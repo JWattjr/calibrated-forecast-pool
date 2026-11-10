@@ -1,0 +1,132 @@
+{
+  "scope": "read-only local reference identities; no other project changed",
+  "references": [
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\PORTFOLIO_MATRIX.md",
+      "byte_count": 10577,
+      "sha256": "47be999136a519a58ca3835a3981c6fd77cdcac333f78a2fd30020cca0107ff1"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\PROGRESS.md",
+      "byte_count": 6471,
+      "sha256": "6d577d699235bf44d15a37c466c48b72e413c873029f90f145cebbac08983b10"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\.gitattributes",
+      "byte_count": 53,
+      "sha256": "f102787df6993229c0893d2cdfb1efcd8b2564cacdf6c0fac79581e70a88213b"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\.gitignore",
+      "byte_count": 124,
+      "sha256": "cc3b124e39a7c4fb93324d1a837855a9b7654760784d7f34ae38f8f6cccdce03"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\gltest.config.yaml",
+      "byte_count": 207,
+      "sha256": "17d2d72309c3fd6931f0b2c4aebc28fd90ad8c7ebea890b416ec2833ea3fd5c1"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\pytest.ini",
+      "byte_count": 60,
+      "sha256": "5af92f079590dd729537e1178555aca8d71d7498acc6bcf1f6705dbab013d26e"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\README.md",
+      "byte_count": 4540,
+      "sha256": "45c8de78b90fb340df067afac0299087ffc864eea49bbc12b20bcb9abf966146"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\requirements.txt",
+      "byte_count": 86,
+      "sha256": "ace689d3596aabf8613d81509369007e96b7f2f62849d05ea5d3ffa96189b6dc"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\SUBMISSION_DRAFT.md",
+      "byte_count": 2751,
+      "sha256": "cf683eb64274dcc98917a41ea060cfce79f73c7f80bf172d8bf9ac32d8f2b0b9"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\contracts\\abi.json",
+      "byte_count": 2733,
+      "sha256": "b13386619eb70fb1fa5c98788ced0e135c1195ef8fdc6857e818a8ecea68698d"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\contracts\\specification_bid_auction.py",
+      "byte_count": 30363,
+      "sha256": "2a14243650d45908db7593a10dbb3121f75d6db8865a6bf113284f19f7e4ef73"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\deployments\\studionet-release-2026-09-28.json",
+      "byte_count": 39361,
+      "sha256": "d1bef13df84325b913ac6ed2a3b319665634338ea0ea9b8dc7090494ef1bd4bc"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\docs\\DISTINCTIVENESS.md",
+      "byte_count": 3598,
+      "sha256": "4a630c2dfa6a35dcb2c5ebafa92dd1bbb14293f1946403df0dd46ca00498ffaa"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\docs\\MECHANISM_DIFFERENTIATION.md",
+      "byte_count": 1347,
+      "sha256": "473a9751b71d23578c5447ab1f5b99beabf7fe8128da774aace8353675c793d8"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\docs\\SECURITY_NOTES.md",
+      "byte_count": 2278,
+      "sha256": "580ee7e39310027e62f2f5b290d6ce1e21f4a47db1cdea6ad6bcf3fc5d66c3e6"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\docs\\TEST_MATRIX.md",
+      "byte_count": 3049,
+      "sha256": "db54dab622a4c59bd943605576be6aba277c839080fd984a45d2b2fe524d2827"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\examples\\constructor.json",
+      "byte_count": 543,
+      "sha256": "81fe0e58fec0ed7c4086b07baa84811f6a116011045bdca8f4194fae7447dd37"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\examples\\demo_sequence.md",
+      "byte_count": 1463,
+      "sha256": "a8293e82ecf9844ca06faf3564adc0da327b49ef28e12e81c6672f9b2acf0c49"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\tests\\conftest.py",
+      "byte_count": 8092,
+      "sha256": "55055f3255c56bb3b161cb5ebcba41c984a5aa42c0ba18e2c502ac95228bea4d"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\tests\\test_auction.py",
+      "byte_count": 17768,
+      "sha256": "34839fb9f6808977c5337a427d67ef1595d69e7f460aa90c9ec3c17dda61c5cf"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\specification-bid-auction\\tests\\test_result_binding.py",
+      "byte_count": 5496,
+      "sha256": "f2d9bb8ebb41c167ff23f43a63b42ce7a4fcd556734809cf82a6184117ec20af"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\research-novelty-bounty\\contracts\\research_novelty_bounty.py",
+      "byte_count": 32632,
+      "sha256": "e865f6b55a1cd1e5a70654a6f72c40e3168fc28728941f14665851dd79e552c1"
+    },
+    {
+      "path": "C:\\Users\\User\\Desktop\\Intelligent Contracts\\standalone\\truthgraph-predicate-resolver\\contracts\\TruthGraph.py",
+      "byte_count": 14899,
+      "sha256": "564e67217e65b5c739585d0b3caebfa69e5efba192e080e9f5a0779849222102"
+    }
+  ],
+  "auction_conftest_copied_verbatim": true,
+  "copied_helpers": {
+    "_text": true,
+    "_json_input": true,
+    "_time": true,
+    "_time_text": true,
+    "_now": true,
+    "_url_host": true,
+    "_canonical": true,
+    "_digest": true,
+    "_parse_model_object": true
+  }
+}

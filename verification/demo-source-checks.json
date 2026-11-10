@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-11-10T20:38:35.375374+00:00",
+  "anonymous": true,
+  "method": "GET; fresh urllib opener; no authorization or cookies",
+  "upstream_release_tag": "v3.12.0",
+  "upstream_commit": "0fb18b02c8ad56299d6a2910be0bab8ad601ef24",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Misc/NEWS.d/3.12.0.rst",
+      "final_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Misc/NEWS.d/3.12.0.rst",
+      "http_status": 200,
+      "byte_count": 1422,
+      "kept_byte_count": 1422,
+      "sha256": "106c380d13387bdf6c74bd84e6b20b32f13a8c847ffb9c6bc98aef1617d896e5",
+      "supporting_line": ".. release date: 2023-10-02",
+      "supporting_line_in_kept_prefix": true
+    }
+  ],
+  "demo_run": false
+}

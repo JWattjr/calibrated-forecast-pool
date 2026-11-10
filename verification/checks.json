@@ -1,0 +1,59 @@
+{
+  "checked_at_utc": "2026-11-10T20:48:20.173017+00:00",
+  "working_directory": "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\calibrated-forecast-pool",
+  "python_version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "genvm_artifact_bundle": "v0.6.0-rc5 (already cached; matches direct-test SDK)",
+  "versions": {
+    "genlayer-test": "0.30.0rc2",
+    "genlayer-py": "0.19.0rc2",
+    "genvm-linter": "0.11.1rc2",
+    "pytest": "9.1.1"
+  },
+  "checks": [
+    {
+      "name": "lint",
+      "argv": [
+        "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-c",
+        "from genvm_linter.cli import cli; cli()",
+        "check",
+        "contracts/calibrated_forecast_pool.py",
+        "--json"
+      ],
+      "powershell_command": "$env:GENVM_VERSION = 'v0.6.0-rc5'\n& 'C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\.venv\\Scripts\\python.exe' '-B' '-c' 'from genvm_linter.cli import cli; cli()' 'check' 'contracts/calibrated_forecast_pool.py' '--json'",
+      "exit_code": 0
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "-vv",
+        "-p",
+        "no:cacheprovider",
+        "--tb=short",
+        "--junitxml=verification/tests.xml"
+      ],
+      "powershell_command": "$env:GENVM_VERSION = 'v0.6.0-rc5'\n& 'C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\.venv\\Scripts\\python.exe' '-B' '-m' 'pytest' '-vv' '-p' 'no:cacheprovider' '--tb=short' '--junitxml=verification/tests.xml'",
+      "exit_code": 0
+    },
+    {
+      "name": "schema",
+      "argv": [
+        "C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-c",
+        "from genvm_linter.cli import cli; cli()",
+        "schema",
+        "contracts/calibrated_forecast_pool.py",
+        "--output",
+        "contracts/abi.json"
+      ],
+      "powershell_command": "$env:GENVM_VERSION = 'v0.6.0-rc5'\n& 'C:\\Users\\User\\Desktop\\Genlayer apps\\intelligent-contracts-v2\\.venv\\Scripts\\python.exe' '-B' '-c' 'from genvm_linter.cli import cli; cli()' 'schema' 'contracts/calibrated_forecast_pool.py' '--output' 'contracts/abi.json'",
+      "exit_code": 0
+    }
+  ]
+}

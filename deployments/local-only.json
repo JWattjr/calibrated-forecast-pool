@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "project": "calibrated-forecast-pool",
+  "status": "LOCAL_ONLY_NOT_DEPLOYED",
+  "network": null,
+  "contract_address": null,
+  "deployment_transaction": null,
+  "contract_explorer_url": null,
+  "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+  "repository_remote": null,
+  "pushed": false,
+  "portal_used": false,
+  "live_demo_run": false,
+  "accounting": "synthetic units only; no external balance debit, token/native custody or transfers",
+  "future_evidence_requirement": "If separately authorized and deployed, record and verify the direct contract-address GenLayer Explorer URL for the correct network as its own evidence entry, using GenLayer Explorer Contract when supported. Transaction/source/repository links do not replace it.",
+  "verification": {
+    "source_sha256": "c641742800bff057db9d28f62e1e7c55c7f8b7b41ca40e8f9a7f62f3cbad2d00",
+    "direct_cases_passed": 66,
+    "lint_passed": true,
+    "sdk_validation_passed": true,
+    "reference_files_rechecked_unchanged": 23,
+    "checks_record": "../verification/checks.json",
+    "full_source_and_results": "../docs/BUILD_REPORT.md"
+  }
+}

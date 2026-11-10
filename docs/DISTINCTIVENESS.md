@@ -1,0 +1,17 @@
+# Distinctiveness audit
+
+Scope: source review of the named local comparator projects. This is a local comparison, not an ecosystem-wide originality claim.
+
+**Disposition: locally implemented candidate; live evidence not established.** The distinguishing mechanism is a quadratic proper score applied to sealed probabilities and normalized into a conserved synthetic pot, with deterministic forfeiture, dust and refund rules. Resolution from web evidence is shared infrastructure and is not claimed as the new part. The payout normalization has the incentive caveat described in DESIGN.md.
+
+| Closest comparator | Its judgment | Participants and actions | Its state changes | Capability or invariant implemented here |
+|---|---|---|---|---|
+| specification-bid-auction | Evaluates whether proposals satisfy frozen eligibility rules using fetched evidence. | Buyer freezes one job; suppliers commit and reveal identity-bound prices/proposals; winner accepts. | Lowest-price eligible bid reserves one award; acceptance records payment; unused budget is refunded. | Forecasters seal probabilities of a shared binary outcome. All revealed scores share a rival-funded pot; unrevealed stakes are forfeited in a scored settlement. Entire pot is allocated exactly once. |
+| research-novelty-bounty | Evaluates support and campaign-local novelty against a growing registry. | Researchers commit and reveal claims and citations in a bounded serial queue. | Supported novel findings extend a versioned registry and reserve scheduled rewards; equivalent findings link without a second reward. | No novelty registry or scheduled owner-funded reward. A single final outcome scores every revealed probability with integer quadratic arithmetic, including explicit zero-score and no-reveal refund cases. |
+| Standalone TruthGraph (`standalone/truthgraph-predicate-resolver/contracts/TruthGraph.py`) | Resolves predicates from fetched sources; deterministically combines leaf statuses using AND/OR/NOT/K_OF_N. | Owner freezes a bounded graph and source URLs; anyone triggers resolution. | Stores atom outcomes and aggregate graph outcome with attempt history; unresolved cases can be retried. | This is the closest resolution comparator. It does not collect sealed probabilities or maintain a scored stake pot. Here an accepted UNRESOLVABLE is terminal and refunds every participant; failed fetch/consensus attempts preserve state for retry. |
+
+Shared explicitly: GenLayer web/model consensus, conservative unresolved outcomes, frozen resolution terms, bounded inputs, pinned runner, source snapshot hashing, identity-bound commit/reveal, integer synthetic accounting and direct-mode mocks. Source availability follows the bounty's record/validation approach, extended by the user-approved UTF-8 truncation rule. None of these shared elements alone is presented as original.
+
+Source references: auction `_normal_bid`, `_snapshot`, `_assess`, `resolve_auction`; bounty `_fetch`, `_valid_candidate`, `_consensus_assessment`; standalone TruthGraph `_consensus_candidate`, `_formula_value`, `resolve`. Reference file identities are recorded in `verification/reference-provenance.json`.
+
+Local evidence consists of the direct-test suite and saved lint/SDK output. There is no StudioNet deployment, public repository, live evidence or Portal submission for this project. No conclusion about ecosystem-wide originality or production economic suitability is made.

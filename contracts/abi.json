@@ -1,0 +1,150 @@
+{
+  "ctor": {
+    "params": [
+      [
+        "question_id",
+        "string"
+      ],
+      [
+        "question",
+        "string"
+      ],
+      [
+        "criterion",
+        "string"
+      ],
+      [
+        "source_urls_json",
+        "string"
+      ],
+      [
+        "stake_units",
+        "int"
+      ],
+      [
+        "commit_deadline_iso",
+        "string"
+      ],
+      [
+        "reveal_deadline_iso",
+        "string"
+      ],
+      [
+        "resolve_after_iso",
+        "string"
+      ]
+    ],
+    "kwparams": {}
+  },
+  "methods": {
+    "commit_forecast": {
+      "params": [
+        [
+          "commitment_hash",
+          "string"
+        ],
+        [
+          "stake_units",
+          "int"
+        ]
+      ],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "null",
+      "payable": false
+    },
+    "get_accounting": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "get_commitment_hash": {
+      "params": [
+        [
+          "probability_bps",
+          "int"
+        ],
+        [
+          "salt",
+          "string"
+        ]
+      ],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "string"
+    },
+    "get_decision": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "get_forecast": {
+      "params": [
+        [
+          "forecaster",
+          "string"
+        ]
+      ],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "get_question": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "get_settlement": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "get_sources": {
+      "params": [],
+      "kwparams": {},
+      "readonly": true,
+      "ret": "dict"
+    },
+    "resolve_question": {
+      "params": [],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "dict",
+      "payable": false
+    },
+    "reveal_forecast": {
+      "params": [
+        [
+          "probability_bps",
+          "int"
+        ],
+        [
+          "salt",
+          "string"
+        ]
+      ],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "null",
+      "payable": false
+    },
+    "settle": {
+      "params": [],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "dict",
+      "payable": false
+    },
+    "withdraw": {
+      "params": [],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "int",
+      "payable": false
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "question_id": "cpython-3120-release-date-2026-11-10",
+  "question": "Does the CPython 3.12.0 final release-news file explicitly state the release date 2023-10-02?",
+  "criterion": "YES only if the frozen CPython 3.12.0 release-news text explicitly states '.. release date: 2023-10-02'. NO only if it explicitly states a different release date for that release. Otherwise UNRESOLVABLE; use no inference or outside knowledge.",
+  "source_urls_json": "[\"https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Misc/NEWS.d/3.12.0.rst\"]",
+  "stake_units": 100,
+  "commit_deadline_iso": "2030-01-02T00:00:00Z",
+  "reveal_deadline_iso": "2030-01-05T00:00:00Z",
+  "resolve_after_iso": "2030-01-06T00:00:00Z"
+}
