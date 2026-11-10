@@ -1,4 +1,6 @@
-# Local build report
+# Build and live verification report
+
+The separately authorized StudioNet demos passed: 24 finalized transactions, 20 successful executions and four expected rollbacks. Scoring paid 172/128/0; deadline expiry refunded both stakes. Both deployed source blobs and direct contract Explorer links were verified. Full live evidence is in docs/LIVE_DEMO.md and deployments/studionet-release-2026-11-10.json. The original local validation results and complete source follow.
 
 Project: `calibrated-forecast-pool`. Source SHA-256: `25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677`.
 
@@ -248,7 +250,7 @@ Schema written to contracts/abi.json
 
 ## Source availability check
 
-The replacement URL proposed as frozen demo evidence was fetched anonymously with HTTP 200, 101514 bytes, at 2026-11-10T21:26:15.528655+00:00. It is pinned to upstream commit `0fb18b02c8ad56299d6a2910be0bab8ad601ef24`. Full response SHA-256: `4a0da7af729f2ba5d6f34d257f440d1700245531aad9cb2bf18bb78af24cfab9`. The supporting statement occupies UTF-8 bytes [2307, 2389) and fits inside the retained 5000-byte prefix. See `docs/DEMO_PLAN.md` and `verification/demo-source-checks.json`. The live demo was not run.
+The replacement URL proposed as frozen demo evidence was fetched anonymously with HTTP 200, 101514 bytes, at 2026-11-10T21:26:15.528655+00:00. It is pinned to upstream commit `0fb18b02c8ad56299d6a2910be0bab8ad601ef24`. Full response SHA-256: `4a0da7af729f2ba5d6f34d257f440d1700245531aad9cb2bf18bb78af24cfab9`. The supporting statement occupies UTF-8 bytes [2307, 2389) and fits inside the retained 5000-byte prefix. See `docs/DEMO_PLAN.md` and `verification/demo-source-checks.json`. The live demo was subsequently run under explicit authorization; see docs/LIVE_DEMO.md for actual results.
 
 ## Decisions, uncertainty and deliberate omissions
 
@@ -258,7 +260,7 @@ The replacement URL proposed as frozen demo evidence was fetched anonymously wit
 - Malformed UTF-8 inside the kept prefix is unavailable; only an incomplete final character is cut back. This preserves strict UTF-8 handling without silent replacement.
 - Quotes must be case-sensitive substrings of retained text after whitespace normalization, with at least eight normalized characters; unsupported or too-short quotes force UNRESOLVABLE. Source membership cannot prove semantic entailment. Direct mocks and callback mutation checks do not establish live consensus or finality.
 - Brier scores are proper in isolation, but rival-dependent pot normalization does not guarantee truthful-reporting incentives. No claim of production incentive compatibility, Sybil resistance or ecosystem-wide originality is made.
-- Deliberately absent: native/token custody or transfers, wallet setup, real stake debits, frontend, multi-question mutable registry, cancellation/admin recovery, live demo, deployment, public remote, push, GitHub repository creation, visibility change and Portal submission.
+- Deliberately absent: native/token custody or transfers, wallet setup, real stake debits, frontend, multi-question mutable registry, cancellation/admin recovery, public remote, push, GitHub repository creation, visibility change and Portal submission.
 - No private keys or credential-helper output were read or logged. Other projects and portfolio trackers were only read.
 
 ## Full contract source

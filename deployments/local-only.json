@@ -21,5 +21,7 @@
     "reference_files_rechecked_unchanged": 23,
     "checks_record": "../verification/checks.json",
     "full_source_and_results": "../docs/BUILD_REPORT.md"
-  }
+  },
+  "record_scope": "Historical local-build snapshot before separately authorized StudioNet demos; current live status is in the linked release manifest.",
+  "current_release_manifest": "studionet-release-2026-11-10.json"
 }

@@ -1,0 +1,65 @@
+{
+  "rendered_browser_verification": {
+    "checks": [
+      {
+        "scenario": "score",
+        "url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+        "method": "Chrome rendered page through computer-use",
+        "page_title": "GenLayer Studio Explorer",
+        "contract_heading_observed": true,
+        "displayed_contract_address": "0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+        "displayed_deployment_transaction": "0xacd8fecbc631531fed7e8839f04286f85cc55121e607cfef2edc536301e0f3a5",
+        "deployment_shown_finalized": true,
+        "deployment_shown_success": true,
+        "network_verified": "StudioNet: dedicated explorer-studio.genlayer.com host; deployment/source independently matched through chain-61999 RPC",
+        "evidence_type": "GenLayer Explorer Contract",
+        "checked_at_utc": "2026-11-10T21:43:34.568465+00:00",
+        "passed": true
+      },
+      {
+        "scenario": "expiry",
+        "url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+        "method": "Chrome rendered page through computer-use",
+        "page_title": "GenLayer Studio Explorer",
+        "contract_heading_observed": true,
+        "displayed_contract_address": "0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+        "displayed_deployment_transaction": "0x148f9677dd928bb860c058cb46ae87713b0177443933a670dd697165e4e66fc2",
+        "deployment_shown_finalized": true,
+        "deployment_shown_success": true,
+        "network_verified": "StudioNet: dedicated explorer-studio.genlayer.com host; deployment/source independently matched through chain-61999 RPC",
+        "evidence_type": "GenLayer Explorer Contract",
+        "checked_at_utc": "2026-11-10T22:19:38.007738+00:00",
+        "passed": true
+      }
+    ]
+  },
+  "initial_direct_http_attempt": {
+    "checks": [
+      {
+        "scenario": "score",
+        "url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+        "evidence_type": "GenLayer Explorer Contract",
+        "checked_at_utc": "2026-11-10T21:40:58.798343+00:00",
+        "page_http_status": 403,
+        "page_final_url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+        "page_contains_contract_address": true,
+        "page_contains_studionet_label": false,
+        "page_sha256": "b8968b2dd5edc905aace42fef24b552f464646ca3f5133c1b40aa8010fd647e8",
+        "api_http_status": 403,
+        "api_url": "https://explorer-studio.genlayer.com/api/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+        "api_type": null,
+        "api_address_matches": false,
+        "network": {
+          "name": "GenLayer StudioNet",
+          "chain_id": 61999,
+          "rpc": "https://studio.genlayer.com/api",
+          "explorer": "https://explorer-studio.genlayer.com"
+        },
+        "source_identity_confirmed_via_studionet_rpc": true,
+        "passed": false
+      }
+    ],
+    "passed": false
+  },
+  "note": "Direct HTTP was challenged (403); Chrome rendered pages verified the contract addresses and matching finalized deployment transactions on the StudioNet Explorer."
+}

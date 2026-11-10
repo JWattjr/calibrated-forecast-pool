@@ -1,0 +1,2660 @@
+{
+  "schema_version": "1.0",
+  "status": "LIVE_DEMOS_PASSED",
+  "run_id": "20261110T213900",
+  "started_at_utc": "2026-11-10T21:39:00.598191+00:00",
+  "project": {
+    "name": "calibrated-forecast-pool",
+    "source_commit": "6cc6b4f32b486dc41fb23d11b7b7b40e004af510",
+    "source_git_blob": "c803084a5cce74da4b9bbfd53b37b36526d20bba",
+    "source_sha256": "25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677",
+    "source_bytes": 27237,
+    "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6"
+  },
+  "network": {
+    "name": "GenLayer StudioNet",
+    "chain_id": 61999,
+    "rpc": "https://studio.genlayer.com/api",
+    "explorer": "https://explorer-studio.genlayer.com"
+  },
+  "runtime": {
+    "executable": "C:\\Python314\\python.exe",
+    "genlayer-py": "0.18.0"
+  },
+  "participants": {
+    "owner": "0x78FD062245fc6E8b62c95BFc89c65c29f5F55651",
+    "alice": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+    "bob": "0xE45136DFF685D014954aEbE29123b23423a540D2",
+    "charlie": "0x5045dc41f50F6196B9517fAEf1774C7bbAb16f38",
+    "trigger": "0x4bCc3b00eFe78D2EfB33bc46eA09193C63712F0B"
+  },
+  "accounting_notice": "Synthetic units only; no native/token custody, funding, balance debit or transfer.",
+  "repository_pushed": false,
+  "portal_used": false,
+  "instances": {
+    "score": {
+      "constructor": {
+        "question_id": "cfp-20261110T213900-score",
+        "question": "Did CPython 3.12 stop including distutils in its standard library?",
+        "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+        "source_urls_json": "[\"https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst\"]",
+        "stake_units": 100,
+        "commit_deadline_iso": "2026-11-10T21:45:03Z",
+        "reveal_deadline_iso": "2026-11-10T21:49:03Z",
+        "resolve_after_iso": "2026-11-10T21:50:03Z",
+        "resolution_deadline_iso": "2026-11-10T22:09:03Z"
+      },
+      "deadlines_epoch": {
+        "commit": 1794347103,
+        "reveal": 1794347343,
+        "resolve_after": 1794347403,
+        "resolution": 1794348543
+      },
+      "committed_roles": [
+        "alice",
+        "bob",
+        "charlie"
+      ],
+      "readbacks": {
+        "after_deployment": {
+          "checked_at_utc": "2026-11-10T21:41:01.673839+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 0,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 0
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {}
+        },
+        "after_commit_alice": {
+          "checked_at_utc": "2026-11-10T21:42:08.513661+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 1,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 100,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 100
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_commit_bob": {
+          "checked_at_utc": "2026-11-10T21:43:10.865571+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_commit_charlie": {
+          "checked_at_utc": "2026-11-10T21:44:24.995743+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "before_forged_reveal": {
+          "checked_at_utc": "2026-11-10T21:45:27.193692+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_forged_reveal": {
+          "checked_at_utc": "2026-11-10T21:46:52.461388+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "view_scope": "question and accounting; one forecast when specified"
+        },
+        "after_reveal_alice": {
+          "checked_at_utc": "2026-11-10T21:47:51.268085+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "view_scope": "question and accounting; one forecast when specified",
+          "forecast": {
+            "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+            "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+            "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+            "probability_bps": 10000,
+            "question_id": "cfp-20261110T213900-score",
+            "salt": "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94",
+            "status": "REVEALED",
+            "withdrawn": false
+          }
+        },
+        "after_reveal_bob": {
+          "checked_at_utc": "2026-11-10T21:48:44.638947+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "view_scope": "question and accounting; one forecast when specified",
+          "forecast": {
+            "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+            "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+            "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+            "probability_bps": 5000,
+            "question_id": "cfp-20261110T213900-score",
+            "salt": "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea",
+            "status": "REVEALED",
+            "withdrawn": false
+          }
+        },
+        "after_reveal_charlie": {
+          "checked_at_utc": "2026-11-10T21:49:35.058196+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "view_scope": "question and accounting; one forecast when specified",
+          "forecast": {
+            "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+            "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+            "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+            "probability_bps": 0,
+            "question_id": "cfp-20261110T213900-score",
+            "salt": "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2",
+            "status": "REVEALED",
+            "withdrawn": false
+          }
+        },
+        "after_resolution": {
+          "checked_at_utc": "2026-11-10T21:51:19.471702+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "RESOLVED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:acc2692a8dff745a527a8d69b69df30c2a9389e5184901b48bc25203f84fe0f9",
+            "input_snapshot_digest": "sha256:f092ee3cdfe01cdd3d2b492fb28584874ea01522c30bae281c3fff40f77a8ee2",
+            "resolution": {
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:9cef81f67389cede9f5661fd7b6d640424aee825b049f9d57866ab13ccf6d088",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "probability_bps": 10000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "probability_bps": 5000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "probability_bps": 0,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2",
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_settlement": {
+          "checked_at_utc": "2026-11-10T21:52:32.772282+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:acc2692a8dff745a527a8d69b69df30c2a9389e5184901b48bc25203f84fe0f9",
+            "input_snapshot_digest": "sha256:f092ee3cdfe01cdd3d2b492fb28584874ea01522c30bae281c3fff40f77a8ee2",
+            "resolution": {
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:9cef81f67389cede9f5661fd7b6d640424aee825b049f9d57866ab13ccf6d088",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x5045dc41f50f6196b9517faef1774c7bbab16f38": 0,
+              "0xe45136dff685d014954aebe29123b23423a540d2": 128,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 172
+            },
+            "dust_recipient": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_withdraw_alice": {
+          "checked_at_utc": "2026-11-10T21:53:39.318192+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 128,
+            "paid_units": 172,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:acc2692a8dff745a527a8d69b69df30c2a9389e5184901b48bc25203f84fe0f9",
+            "input_snapshot_digest": "sha256:f092ee3cdfe01cdd3d2b492fb28584874ea01522c30bae281c3fff40f77a8ee2",
+            "resolution": {
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:9cef81f67389cede9f5661fd7b6d640424aee825b049f9d57866ab13ccf6d088",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x5045dc41f50f6196b9517faef1774c7bbab16f38": 0,
+              "0xe45136dff685d014954aebe29123b23423a540d2": 128,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 172
+            },
+            "dust_recipient": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "recovery_readback": {
+          "checked_at_utc": "2026-11-10T22:15:30.314180+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 300,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:acc2692a8dff745a527a8d69b69df30c2a9389e5184901b48bc25203f84fe0f9",
+            "input_snapshot_digest": "sha256:f092ee3cdfe01cdd3d2b492fb28584874ea01522c30bae281c3fff40f77a8ee2",
+            "resolution": {
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:9cef81f67389cede9f5661fd7b6d640424aee825b049f9d57866ab13ccf6d088",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x5045dc41f50f6196b9517faef1774c7bbab16f38": 0,
+              "0xe45136dff685d014954aebe29123b23423a540d2": 128,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 172
+            },
+            "dust_recipient": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "before_duplicate_withdraw": {
+          "checked_at_utc": "2026-11-10T22:16:35.501836+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 300,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:acc2692a8dff745a527a8d69b69df30c2a9389e5184901b48bc25203f84fe0f9",
+            "input_snapshot_digest": "sha256:f092ee3cdfe01cdd3d2b492fb28584874ea01522c30bae281c3fff40f77a8ee2",
+            "resolution": {
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:9cef81f67389cede9f5661fd7b6d640424aee825b049f9d57866ab13ccf6d088",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x5045dc41f50f6196b9517faef1774c7bbab16f38": 0,
+              "0xe45136dff685d014954aebe29123b23423a540d2": 128,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 172
+            },
+            "dust_recipient": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": true
+            }
+          }
+        },
+        "final": {
+          "checked_at_utc": "2026-11-10T22:17:40.499996+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T21:45:03Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-score",
+            "resolution_deadline": "2026-11-10T22:09:03Z",
+            "resolve_after": "2026-11-10T21:50:03Z",
+            "reveal_deadline": "2026-11-10T21:49:03Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 300,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:acc2692a8dff745a527a8d69b69df30c2a9389e5184901b48bc25203f84fe0f9",
+            "input_snapshot_digest": "sha256:f092ee3cdfe01cdd3d2b492fb28584874ea01522c30bae281c3fff40f77a8ee2",
+            "resolution": {
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:9cef81f67389cede9f5661fd7b6d640424aee825b049f9d57866ab13ccf6d088",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 101514,
+                "content_digest": "sha256:2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+                "kept_byte_count": 5000,
+                "status": "truncated",
+                "text": "\n****************************\n  What's New In Python 3.12\n****************************\n\n:Editor: Adam Turner\n\n.. Rules for maintenance:\n\n   * Anyone can add text to this document.  Do not spend very much time\n   on the wording of your changes, because your text will probably\n   get rewritten to some degree.\n\n   * The maintainer will go through Misc/NEWS periodically and add\n   changes; it's therefore more important to add your changes to\n   Misc/NEWS than to this file.\n\n   * This is not a complete list of every single change; completeness\n   is the purpose of Misc/NEWS.  Some changes I consider too small\n   or esoteric to include.  If such a change is added to the text,\n   I'll just remove it.  (This is another reason you shouldn't spend\n   too much time on writing your addition.)\n\n   * If you want to draw your new text to the attention of the\n   maintainer, add 'XXX' to the beginning of the paragraph or\n   section.\n\n   * It's OK to just add a fragmentary note about a change.  For\n   example: \"XXX Describe the transmogrify() function added to the\n   socket module.\"  The maintainer will research the change and\n   write the necessary text.\n\n   * You can comment out your additions if you like, but it's not\n   necessary (especially when a final release is some months away).\n\n   * Credit the author of a patch or bugfix.   Just the name is\n   sufficient; the e-mail address isn't necessary.\n\n   * It's helpful to add the issue number as a comment:\n\n   XXX Describe the transmogrify() function added to the socket\n   module.\n   (Contributed by P.Y. Developer in :gh:`12345`.)\n\n   This saves the maintainer the effort of going through the VCS log when\n   researching a change.\n\nThis article explains the new features in Python 3.12, compared to 3.11.\nPython 3.12 was released on October 2, 2023.\nFor full details, see the :ref:`changelog <changelog>`.\n\n.. seealso::\n\n   :pep:`693` -- Python 3.12 Release Schedule\n\nSummary -- Release highlights\n=============================\n\n.. This section singles out the most important changes in Python 3.12.\n   Brevity is key.\n\nPython 3.12 is the latest stable release of the Python programming language,\nwith a mix of changes to the language and the standard library.\nThe library changes focus on cleaning up deprecated APIs, usability, and correctness.\nOf note, the :mod:`!distutils` package has been removed from the standard library.\nFilesystem support in :mod:`os` and :mod:`pathlib` has seen a number of improvements,\nand several modules have better performance.\n\nThe language changes focus on usability,\nas :term:`f-strings <f-string>` have had many limitations removed\nand 'Did you mean ...' suggestions continue to improve.\nThe new :ref:`type parameter syntax <whatsnew312-pep695>`\nand :keyword:`type` statement improve ergonomics for using :term:`generic types\n<generic type>` and :term:`type aliases <type alias>` with static type checkers.\n\nThis article doesn't attempt to provide a complete specification of all new features,\nbut instead gives a convenient overview.\nFor full details, you should refer to the documentation,\nsuch as the  :ref:`Library Reference <library-index>`\nand :ref:`Language Reference <reference-index>`.\nIf you want to understand the complete implementation and design rationale for a change,\nrefer to the PEP for a particular new feature;\nbut note that PEPs usually are not kept up-to-date\nonce a feature has been fully implemented.\n\n--------------\n\n.. PEP-sized items next.\n\nNew syntax features:\n\n* :ref:`PEP 695 <whatsnew312-pep695>`, type parameter syntax and the :keyword:`type` statement\n\nNew grammar features:\n\n* :ref:`PEP 701 <whatsnew312-pep701>`, :term:`f-strings <f-string>` in the grammar\n\nInterpreter improvements:\n\n* :ref:`PEP 684 <whatsnew312-pep684>`, a unique per-interpreter :term:`GIL\n  <global interpreter lock>`\n* :ref:`PEP 669 <whatsnew312-pep669>`, low impact monitoring\n* `Improved 'Did you mean ...' suggestions <improved error messages_>`_\n  for :exc:`NameError`, :exc:`ImportError`, and :exc:`SyntaxError` exceptions\n\nPython data model improvements:\n\n* :ref:`PEP 688 <whatsnew312-pep688>`, using the :ref:`buffer protocol\n  <bufferobjects>` from Python\n\nSignificant improvements in the standard library:\n\n* The :class:`pathlib.Path` class now supports subclassing\n* The :mod:`os` module received several improvements for Windows support\n* A :ref:`command-line interface <sqlite3-cli>` has been added to the\n  :mod:`sqlite3` module\n* :func:`isinstance` checks against :func:`runtime-checkable protocols\n  <typing.runtime_checkable>` enjoy a speed up of between two and 20 times\n* The :mod:`asyncio` package has had a number of performance improvements,\n  with some benchmarks showing a 75% speed up.\n* A :ref:`command-line interface <uuid-cli>` has been added to the\n  :mod:`uuid` module\n* Due to the changes in :ref:`PEP 701 <whatsnew312-pep701>`,\n  producing tokens via the :mod:`tokenize` module is up to up to 64% faster.\n\nSecurity improvements:\n\n* Replace the builtin :mod:`hashlib",
+                "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x5045dc41f50f6196b9517faef1774c7bbab16f38": 0,
+              "0xe45136dff685d014954aebe29123b23423a540d2": 128,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 172
+            },
+            "dust_recipient": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "charlie": {
+              "commitment_hash": "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+              "contract_address": "0xc74acba3e9f5733680a8f6245717dfd70c8f7e93",
+              "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261110T213900-score",
+              "salt": "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": true
+            }
+          }
+        }
+      },
+      "address": "0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+      "explorer_contract_url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+      "evidence_type": "GenLayer Explorer Contract",
+      "deployed_source_matches_commit": true,
+      "deployed_source_sha256": "25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677",
+      "deployed_source_git_blob": "c803084a5cce74da4b9bbfd53b37b36526d20bba",
+      "complete": true
+    },
+    "expiry": {
+      "constructor": {
+        "question_id": "cfp-20261110T213900-expiry",
+        "question": "Did CPython 3.12 stop including distutils in its standard library?",
+        "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+        "source_urls_json": "[\"https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst\"]",
+        "stake_units": 100,
+        "commit_deadline_iso": "2026-11-10T22:23:43Z",
+        "reveal_deadline_iso": "2026-11-10T22:26:43Z",
+        "resolve_after_iso": "2026-11-10T22:27:43Z",
+        "resolution_deadline_iso": "2026-11-10T22:28:43Z"
+      },
+      "deadlines_epoch": {
+        "commit": 1794349423,
+        "reveal": 1794349603,
+        "resolve_after": 1794349663,
+        "resolution": 1794349723
+      },
+      "committed_roles": [
+        "alice",
+        "bob"
+      ],
+      "readbacks": {
+        "after_deployment": {
+          "checked_at_utc": "2026-11-10T22:18:40.066158+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 0,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 0
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {}
+        },
+        "after_commit_alice": {
+          "checked_at_utc": "2026-11-10T22:19:47.331332+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 1,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 100,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 100
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_commit_bob": {
+          "checked_at_utc": "2026-11-10T22:20:57.088440+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_reveal_alice": {
+          "checked_at_utc": "2026-11-10T22:24:32.119141+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "view_scope": "question and accounting; one forecast when specified",
+          "forecast": {
+            "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+            "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+            "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+            "probability_bps": 8000,
+            "question_id": "cfp-20261110T213900-expiry",
+            "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+            "status": "REVEALED",
+            "withdrawn": false
+          }
+        },
+        "before_early_expiry": {
+          "checked_at_utc": "2026-11-10T22:24:53.617018+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_early_expiry": {
+          "checked_at_utc": "2026-11-10T22:25:54.883043+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_late_resolution": {
+          "checked_at_utc": "2026-11-10T22:29:47.163098+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_expiry": {
+          "checked_at_utc": "2026-11-10T22:30:55.045807+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "RESOLVED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:b05642f295e6cf2ff9f097f3ef6fe0a37d0106ede6bf0c03c6b7d21dbccc7c37",
+            "input_snapshot_digest": "sha256:2112c681678cb95bda129ff17a581249973ccbdd6b1752a8e6a10ae0671edae8",
+            "reason": "RESOLUTION_DEADLINE",
+            "resolution": {
+              "outcome": "UNRESOLVABLE",
+              "quotes": []
+            },
+            "snapshot_digest": "sha256:ae96a9ffae2cd7f08b6371400f97b7e6a4d04dd0762400bd046a904bc1a6689d",
+            "sources": []
+          },
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_settlement": {
+          "checked_at_utc": "2026-11-10T22:32:01.392527+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:b05642f295e6cf2ff9f097f3ef6fe0a37d0106ede6bf0c03c6b7d21dbccc7c37",
+            "input_snapshot_digest": "sha256:2112c681678cb95bda129ff17a581249973ccbdd6b1752a8e6a10ae0671edae8",
+            "reason": "RESOLUTION_DEADLINE",
+            "resolution": {
+              "outcome": "UNRESOLVABLE",
+              "quotes": []
+            },
+            "snapshot_digest": "sha256:ae96a9ffae2cd7f08b6371400f97b7e6a4d04dd0762400bd046a904bc1a6689d",
+            "sources": []
+          },
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {
+            "allocations": {
+              "0xe45136dff685d014954aebe29123b23423a540d2": 100,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 100
+            },
+            "dust_recipient": "",
+            "dust_units": 0,
+            "outcome": "UNRESOLVABLE",
+            "pot_units": 200,
+            "refund": true,
+            "score_sum": 36000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "score": 36000000,
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "score": 0,
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_withdraw_alice": {
+          "checked_at_utc": "2026-11-10T22:33:05.801415+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 100,
+            "paid_units": 0,
+            "refunded_units": 100,
+            "stakes_in": 200
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:b05642f295e6cf2ff9f097f3ef6fe0a37d0106ede6bf0c03c6b7d21dbccc7c37",
+            "input_snapshot_digest": "sha256:2112c681678cb95bda129ff17a581249973ccbdd6b1752a8e6a10ae0671edae8",
+            "reason": "RESOLUTION_DEADLINE",
+            "resolution": {
+              "outcome": "UNRESOLVABLE",
+              "quotes": []
+            },
+            "snapshot_digest": "sha256:ae96a9ffae2cd7f08b6371400f97b7e6a4d04dd0762400bd046a904bc1a6689d",
+            "sources": []
+          },
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {
+            "allocations": {
+              "0xe45136dff685d014954aebe29123b23423a540d2": 100,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 100
+            },
+            "dust_recipient": "",
+            "dust_units": 0,
+            "outcome": "UNRESOLVABLE",
+            "pot_units": 200,
+            "refund": true,
+            "score_sum": 36000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "score": 36000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "score": 0,
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_withdraw_bob": {
+          "checked_at_utc": "2026-11-10T22:34:11.832018+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 0,
+            "refunded_units": 200,
+            "stakes_in": 200
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:b05642f295e6cf2ff9f097f3ef6fe0a37d0106ede6bf0c03c6b7d21dbccc7c37",
+            "input_snapshot_digest": "sha256:2112c681678cb95bda129ff17a581249973ccbdd6b1752a8e6a10ae0671edae8",
+            "reason": "RESOLUTION_DEADLINE",
+            "resolution": {
+              "outcome": "UNRESOLVABLE",
+              "quotes": []
+            },
+            "snapshot_digest": "sha256:ae96a9ffae2cd7f08b6371400f97b7e6a4d04dd0762400bd046a904bc1a6689d",
+            "sources": []
+          },
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {
+            "allocations": {
+              "0xe45136dff685d014954aebe29123b23423a540d2": 100,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 100
+            },
+            "dust_recipient": "",
+            "dust_units": 0,
+            "outcome": "UNRESOLVABLE",
+            "pot_units": 200,
+            "refund": true,
+            "score_sum": 36000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "score": 36000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "score": 0,
+              "status": "COMMITTED",
+              "withdrawn": true
+            }
+          }
+        },
+        "final": {
+          "checked_at_utc": "2026-11-10T22:34:35.237819+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-10T22:23:43Z",
+            "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0x78fd062245fc6e8b62c95bfc89c65c29f5f55651",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261110T213900-expiry",
+            "resolution_deadline": "2026-11-10T22:28:43Z",
+            "resolve_after": "2026-11-10T22:27:43Z",
+            "reveal_deadline": "2026-11-10T22:26:43Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 0,
+            "refunded_units": 200,
+            "stakes_in": 200
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:b05642f295e6cf2ff9f097f3ef6fe0a37d0106ede6bf0c03c6b7d21dbccc7c37",
+            "input_snapshot_digest": "sha256:2112c681678cb95bda129ff17a581249973ccbdd6b1752a8e6a10ae0671edae8",
+            "reason": "RESOLUTION_DEADLINE",
+            "resolution": {
+              "outcome": "UNRESOLVABLE",
+              "quotes": []
+            },
+            "snapshot_digest": "sha256:ae96a9ffae2cd7f08b6371400f97b7e6a4d04dd0762400bd046a904bc1a6689d",
+            "sources": []
+          },
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {
+            "allocations": {
+              "0xe45136dff685d014954aebe29123b23423a540d2": 100,
+              "0xf5a4f0538229282fc84de0033f8f5c06fd69838c": 100
+            },
+            "dust_recipient": "",
+            "dust_units": 0,
+            "outcome": "UNRESOLVABLE",
+            "pot_units": 200,
+            "refund": true,
+            "score_sum": 36000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+              "contract_address": "0xe908f2670ee24c13346cf2e754001ad20f2f825a",
+              "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "probability_bps": 8000,
+              "question_id": "cfp-20261110T213900-expiry",
+              "salt": "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f",
+              "score": 36000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+              "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+              "payment_kind": "REFUND",
+              "payout_units": 100,
+              "score": 0,
+              "status": "COMMITTED",
+              "withdrawn": true
+            }
+          }
+        }
+      },
+      "address": "0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+      "explorer_contract_url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+      "evidence_type": "GenLayer Explorer Contract",
+      "deployed_source_matches_commit": true,
+      "deployed_source_sha256": "25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677",
+      "deployed_source_git_blob": "c803084a5cce74da4b9bbfd53b37b36526d20bba",
+      "complete": true
+    }
+  },
+  "transactions": [
+    {
+      "operation": "score_deploy",
+      "scenario": "score",
+      "method": "constructor",
+      "args": [
+        "cfp-20261110T213900-score",
+        "Did CPython 3.12 stop including distutils in its standard library?",
+        "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+        "[\"https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst\"]",
+        100,
+        "2026-11-10T21:45:03Z",
+        "2026-11-10T21:49:03Z",
+        "2026-11-10T21:50:03Z",
+        "2026-11-10T22:09:03Z"
+      ],
+      "actor": "0x78FD062245fc6E8b62c95BFc89c65c29f5F55651",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:39:01.275136+00:00",
+      "hash": "0xacd8fecbc631531fed7e8839f04286f85cc55121e607cfef2edc536301e0f3a5",
+      "submitted_at_utc": "2026-11-10T21:39:08.733587+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xacd8fecbc631531fed7e8839f04286f85cc55121e607cfef2edc536301e0f3a5",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:39:18.064739+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:39:45.507995+00:00",
+      "contract_address": "0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+      "receipt_path": "studionet-receipts-2026-11-10/score_deploy.json",
+      "receipt_sha256": "6c842bea96e09aec1c8b64d0ab5bfcfd2d6fd896c17478c7dbca11496fff64a9"
+    },
+    {
+      "operation": "score_commit_alice",
+      "scenario": "score",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:62bc1ee2d38d4e178953ca6e02edd901678614519375584f80f85b495353da2e",
+        100
+      ],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:41:01.675747+00:00",
+      "hash": "0xf2e3b8d1a04e7dca0a6ec373732556ca0d6ccb053497892b7f11347ca9b14fc3",
+      "submitted_at_utc": "2026-11-10T21:41:07.260032+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xf2e3b8d1a04e7dca0a6ec373732556ca0d6ccb053497892b7f11347ca9b14fc3",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:41:16.351886+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:41:50.809083+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_commit_alice.json",
+      "receipt_sha256": "2e85ddf9131f45ca11e9a4d37a2fe0e1a457f4e82802b5a8a80e3c1e0ac1310b"
+    },
+    {
+      "operation": "score_commit_bob",
+      "scenario": "score",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:4210a05d71c95ece09708fe0a58d380843d3e9d3daebfb4e7c04a52477c5aa5d",
+        100
+      ],
+      "actor": "0xE45136DFF685D014954aEbE29123b23423a540D2",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:42:08.516218+00:00",
+      "hash": "0x87af4eed3cd79ae80789234966eb27c4531115eae9c3d6442dfe02779cc2126d",
+      "submitted_at_utc": "2026-11-10T21:42:13.442499+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x87af4eed3cd79ae80789234966eb27c4531115eae9c3d6442dfe02779cc2126d",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:42:22.365390+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:42:48.751152+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_commit_bob.json",
+      "receipt_sha256": "6e44d27106bb5bda2aaa5abf2a819c78e32f580c76a2e2b8674ccfecd5bc70a4"
+    },
+    {
+      "operation": "score_commit_charlie",
+      "scenario": "score",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:97e6467aed165f356ec937b0b5b0f3d11cba864bbada29ee6fc274788f41b8a9",
+        100
+      ],
+      "actor": "0x5045dc41f50F6196B9517fAEf1774C7bbAb16f38",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:43:10.867873+00:00",
+      "hash": "0x941801168e883af6e09cdb4d5ed43c80c41003bcd095770be4a01854c36cd589",
+      "submitted_at_utc": "2026-11-10T21:43:16.181123+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x941801168e883af6e09cdb4d5ed43c80c41003bcd095770be4a01854c36cd589",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:43:25.391773+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:43:59.925876+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_commit_charlie.json",
+      "receipt_sha256": "d446ca6d8841fafd7c932e012973f1ab381a798ab6f2170024a17a19428d0ba6"
+    },
+    {
+      "operation": "score_forged_reveal",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        9999,
+        "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94"
+      ],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": "reveal does not match",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:45:27.197130+00:00",
+      "hash": "0x0ac97eafd776af435c59367f3aef350155fc4db7c2781a6a31053dc8a4d4cb87",
+      "submitted_at_utc": "2026-11-10T21:45:32.358628+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0ac97eafd776af435c59367f3aef350155fc4db7c2781a6a31053dc8a4d4cb87",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:45:41.545985+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "ERROR",
+      "leader_result_code": "rollback",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:46:15.988344+00:00",
+      "expected_error_found": true,
+      "receipt_path": "studionet-receipts-2026-11-10/score_forged_reveal.json",
+      "receipt_sha256": "582f374270996f1b3d7d8282748d3d1ee914d81858da5636bcfa0c529140db1c"
+    },
+    {
+      "operation": "score_reveal_alice",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        10000,
+        "f015122122451ddd1a08eaf6f657d7bc6c8357e178c3f7ae584b06dea8658a94"
+      ],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:46:52.463663+00:00",
+      "hash": "0x6bdb6b21eff07a0fb76bc76f97b0689f70afeb8ef4b8c2b37e711b1f1821f051",
+      "submitted_at_utc": "2026-11-10T21:46:58.312420+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x6bdb6b21eff07a0fb76bc76f97b0689f70afeb8ef4b8c2b37e711b1f1821f051",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:47:07.402453+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:47:42.453443+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_reveal_alice.json",
+      "receipt_sha256": "0426cae29b05bb9d79fc26aa4d59b6659739538f5fa352bf7a499166cd71058a"
+    },
+    {
+      "operation": "score_reveal_bob",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        5000,
+        "b1a08e6fc7781e2cf9719319f51865d15d0b2dea3ca59a87f394828261c123ea"
+      ],
+      "actor": "0xE45136DFF685D014954aEbE29123b23423a540D2",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:47:51.270958+00:00",
+      "hash": "0x46273d26cdea696084777989fe07c11646c6fbcfde0d5c417fab58d6a4cee8a1",
+      "submitted_at_utc": "2026-11-10T21:47:58.554972+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x46273d26cdea696084777989fe07c11646c6fbcfde0d5c417fab58d6a4cee8a1",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:48:07.799052+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:48:34.666571+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_reveal_bob.json",
+      "receipt_sha256": "8df573c9eea5753b933416f74dc7496e726120001b0c2bd8a5be6286e1d2dda3"
+    },
+    {
+      "operation": "score_reveal_charlie",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        0,
+        "e59da6280d0926f53280eb4898ea13048e01f22d64072be9a605e7e0ceb6cfa2"
+      ],
+      "actor": "0x5045dc41f50F6196B9517fAEf1774C7bbAb16f38",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:48:44.640958+00:00",
+      "hash": "0x4d725ac2d9a56b35ff79d10e6bb940493fc4ea66e261d8d97bea3be2692dfec1",
+      "submitted_at_utc": "2026-11-10T21:48:49.640465+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x4d725ac2d9a56b35ff79d10e6bb940493fc4ea66e261d8d97bea3be2692dfec1",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:48:58.890009+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:49:25.888055+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_reveal_charlie.json",
+      "receipt_sha256": "3d3c20af60f20ceba3486fb34ba9d7764bdedde6c234d2b6e77fdd7be27cf87b"
+    },
+    {
+      "operation": "score_resolve",
+      "scenario": "score",
+      "method": "resolve_question",
+      "args": [],
+      "actor": "0x4bCc3b00eFe78D2EfB33bc46eA09193C63712F0B",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:50:04.221809+00:00",
+      "hash": "0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab",
+      "submitted_at_utc": "2026-11-10T21:50:09.343924+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:50:26.923219+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:50:53.655449+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_resolve.json",
+      "receipt_sha256": "c0c3e76b81f61f522bba1e396fbe3ca32472fa331c728d5e79bf244453258b00"
+    },
+    {
+      "operation": "score_settle",
+      "scenario": "score",
+      "method": "settle",
+      "args": [],
+      "actor": "0x4bCc3b00eFe78D2EfB33bc46eA09193C63712F0B",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:51:19.474529+00:00",
+      "hash": "0xf3d915d0c8000c86a29c0cab93f6318f1c2b459b9a248fb4c185b2066b236aa9",
+      "submitted_at_utc": "2026-11-10T21:51:24.163423+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xf3d915d0c8000c86a29c0cab93f6318f1c2b459b9a248fb4c185b2066b236aa9",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:51:33.257254+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:52:07.340173+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_settle.json",
+      "receipt_sha256": "5a1306f9f06c31228b1c4bd9f4a066e2dde05a973f0c2bee1ff321679d33d64d"
+    },
+    {
+      "operation": "score_withdraw_alice",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:52:32.775115+00:00",
+      "hash": "0x3164f1b4bbc3afe02459be91453a9ae1924c4d07b61a0dec7c3f743d8240375e",
+      "submitted_at_utc": "2026-11-10T21:52:38.724764+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x3164f1b4bbc3afe02459be91453a9ae1924c4d07b61a0dec7c3f743d8240375e",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:52:48.263577+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:53:14.683638+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_withdraw_alice.json",
+      "receipt_sha256": "371d1f2f8633fc5837d74d18892915c88ad966155c9bd7ca585c7f67b3cefafc"
+    },
+    {
+      "operation": "score_withdraw_bob",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0xE45136DFF685D014954aEbE29123b23423a540D2",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T21:53:39.320639+00:00",
+      "hash": "0xe0c7e4266fc3fe7b946ab5eaf6ebb8a8efb361b9c942993a11a13e01eb5b7ebf",
+      "submitted_at_utc": "2026-11-10T21:53:44.654062+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xe0c7e4266fc3fe7b946ab5eaf6ebb8a8efb361b9c942993a11a13e01eb5b7ebf",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T21:53:53.968397+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T21:54:20.760930+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_withdraw_bob.json",
+      "receipt_sha256": "39bc4b828cae115f65e1dd6cae894a87a443c034377277e544b348a6f0a5e95b"
+    },
+    {
+      "operation": "score_withdraw_charlie",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0x5045dc41f50F6196B9517fAEf1774C7bbAb16f38",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:15:30.317026+00:00",
+      "hash": "0xc6fe27607f5175606cb356b39da837839c18d89b6156148febe897ef446d4c4d",
+      "submitted_at_utc": "2026-11-10T22:15:35.387163+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xc6fe27607f5175606cb356b39da837839c18d89b6156148febe897ef446d4c4d",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:15:44.851109+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 5
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:16:10.966192+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/score_withdraw_charlie.json",
+      "receipt_sha256": "ac402f56711a144f2a188e44444dad13a90f9eb813a55f7546fff3724fe1458d"
+    },
+    {
+      "operation": "score_duplicate_withdraw",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": "already been withdrawn",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:16:35.503787+00:00",
+      "hash": "0x638521350397fb997292e06b386171df3a083a729a437796a21aa55f59bac128",
+      "submitted_at_utc": "2026-11-10T22:16:40.501479+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x638521350397fb997292e06b386171df3a083a729a437796a21aa55f59bac128",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:16:49.962798+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "ERROR",
+      "leader_result_code": "rollback",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:17:15.416611+00:00",
+      "expected_error_found": true,
+      "receipt_path": "studionet-receipts-2026-11-10/score_duplicate_withdraw.json",
+      "receipt_sha256": "369aafae183f24d7e7d1bf67c9dba62a9feb611699b42f95e01113d35f0b2b69"
+    },
+    {
+      "operation": "expiry_deploy",
+      "scenario": "expiry",
+      "method": "constructor",
+      "args": [
+        "cfp-20261110T213900-expiry",
+        "Did CPython 3.12 stop including distutils in its standard library?",
+        "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
+        "[\"https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst\"]",
+        100,
+        "2026-11-10T22:23:43Z",
+        "2026-11-10T22:26:43Z",
+        "2026-11-10T22:27:43Z",
+        "2026-11-10T22:28:43Z"
+      ],
+      "actor": "0x78FD062245fc6E8b62c95BFc89c65c29f5F55651",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:17:41.334694+00:00",
+      "hash": "0x148f9677dd928bb860c058cb46ae87713b0177443933a670dd697165e4e66fc2",
+      "submitted_at_utc": "2026-11-10T22:17:48.141661+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x148f9677dd928bb860c058cb46ae87713b0177443933a670dd697165e4e66fc2",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:17:57.311809+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:18:24.405817+00:00",
+      "contract_address": "0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_deploy.json",
+      "receipt_sha256": "3613a1cc8bca38640b7f59abd10a338e4d0f0cec1f8bbae80d6d52d3b45e2262"
+    },
+    {
+      "operation": "expiry_commit_alice",
+      "scenario": "expiry",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:ab69b131412b26585eac647fc19b8b47676ad651b567aa5526cc410c245ce011",
+        100
+      ],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:18:40.069526+00:00",
+      "hash": "0xba32a11c3aa3eb4bc0751ab32c15ddd431fbae3566b4043830f74c8c68f45a0b",
+      "submitted_at_utc": "2026-11-10T22:18:45.537193+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xba32a11c3aa3eb4bc0751ab32c15ddd431fbae3566b4043830f74c8c68f45a0b",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:18:54.973002+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:19:28.946285+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_commit_alice.json",
+      "receipt_sha256": "a30fb8bc8a8757ade5a2054371bbad86d699188cb5d2d0f9d1e62adf10a2d7eb"
+    },
+    {
+      "operation": "expiry_commit_bob",
+      "scenario": "expiry",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:914c12e922ffb50ee8a6a698305859a3f6a583085071f3490dbf2f7dd7679a76",
+        100
+      ],
+      "actor": "0xE45136DFF685D014954aEbE29123b23423a540D2",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:19:47.335360+00:00",
+      "hash": "0x5e7ba8afcef686dc7cd40dbbd894e59a73025086a46870fc319526798c36963d",
+      "submitted_at_utc": "2026-11-10T22:19:52.406621+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5e7ba8afcef686dc7cd40dbbd894e59a73025086a46870fc319526798c36963d",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:20:01.669349+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:20:35.383162+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_commit_bob.json",
+      "receipt_sha256": "1083a1d7aea62f4ef55d5413652c9464b47bb3f97ec8582e691f297612306d7f"
+    },
+    {
+      "operation": "expiry_reveal_alice",
+      "scenario": "expiry",
+      "method": "reveal_forecast",
+      "args": [
+        8000,
+        "a70c6d41654934af4996785bddc6ffdd541827a4081b78ea8b5369b0949f774f"
+      ],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:23:43.054660+00:00",
+      "hash": "0xcb2b84535e50f6797dfe19624334a2e67a6e4a7247e04cf1686f38ec1bcdd720",
+      "submitted_at_utc": "2026-11-10T22:23:48.337158+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xcb2b84535e50f6797dfe19624334a2e67a6e4a7247e04cf1686f38ec1bcdd720",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:23:57.762515+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:24:23.160039+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_reveal_alice.json",
+      "receipt_sha256": "b52c12079dc6c158e755f07a98391ece30c2060fc2a7469e40b7c19345012bd8"
+    },
+    {
+      "operation": "expiry_too_early",
+      "scenario": "expiry",
+      "method": "expire_unresolved",
+      "args": [],
+      "actor": "0x4bCc3b00eFe78D2EfB33bc46eA09193C63712F0B",
+      "expected_error": "resolution deadline has not passed",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:24:53.629250+00:00",
+      "hash": "0x3eb47f9e83dc8ba463e1c35ceb566e4a5a6627449da82b2e086dfc2db0f21d87",
+      "submitted_at_utc": "2026-11-10T22:24:58.722704+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x3eb47f9e83dc8ba463e1c35ceb566e4a5a6627449da82b2e086dfc2db0f21d87",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:25:07.479498+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "ERROR",
+      "leader_result_code": "rollback",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:25:33.653232+00:00",
+      "expected_error_found": true,
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_too_early.json",
+      "receipt_sha256": "4a373f4b1a4c7da55e91aa0903e665cc3eefb56fae49b2456460051bebebab73"
+    },
+    {
+      "operation": "expiry_late_resolution",
+      "scenario": "expiry",
+      "method": "resolve_question",
+      "args": [],
+      "actor": "0x4bCc3b00eFe78D2EfB33bc46eA09193C63712F0B",
+      "expected_error": "resolution deadline has passed",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:28:42.942782+00:00",
+      "hash": "0x2857e96d4720bb0e3cb3d4889d775ca5cd4f418e0e701ecd0638d6babc645e05",
+      "submitted_at_utc": "2026-11-10T22:28:48.353016+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x2857e96d4720bb0e3cb3d4889d775ca5cd4f418e0e701ecd0638d6babc645e05",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:28:57.802421+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "ERROR",
+      "leader_result_code": "rollback",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:29:25.227022+00:00",
+      "expected_error_found": true,
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_late_resolution.json",
+      "receipt_sha256": "2c0c1d114d8be281da93d16d6bb3ff35946c24d5031ed3f39e04d13108759a0f"
+    },
+    {
+      "operation": "expiry_expire",
+      "scenario": "expiry",
+      "method": "expire_unresolved",
+      "args": [],
+      "actor": "0x4bCc3b00eFe78D2EfB33bc46eA09193C63712F0B",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:29:47.167462+00:00",
+      "hash": "0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30",
+      "submitted_at_utc": "2026-11-10T22:29:54.300203+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:30:04.157974+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:30:32.108689+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_expire.json",
+      "receipt_sha256": "db733ff0694e0a412c0018c86a07ef4445e884dde66b91aa73200e3fbb21b624"
+    },
+    {
+      "operation": "expiry_settle",
+      "scenario": "expiry",
+      "method": "settle",
+      "args": [],
+      "actor": "0x4bCc3b00eFe78D2EfB33bc46eA09193C63712F0B",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:30:55.050546+00:00",
+      "hash": "0xf308270cd3c07bacccf308bf60bc2d60e56e13f7aed635b103a775332a7729ca",
+      "submitted_at_utc": "2026-11-10T22:31:02.034856+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xf308270cd3c07bacccf308bf60bc2d60e56e13f7aed635b103a775332a7729ca",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:31:11.426961+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:31:38.733669+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_settle.json",
+      "receipt_sha256": "6642709f2062383215b1a5f7575cd66dcf3abc83041c6b5443d40b1199081792"
+    },
+    {
+      "operation": "expiry_withdraw_alice",
+      "scenario": "expiry",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0xf5A4F0538229282fC84dE0033F8F5C06fd69838C",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:32:01.396889+00:00",
+      "hash": "0x15aa47bab302ec3d2775a2c6d6f0ec3f696fce6ab9df78bb984e2f9ec5bc2270",
+      "submitted_at_utc": "2026-11-10T22:32:07.807304+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x15aa47bab302ec3d2775a2c6d6f0ec3f696fce6ab9df78bb984e2f9ec5bc2270",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:32:16.894359+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:32:43.098392+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_withdraw_alice.json",
+      "receipt_sha256": "5362a6258b8a743747c533135b5d2a4b48140b5cab93e9fc80d2a6115b49ccba"
+    },
+    {
+      "operation": "expiry_withdraw_bob",
+      "scenario": "expiry",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0xE45136DFF685D014954aEbE29123b23423a540D2",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-10T22:33:05.805716+00:00",
+      "hash": "0xb5d9afe1b2cbf61d1afe2ff79c4a46c80e307e2aec6bbc4bf36629d513a1dee2",
+      "submitted_at_utc": "2026-11-10T22:33:12.546036+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xb5d9afe1b2cbf61d1afe2ff79c4a46c80e307e2aec6bbc4bf36629d513a1dee2",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-10T22:33:22.377923+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-10T22:33:48.886609+00:00",
+      "receipt_path": "studionet-receipts-2026-11-10/expiry_withdraw_bob.json",
+      "receipt_sha256": "86c86e6add52fa77f6fc4de4479e87122f3ff0925ff07446fbbc7b29322d0769"
+    }
+  ],
+  "stopped_at_utc": "2026-11-10T21:54:44.031199+00:00",
+  "recovery_events": [
+    {
+      "at_utc": "2026-11-10T22:15:05.816811+00:00",
+      "previous_status": "STOPPED",
+      "previous_stop_reason": "gen_call returned invalid JSON: Expecting value: line 1 column 1 (char 0). Response content: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]-->\n<head>\n\n<title>genlayer.com | 502: Bad gateway</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" ...",
+      "action": "Resume from captured finalized scoring receipts; retry transient read-only gateway failures; no recorded transaction is resubmitted.",
+      "approval_review_interruption": "A proposed driver-adjustment tool action was not executed because approval review hit a usage limit. The background run continued and completed resolution/settlement before a later HTTP 502 stopped a read-back."
+    }
+  ],
+  "completed_at_utc": "2026-11-10T22:35:05.701306+00:00",
+  "historical_stop_reason": "gen_call returned invalid JSON: Expecting value: line 1 column 1 (char 0). Response content: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]-->\n<head>\n\n<title>genlayer.com | 502: Bad gateway</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" ...",
+  "verification": {
+    "transaction_count": 24,
+    "leader_success_count": 20,
+    "expected_rollback_count": 4,
+    "all_transactions_finalized": true,
+    "all_source_bytes_match_commit": true,
+    "all_final_balances_conserved": true,
+    "revealed_commitment_reconstruction": [
+      {
+        "scenario": "score",
+        "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+        "passed": true
+      },
+      {
+        "scenario": "score",
+        "forecaster": "0xe45136dff685d014954aebe29123b23423a540d2",
+        "passed": true
+      },
+      {
+        "scenario": "score",
+        "forecaster": "0x5045dc41f50f6196b9517faef1774c7bbab16f38",
+        "passed": true
+      },
+      {
+        "scenario": "expiry",
+        "forecaster": "0xf5a4f0538229282fc84de0033f8f5c06fd69838c",
+        "passed": true
+      }
+    ],
+    "public_evidence_scan_contains_no_signer_private_keys": true,
+    "browser_explorer_checks": [
+      {
+        "scenario": "score",
+        "url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+        "method": "Chrome rendered page through computer-use",
+        "page_title": "GenLayer Studio Explorer",
+        "contract_heading_observed": true,
+        "displayed_contract_address": "0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+        "displayed_deployment_transaction": "0xacd8fecbc631531fed7e8839f04286f85cc55121e607cfef2edc536301e0f3a5",
+        "deployment_shown_finalized": true,
+        "deployment_shown_success": true,
+        "network_verified": "StudioNet: dedicated explorer-studio.genlayer.com host; deployment/source independently matched through chain-61999 RPC",
+        "evidence_type": "GenLayer Explorer Contract",
+        "checked_at_utc": "2026-11-10T21:43:34.568465+00:00",
+        "passed": true
+      },
+      {
+        "scenario": "expiry",
+        "url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+        "method": "Chrome rendered page through computer-use",
+        "page_title": "GenLayer Studio Explorer",
+        "contract_heading_observed": true,
+        "displayed_contract_address": "0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+        "displayed_deployment_transaction": "0x148f9677dd928bb860c058cb46ae87713b0177443933a670dd697165e4e66fc2",
+        "deployment_shown_finalized": true,
+        "deployment_shown_success": true,
+        "network_verified": "StudioNet: dedicated explorer-studio.genlayer.com host; deployment/source independently matched through chain-61999 RPC",
+        "evidence_type": "GenLayer Explorer Contract",
+        "checked_at_utc": "2026-11-10T22:19:38.007738+00:00",
+        "passed": true
+      }
+    ],
+    "live_nondeterministic_judgments": 1,
+    "limits": [
+      "Synthetic bookkeeping only; no native/token custody or transfers.",
+      "The listed honest-network demos do not prove adversarial validator robustness or formal security.",
+      "Pool-normalized Brier payouts do not establish truthful-reporting incentives.",
+      "Repository remains local; reviewer access to source is not published; Portal not used."
+    ]
+  },
+  "submission_evidence_links": [
+    {
+      "label": "score contract",
+      "evidence_type": "GenLayer Explorer Contract",
+      "url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+      "network": "GenLayer StudioNet",
+      "chain_id": 61999,
+      "verified_opens_correct_contract": true
+    },
+    {
+      "label": "expiry contract",
+      "evidence_type": "GenLayer Explorer Contract",
+      "url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+      "network": "GenLayer StudioNet",
+      "chain_id": 61999,
+      "verified_opens_correct_contract": true
+    }
+  ]
+}

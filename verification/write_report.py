@@ -47,6 +47,8 @@ Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` fr
 
 {test_list}
 '''
+if (root / "deployments/studionet-release-2026-11-10.json").exists():
+    matrix += "\n## Separate live verification\n\nThe authorized StudioNet run finalized 24 transactions: 20 successful executions and four expected rollbacks. The scoring instance paid 172/128/0; the separate expiry instance refunded revealed and unrevealed stakes. Both source identities and direct contract Explorer links were verified. See [LIVE_DEMO.md](LIVE_DEMO.md) and the release manifest. These live receipts are separate from the 85 mocked direct-mode test cases.\n"
 (root / "docs/TEST_MATRIX.md").write_text(matrix.rstrip() + "\n", encoding="utf-8", newline="\n")
 
 checks = json.loads((verification / "checks.json").read_text())
@@ -99,5 +101,9 @@ The replacement URL proposed as frozen demo evidence was fetched anonymously wit
 {source.rstrip()}
 ```
 '''
+if (root / "deployments/studionet-release-2026-11-10.json").exists():
+    report = report.replace("# Local build report", "# Build and live verification report\n\nThe separately authorized StudioNet demos passed: 24 finalized transactions, 20 successful executions and four expected rollbacks. Scoring paid 172/128/0; deadline expiry refunded both stakes. Both deployed source blobs and direct contract Explorer links were verified. Full live evidence is in docs/LIVE_DEMO.md and deployments/studionet-release-2026-11-10.json. The original local validation results and complete source follow.")
+    report = report.replace("The live demo was not run.", "The live demo was subsequently run under explicit authorization; see docs/LIVE_DEMO.md for actual results.")
+    report = report.replace("cancellation/admin recovery, live demo, deployment, public remote", "cancellation/admin recovery, public remote")
 (root / "docs/BUILD_REPORT.md").write_text(report.rstrip() + "\n", encoding="utf-8", newline="\n")
 print(f"Wrote full-source report and matrix for {len(cases)} passing cases; source sha256={source_hash}")

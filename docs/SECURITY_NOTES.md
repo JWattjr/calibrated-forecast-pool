@@ -16,4 +16,4 @@
 - Valid UNRESOLVABLE is terminal. Unsupported quotations conservatively produce UNRESOLVABLE and full refunds; this cannot prove that the world event itself is undecidable.
 - Malformed candidate/model output and consensus failures revert. Direct-mode validator mutation tests do not establish live malicious-validator behavior or network finality.
 - Pool-normalized scores do not establish truthful-reporting incentives. Equal stakes and one commitment per address do not prevent Sybil participation or collusion.
-- No deployment, wallet integration, live consensus test, formal verification or production security audit has been performed.
+- Two StudioNet demo instances have been deployed and exercised, including one successful real-source consensus judgment and deterministic expiry refunds. Native/token wallet integration, adversarial live consensus testing, formal verification and production security audit remain unverified.

@@ -20,7 +20,7 @@ $env:GENVM_VERSION = 'v0.6.0-rc5'
 
 `verification/run_checks.py` runs those gates in order, extracts `contracts/abi.json`, and saves exact commands, output, tool versions and JUnit results. It pins the already cached GenVM artifact bundle to `v0.6.0-rc5`, matching the auction's direct-test SDK, to avoid automatic artifact updates. Use `..\.venv\Scripts\python.exe -B verification/run_checks.py` to reproduce it. These tests mock web and model calls, explicitly exercise the captured validator callback, and simulate a consensus failure. They do not prove live consensus or finality.
 
-Any future StudioNet runtime calls must use a separate existing environment pinned to `genlayer-py==0.18.0` (`requirements-studionet.txt`), rather than the direct-test environment. No runtime call was made for this project.
+Any future StudioNet runtime calls must use a separate existing environment pinned to `genlayer-py==0.18.0` (`requirements-studionet.txt`), rather than the direct-test environment. The authorized StudioNet demos used the installed global Python runtime with `genlayer-py==0.18.0`; exact execution details are in the live release manifest.
 
 ## Lifecycle
 
@@ -43,6 +43,8 @@ The constructor has nine parameters, including `resolution_deadline_iso` strictl
 - [StudioNet demo proposal and anonymous source checks](docs/DEMO_PLAN.md)
 - [Security notes](docs/SECURITY_NOTES.md)
 - [Local example sequence](examples/demo_sequence.md)
-- [Local-only status manifest](deployments/local-only.json)
+- [StudioNet live demo results](docs/LIVE_DEMO.md)
+- [StudioNet release manifest and receipts](deployments/studionet-release-2026-11-10.json)
+- [Historical local-build manifest](deployments/local-only.json)
 
-This project is local only. It has not been pushed, published, deployed or submitted. The proposed demo was not run. Literal entailment remains the nondeterministic judgment; quotation membership checks cannot independently prove that a quote establishes a criterion. Brier scores are proper as a standalone scoring rule; normalizing them into shares of a rival-dependent pot does not establish truthful-reporting incentives. See DESIGN.md for this economic limitation.
+Two StudioNet instances were deployed from exact source commit `6cc6b4f`: the scoring demo paid 172/128/0, and the deadline-expiry demo refunded both revealed/unrevealed stakes. All 24 transactions finalized with 20 successes and four expected rollbacks. See the live evidence above. The repository remains local; nothing was pushed or submitted to the Portal. Literal entailment remains the nondeterministic judgment; quotation membership checks cannot independently prove that a quote establishes a criterion. Brier scores are proper as a standalone scoring rule; normalizing them into shares of a rival-dependent pot does not establish truthful-reporting incentives. See DESIGN.md for this economic limitation.

@@ -1,6 +1,6 @@
-# Proposed StudioNet demo — not run
+# StudioNet demo plan and execution record
 
-Status: proposal only. No deployment or runtime transaction was made. Dates in `examples/constructor.json` are local placeholders; choose ordered future deadlines before a separately authorized deployment and freeze them permanently. Use the existing separate StudioNet environment with `genlayer-py==0.18.0` for any future runtime call; direct tests require 0.19.0rc2.
+Status: executed under explicit user authorization on 2026-11-10. Both demos passed; see [LIVE_DEMO.md](LIVE_DEMO.md) and the [release manifest](../deployments/studionet-release-2026-11-10.json). The original reproducible plan follows. Dates in `examples/constructor.json` are local placeholders; choose ordered future deadlines before a separately authorized deployment and freeze them permanently. Use the existing separate StudioNet environment with `genlayer-py==0.18.0` for any future runtime call; direct tests require 0.19.0rc2.
 
 ## Settled question and criterion
 
@@ -8,7 +8,7 @@ Question: **Did CPython 3.12 stop including distutils in its standard library?**
 
 Criterion: YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.
 
-The question uses “stop including”; the source states removal in release-summary prose with reStructuredText module markup. The model interprets those equivalent meanings against the frozen criterion and emits a normalized outcome. No particular literal answer string is required by the criterion. The quote checker establishes source membership after whitespace normalization; it does not perform the semantic decision. Expected YES is a proposal expectation, not an on-chain result.
+The question uses “stop including”; the source states removal in release-summary prose with reStructuredText module markup. The model interprets those equivalent meanings against the frozen criterion and emits a normalized outcome. No particular literal answer string is required by the criterion. The quote checker establishes source membership after whitespace normalization; it does not perform the semantic decision. The original expected YES was a proposal expectation; the actual authorized run subsequently finalized YES, as recorded in LIVE_DEMO.md.
 
 ## Anonymous source verification
 
@@ -39,4 +39,4 @@ See [machine-readable record](../verification/demo-source-checks.json). Reproduc
 
 ## Evidence for a future authorized run
 
-Record and verify the direct GenLayer Explorer URL for the deployed contract address as a separate evidence entry on the correct network. Select **GenLayer Explorer Contract** when evidence types are supported. Transaction/source/repository links are additional evidence and do not replace the contract-address link. This local project has no deployed address. This plan does not authorize deployment, submission or repository visibility changes.
+Record and verify the direct GenLayer Explorer URL for the deployed contract address as a separate evidence entry on the correct network. Select **GenLayer Explorer Contract** when evidence types are supported. Transaction/source/repository links are additional evidence and do not replace the contract-address link. The scoring instance is [here](https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93); the expiry instance is [here](https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A). Both direct contract links were verified on StudioNet. This plan does not authorize deployment, submission or repository visibility changes.

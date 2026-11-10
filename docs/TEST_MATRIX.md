@@ -112,3 +112,8 @@ Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` fr
 | `test_resolution_after_deadline_reverts_without_fetch` | PASS |
 | `test_resolution_at_final_deadline_is_allowed_and_cannot_expire_later` | PASS |
 | `test_failed_fetch_can_expire_after_resolution_deadline` | PASS |
+
+
+## Separate live verification
+
+The authorized StudioNet run finalized 24 transactions: 20 successful executions and four expected rollbacks. The scoring instance paid 172/128/0; the separate expiry instance refunded revealed and unrevealed stakes. Both source identities and direct contract Explorer links were verified. See [LIVE_DEMO.md](LIVE_DEMO.md) and the release manifest. These live receipts are separate from the 85 mocked direct-mode test cases.
