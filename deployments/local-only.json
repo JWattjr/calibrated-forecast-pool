@@ -14,8 +14,8 @@
   "accounting": "synthetic units only; no external balance debit, token/native custody or transfers",
   "future_evidence_requirement": "If separately authorized and deployed, record and verify the direct contract-address GenLayer Explorer URL for the correct network as its own evidence entry, using GenLayer Explorer Contract when supported. Transaction/source/repository links do not replace it.",
   "verification": {
-    "source_sha256": "c641742800bff057db9d28f62e1e7c55c7f8b7b41ca40e8f9a7f62f3cbad2d00",
-    "direct_cases_passed": 66,
+    "source_sha256": "25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677",
+    "direct_cases_passed": 85,
     "lint_passed": true,
     "sdk_validation_passed": true,
     "reference_files_rechecked_unchanged": 23,

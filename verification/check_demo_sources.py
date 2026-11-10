@@ -16,20 +16,11 @@ def get(url):
 
 
 def main():
-    api = "https://api.github.com/repos/python/cpython/git/"
-    status, body, _ = get(api + "ref/tags/v3.12.0")
-    assert status == 200
-    obj = json.loads(body)["object"]
-    if obj["type"] == "tag":
-        status, body, _ = get(api + "tags/" + obj["sha"])
-        assert status == 200
-        obj = json.loads(body)["object"]
-    assert obj["type"] == "commit"
-    commit = obj["sha"]
-    url = f"https://raw.githubusercontent.com/python/cpython/{commit}/Misc/NEWS.d/3.12.0.rst"
+    commit = "0fb18b02c8ad56299d6a2910be0bab8ad601ef24"
+    url = f"https://raw.githubusercontent.com/python/cpython/{commit}/Doc/whatsnew/3.12.rst"
     status, body, final_url = get(url)
     text = body[:5000].decode("utf-8")
-    line = ".. release date: 2023-10-02"
+    line = "Of note, the :mod:`!distutils` package has been removed from the standard library."
     assert status == 200 and line in text.splitlines()
     result = {
         "checked_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -40,7 +31,10 @@ def main():
         "sources": [{"url": url, "final_url": final_url, "http_status": status,
                      "byte_count": len(body), "kept_byte_count": len(body[:5000]),
                      "sha256": hashlib.sha256(body).hexdigest(),
-                     "supporting_line": line, "supporting_line_in_kept_prefix": True}],
+                     "kept_sha256": hashlib.sha256(body[:5000]).hexdigest(),
+                     "supporting_line": line, "supporting_line_in_kept_prefix": True,
+                     "supporting_line_byte_offset": body.index(line.encode("utf-8")),
+                     "supporting_line_end_byte_offset": body.index(line.encode("utf-8")) + len(line.encode("utf-8"))}],
         "demo_run": False,
     }
     output = Path(__file__).with_name("demo-source-checks.json")

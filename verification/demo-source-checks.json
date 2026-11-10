@@ -1,19 +1,22 @@
 {
-  "checked_at_utc": "2026-11-10T20:38:35.375374+00:00",
+  "checked_at_utc": "2026-11-10T21:26:15.528655+00:00",
   "anonymous": true,
   "method": "GET; fresh urllib opener; no authorization or cookies",
   "upstream_release_tag": "v3.12.0",
   "upstream_commit": "0fb18b02c8ad56299d6a2910be0bab8ad601ef24",
   "sources": [
     {
-      "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Misc/NEWS.d/3.12.0.rst",
-      "final_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Misc/NEWS.d/3.12.0.rst",
+      "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst",
+      "final_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst",
       "http_status": 200,
-      "byte_count": 1422,
-      "kept_byte_count": 1422,
-      "sha256": "106c380d13387bdf6c74bd84e6b20b32f13a8c847ffb9c6bc98aef1617d896e5",
-      "supporting_line": ".. release date: 2023-10-02",
-      "supporting_line_in_kept_prefix": true
+      "byte_count": 101514,
+      "kept_byte_count": 5000,
+      "sha256": "4a0da7af729f2ba5d6f34d257f440d1700245531aad9cb2bf18bb78af24cfab9",
+      "kept_sha256": "2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
+      "supporting_line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+      "supporting_line_in_kept_prefix": true,
+      "supporting_line_byte_offset": 2307,
+      "supporting_line_end_byte_offset": 2389
     }
   ],
   "demo_run": false

@@ -33,7 +33,7 @@ def deploy(vm, deployer, owner, **overrides):
                 criterion="YES only if the source explicitly dates release 1.0 before 2024-02-01; NO if it explicitly dates it on or after that date; otherwise UNRESOLVABLE.",
                 source_urls_json=json.dumps([URL]), stake_units=100,
                 commit_deadline_iso="2030-01-02T00:00:00Z", reveal_deadline_iso="2030-01-05T00:00:00Z",
-                resolve_after_iso="2030-01-06T00:00:00Z")
+                resolve_after_iso="2030-01-06T00:00:00Z", resolution_deadline_iso="2030-01-08T00:00:00Z")
     args.update(overrides)
     vm.sender = owner
     vm.warp(COMMIT)
@@ -354,8 +354,10 @@ def test_quote_only_past_cut_forces_unresolvable_refund(pool, direct_vm, direct_
 
 
 @pytest.mark.parametrize("quotes", [[], [{"url": URL, "line": "invented line"}],
-                                      [{"url": URL_B, "line": LINE}], [{"url": URL, "line": "published on 2024-01-01."}]])
-def test_missing_invented_unavailable_or_partial_line_quotes_are_unresolvable(pool, direct_vm, quotes):
+                                      [{"url": URL_B, "line": LINE}], [{"url": URL, "line": "short"}],
+                                      [{"url": URL, "line": ""}], [{"url": URL, "line": " \n\t "}],
+                                      [{"url": URL, "line": "Release"}], [{"url": URL, "line": LINE.lower()}]])
+def test_missing_invented_unavailable_short_or_wrong_case_quotes_are_unresolvable(pool, direct_vm, quotes):
     assert finish(pool, direct_vm, quotes=quotes)["outcome"] == "UNRESOLVABLE"
 
 
@@ -454,7 +456,7 @@ def test_access_control_lifecycle_and_frozen_terms(pool, direct_vm, direct_owner
     with direct_vm.prank(direct_owner), unchanged(direct_vm, pool, "no commitment"):
         pool.withdraw()
     assert pool.get_forecast(key(direct_alice))["withdrawn"] is False
-    for field in ("owner", "question_id", "question", "criterion", "source_urls", "stake_units", "commit_deadline", "reveal_deadline", "resolve_after"):
+    for field in ("owner", "question_id", "question", "criterion", "source_urls", "stake_units", "commit_deadline", "reveal_deadline", "resolve_after", "resolution_deadline"):
         assert pool.get_question()[field] == frozen[field]
     assert withdraw(pool, direct_vm, direct_alice) == 100
     with unchanged(direct_vm, pool, "not open"):
@@ -477,6 +479,9 @@ def test_access_control_lifecycle_and_frozen_terms(pool, direct_vm, direct_owner
     ({"commit_deadline_iso": "2030-01-02T00:00:00"}, "timezone offset"),
     ({"resolve_after_iso": "2030-01-04T00:00:00Z"}, "strictly ordered"),
     ({"reveal_deadline_iso": "2030-01-02T00:00:00Z"}, "strictly ordered"),
+    ({"resolution_deadline_iso": "2030-01-06T00:00:00Z"}, "strictly ordered"),
+    ({"resolution_deadline_iso": "2030-01-05T00:00:00Z"}, "strictly ordered"),
+    ({"resolution_deadline_iso": "2030-01-08T00:00:00"}, "timezone offset"),
 ])
 def test_frozen_input_size_and_schema_bounds(direct_vm, direct_deploy, direct_owner, overrides, message):
     with direct_vm.expect_revert(message):
@@ -543,4 +548,89 @@ def test_valid_quote_in_kept_prefix_can_resolve_oversized_body(pool, direct_vm, 
     result = finish(pool, direct_vm, body=body)
     assert result["outcome"] == "YES" and not result["refund"]
     assert pool.get_sources()["sources"][0]["status"] == "truncated"
+    assert withdraw(pool, direct_vm, direct_alice) == 100
+
+
+@pytest.mark.parametrize("body,quote", [
+    pytest.param(LINE, " \t" + LINE + "\n ", id="quote-outer-whitespace"),
+    pytest.param(" \t" + LINE + "\n ", LINE, id="source-outer-whitespace"),
+    pytest.param(LINE.replace("published on", "published\n\t on"), LINE, id="source-line-wrap"),
+    pytest.param(LINE, LINE.replace("published on", "published\n\t on"), id="quote-line-wrap"),
+    pytest.param(LINE, "published on 2024-01-01.", id="partial-line"),
+    pytest.param("Release!", "Release!", id="eight-character-minimum"),
+])
+def test_whitespace_normalized_substring_quotes_are_accepted(pool, direct_vm, body, quote):
+    result = finish(pool, direct_vm, body=body, quotes=[{"url": URL, "line": quote}])
+    assert result["outcome"] == "YES"
+    assert pool.get_decision()["resolution"]["quotes"] == [{"url": URL, "line": quote}]
+
+
+@pytest.mark.parametrize("time", [RESOLVE, "2030-01-08T00:00:00Z"])
+def test_expiry_before_or_at_resolution_deadline_reverts(pool, direct_vm, direct_alice, time):
+    commit(pool, direct_vm, direct_alice, 8000)
+    direct_vm.warp(time)
+    with unchanged(direct_vm, pool, "resolution deadline has not passed", [direct_alice]):
+        pool.expire_unresolved()
+
+
+def test_expiry_after_deadline_refunds_revealed_and_unrevealed(pool, direct_vm, direct_alice, direct_bob, direct_charlie):
+    a = commit(pool, direct_vm, direct_alice, 8000)
+    commit(pool, direct_vm, direct_bob, 2000)
+    direct_vm.warp(REVEAL)
+    reveal(pool, direct_vm, a)
+    direct_vm.warp("2030-01-08T00:00:01Z")
+    direct_vm.sender = direct_charlie  # Expiry requires no privileged caller.
+    decision = pool.expire_unresolved()
+    assert decision["reason"] == "RESOLUTION_DEADLINE"
+    assert decision["resolution"] == {"outcome": "UNRESOLVABLE", "quotes": []}
+    assert decision["sources"] == [] and pool.get_sources() == {"sources": []}
+    assert pool.get_question()["status"] == "RESOLVED"
+    assert accounting(pool)["held_units"] == 200
+    with unchanged(direct_vm, pool, "only an open question"):
+        pool.expire_unresolved()
+    with unchanged(direct_vm, pool, "already been resolved"):
+        pool.resolve_question()
+    result = pool.settle()
+    assert result["refund"] and result["allocations"] == {key(direct_alice): 100, key(direct_bob): 100}
+    accounting(pool)
+    for address in (direct_alice, direct_bob):
+        assert withdraw(pool, direct_vm, address) == 100
+    assert accounting(pool) == {"stakes_in": 200, "paid_units": 0, "refunded_units": 200, "held_units": 0, "conserved": True}
+    with direct_vm.prank(direct_alice), unchanged(direct_vm, pool, "already been withdrawn"):
+        pool.withdraw()
+
+
+def test_resolution_after_deadline_reverts_without_fetch(pool, direct_vm, direct_alice):
+    commit(pool, direct_vm, direct_alice, 8000)
+    direct_vm.warp("2030-01-08T00:00:01Z")
+    with unchanged(direct_vm, pool, "resolution deadline has passed", [direct_alice]):
+        pool.resolve_question()
+    assert pool.get_question()["status"] == "OPEN"
+
+
+def test_resolution_at_final_deadline_is_allowed_and_cannot_expire_later(pool, direct_vm):
+    direct_vm.warp("2030-01-08T00:00:00Z")
+    mocks(direct_vm)
+    pool.resolve_question()
+    assert direct_vm.run_validator()
+    accounting(pool)
+    direct_vm.warp("2030-01-08T00:00:01Z")
+    with unchanged(direct_vm, pool, "only an open question"):
+        pool.expire_unresolved()
+    pool.settle()
+    accounting(pool)
+    with unchanged(direct_vm, pool, "only an open question"):
+        pool.expire_unresolved()
+
+
+def test_failed_fetch_can_expire_after_resolution_deadline(pool, direct_vm, direct_alice):
+    commit(pool, direct_vm, direct_alice, 8000)
+    direct_vm.warp(RESOLVE)
+    direct_vm.mock_web(r".*", {"status": 503, "body": "outage"})
+    with unchanged(direct_vm, pool, "fetch failed", [direct_alice]):
+        pool.resolve_question()
+    direct_vm.warp("2030-01-08T00:00:01Z")
+    pool.expire_unresolved()
+    accounting(pool)
+    assert pool.settle()["refund"]
     assert withdraw(pool, direct_vm, direct_alice) == 100

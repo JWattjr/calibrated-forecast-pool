@@ -1,4 +1,4 @@
 $env:GENVM_VERSION = 'v0.6.0-rc5'
 & 'C:\Users\User\Desktop\Genlayer apps\intelligent-contracts-v2\.venv\Scripts\python.exe' '-B' '-c' 'from genvm_linter.cli import cli; cli()' 'check' 'contracts/calibrated_forecast_pool.py' '--json'
 
-{"ok":true,"lint":{"ok":true,"passed":3},"validate":{"ok":true,"contract":"CalibratedForecastPool","methods":12,"view_methods":7,"write_methods":5,"ctor_params":8,"warnings":[{"code":"I200","msg":"py-genlayer: a newer runner is available (5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng). See https://github.com/genlayerlabs/genvm-manager/releases for changes."}]}}
+{"ok":true,"lint":{"ok":true,"passed":3},"validate":{"ok":true,"contract":"CalibratedForecastPool","methods":13,"view_methods":7,"write_methods":6,"ctor_params":9,"warnings":[{"code":"I200","msg":"py-genlayer: a newer runner is available (5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng). See https://github.com/genlayerlabs/genvm-manager/releases for changes."}]}}

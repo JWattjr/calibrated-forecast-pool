@@ -32,6 +32,10 @@
       [
         "resolve_after_iso",
         "string"
+      ],
+      [
+        "resolution_deadline_iso",
+        "string"
       ]
     ],
     "kwparams": {}
@@ -51,6 +55,13 @@
       "kwparams": {},
       "readonly": false,
       "ret": "null",
+      "payable": false
+    },
+    "expire_unresolved": {
+      "params": [],
+      "kwparams": {},
+      "readonly": false,
+      "ret": "dict",
       "payable": false
     },
     "get_accounting": {

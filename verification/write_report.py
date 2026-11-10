@@ -30,14 +30,17 @@ Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` fr
 | All dust to highest score; ties use lowest address | Worked example plus `test_dust_tie_uses_lowest_address_with_unrevealed_pot` |
 | Identity, question and contract bound; independent canonical hash reconstruction; copied reveal fails | Changed/copy/cross-domain/real-deployment tests |
 | One commitment and reveal; late commit, early/late reveal, exact deadline edges | Duplicate and deadline tests |
+| Resolution deadline strictly follows resolve-after; expiry only after deadline and only while OPEN; no resolution after deadline | Constructor deadline cases and expiry/late-resolution boundary tests |
+| Expiry records RESOLUTION_DEADLINE with empty sources/quotes and refunds revealed/unrevealed stakes without web/model calls | `test_expiry_after_deadline_refunds_revealed_and_unrevealed`, `test_failed_fetch_can_expire_after_resolution_deadline` |
 | Unrevealed stake forfeited for scored YES/NO; full refund for UNRESOLVABLE, no reveals or zero sum | Forfeiture, terminal UNRESOLVABLE and four degenerate cases |
 | Only own payout withdrawn once, including zero; public resolution/settlement; immutable terms | Worked example and access-control/lifecycle tests |
 | Fetch and consensus failure preserve state and allow retry | Five fetch failures, one partial-source failure, network exception and mocked consensus failure |
 | Conservation at each lifecycle step and after reverts; claimed/unclaimed rows independently sum to counters | `accounting`, `unchanged` and lifecycle helpers; fixture teardown for every `pool` scenario |
 | Exact cap, over cap, three-/four-byte cut, complete multibyte boundary | Five UTF-8 fetch boundary cases |
 | Tail-only quote downgrades to UNRESOLVABLE; retained quote can resolve a truncated body | Tail/prefix quote tests |
+| Whitespace and line-wrap normalization; partial-line substring matching; minimum eight normalized characters; case-sensitive rejection | Six accepted substring cases and missing/invented/unavailable/short/wrong-case quote cases |
 | Source status/count/digest tampering rejected even with rebound outer hashes; independent re-fetch rejects coherent lies | `test_validator_rejects_mismatched_truncation_record_even_rebound` |
-| Validators compare normalized outcome and bound evidence, while valid exact quote selection may differ | `test_validator_compares_outcome_and_evidence_not_free_text`, normalization test |
+| Validators compare normalized outcome and bound evidence, while valid quotation selection may differ | `test_validator_compares_outcome_and_evidence_not_free_text`, normalization test |
 | Question, criterion, URLs/JSON, timestamps, salt, probability, stake, commitment, queue, model response and quote bounds | Constructor/size/schema/format tests, 8-forecaster maximum-stake test |
 
 ## Expanded pass/fail results
@@ -52,7 +55,14 @@ report = f'''# Local build report
 
 Project: `calibrated-forecast-pool`. Source SHA-256: `{source_hash}`.
 
-Result: {len(cases)} tests PASS; 3 GenVM lint checks PASS; SDK validation PASS (12 methods: 7 views and 5 writes; 8 constructor parameters). The final Git commit identifier is supplied with delivery, outside this commit to avoid a self-referencing commit hash.
+Result: {len(cases)} tests PASS; 3 GenVM lint checks PASS; SDK validation PASS (13 methods: 7 views and 6 writes; 9 constructor parameters). The final Git commit identifier is supplied with delivery, outside this commit to avoid a self-referencing commit hash.
+
+## Review fixes
+
+- Added a frozen resolution deadline strictly after resolve-after. Resolution is accepted through the final deadline; after it, permissionless expiry records UNRESOLVABLE / RESOLUTION_DEADLINE with empty sources and quotations. The existing settlement path refunds all stakes, revealed or unrevealed.
+- Replaced full-line quotation matching with case-sensitive substring matching after collapsing whitespace and stripping both quote and retained source text. At least eight normalized characters are required. Partial-line quotations and line wrapping are accepted; invented, too-short and discarded-tail quotations remain UNRESOLVABLE.
+- Replaced the literal-date demo with an interpretation of the settled CPython 3.12 distutils removal. The commit-pinned raw release documentation states the answer using different wording, inside the first 5,000 bytes. Stake and forecaster count remain unchanged, preserving the 172/128/0 worked payout example.
+- Shared commitment hashing, runner, truncation/digest/availability validation, scoring, dust, synthetic accounting and one-shot withdrawal behavior are unchanged. Direct-test compatibility fixtures and dependency pins are unchanged.
 
 ## Commands and exact output
 
@@ -70,15 +80,15 @@ report += f'''## Every test and result
 
 ## Source availability check
 
-The only URL proposed as frozen demo evidence was fetched anonymously with HTTP {demo['sources'][0]['http_status']}, {demo['sources'][0]['byte_count']} bytes, at {demo['checked_at_utc']}. It is pinned to upstream commit `{demo['upstream_commit']}`. See `docs/DEMO_PLAN.md` and `verification/demo-source-checks.json`. The live demo was not run. An initial sandbox source check failed DNS resolution; the same read-only check succeeded with network access. This was not a contract failure.
+The replacement URL proposed as frozen demo evidence was fetched anonymously with HTTP {demo['sources'][0]['http_status']}, {demo['sources'][0]['byte_count']} bytes, at {demo['checked_at_utc']}. It is pinned to upstream commit `{demo['upstream_commit']}`. Full response SHA-256: `{demo['sources'][0]['sha256']}`. The supporting statement occupies UTF-8 bytes [{demo['sources'][0]['supporting_line_byte_offset']}, {demo['sources'][0]['supporting_line_end_byte_offset']}) and fits inside the retained {demo['sources'][0]['kept_byte_count']}-byte prefix. See `docs/DEMO_PLAN.md` and `verification/demo-source-checks.json`. The live demo was not run.
 
 ## Decisions, uncertainty and deliberate omissions
 
 - User-approved deviation: 5,000-byte UTF-8 prefix truncation replaces the auction's oversized-body rejection, using bounty-style source metadata and independent validation. Everything shared with the auction is documented in DESIGN.md; source identities are in reference-provenance.json.
 - One question per deployment follows the auction layout. The question owner freezes terms at construction. Anyone may trigger resolution and settlement; each forecaster may withdraw only their own allocation.
-- A failed source aborts the entire attempt, preserving all state. No failed-attempt availability log is persisted. Only finalized records appear in get_sources. An accepted UNRESOLVABLE result is terminal and refunds all stakes on settlement.
+- A failed source aborts the entire attempt, preserving all state. No failed-attempt availability log is persisted. Only finalized records appear in get_sources. A finalized UNRESOLVABLE result is terminal and refunds all stakes on settlement; a deterministic deadline expiry records empty sources and quotations.
 - Malformed UTF-8 inside the kept prefix is unavailable; only an incomplete final character is cut back. This preserves strict UTF-8 handling without silent replacement.
-- Quotes must be complete exact lines in retained text; unsupported quotes force UNRESOLVABLE. Exact membership cannot prove semantic entailment. Direct mocks and callback mutation checks do not establish live consensus or finality.
+- Quotes must be case-sensitive substrings of retained text after whitespace normalization, with at least eight normalized characters; unsupported or too-short quotes force UNRESOLVABLE. Source membership cannot prove semantic entailment. Direct mocks and callback mutation checks do not establish live consensus or finality.
 - Brier scores are proper in isolation, but rival-dependent pot normalization does not guarantee truthful-reporting incentives. No claim of production incentive compatibility, Sybil resistance or ecosystem-wide originality is made.
 - Deliberately absent: native/token custody or transfers, wallet setup, real stake debits, frontend, multi-question mutable registry, cancellation/admin recovery, live demo, deployment, public remote, push, GitHub repository creation, visibility change and Portal submission.
 - No private keys or credential-helper output were read or logged. Other projects and portfolio trackers were only read.
