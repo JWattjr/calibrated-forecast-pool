@@ -1,6 +1,6 @@
 # Submission draft
 
-Category: **Intelligent Contracts** (Builder, type 52). Contribution date: **2026-11-11** (Africa/Lagos). Status: prepared for authorized public publication and Portal draft review; **not submitted**.
+Category: **Intelligent Contracts** (Builder, type 52). Contribution date: **2026-11-10** (work completion date; also the Portal's current UTC date maximum). Draft prepared on **2026-11-11 Africa/Lagos**. Status: Portal draft filled with four existing public evidence links; public repository creation and full-history push await explicit approval. **Not submitted**.
 
 ## Title
 
@@ -38,3 +38,7 @@ Start with LIVE_DEMO.md for the 24 classified transactions and final balances, D
 - Confirm repository and pinned files are readable anonymously after publication.
 - Verify title, note, date and every evidence URL/type match verification/portal-fields.json.
 - Review the completed Portal draft. CAPTCHA and final submission are separate from this prepared draft; Portal submission has not occurred.
+
+## Current prepared Portal state
+
+The title and 951-character note are filled and read back exactly. Both direct contract URLs are individually typed GenLayer Explorer Contract; the resolution and expiry transactions are typed Other. The seven GitHub source/documentation entries above remain planned and were not entered because the repository has not been created. The Portal tab is preserved for review; CAPTCHA and final submission were not performed. See verification/portal-draft-prepared-2026-11-11.json.

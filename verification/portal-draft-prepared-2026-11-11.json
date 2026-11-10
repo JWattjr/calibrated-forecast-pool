@@ -1,0 +1,29 @@
+{
+  "title": "Calibrated Forecast Pool \u2014 sealed probabilities and conserved Brier payouts",
+  "notes": "Forecasters seal identity/question/contract-bound probabilities and equal synthetic stakes, then reveal. Validators independently fetch frozen sources and interpret a binary criterion; integer Brier scores deterministically split the pot, with dust ordering, unrevealed-stake forfeiture and one-shot withdrawals. Permissionless deadline expiry refunds unresolved pools. Two source-matched StudioNet demos: CPython distutils removal resolved YES and paid 172/128/0 from 300 units; expiry refunded both revealed and unrevealed 100-unit stakes. All 24 transactions finalized: 20 successes, 4 expected rollbacks; zero units held. 85 direct tests and lint/SDK validation pass. Local comparisons disclose shared commit-reveal and evidence-resolution plumbing; the distinction is sealed-probability scoring with conserved allocation. Limits: synthetic ledger, no native/token custody; normalized pooled payouts do not guarantee truthful-reporting incentives.",
+  "contributionDate": "2026-11-10",
+  "evidenceUrls": [
+    "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+    "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+    "https://explorer-studio.genlayer.com/tx/0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab",
+    "https://explorer-studio.genlayer.com/tx/0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30"
+  ],
+  "evidenceTypes": [
+    "GenLayer Explorer Contract",
+    "GenLayer Explorer Contract",
+    "Other",
+    "Other"
+  ],
+  "notesLength": 951,
+  "portalSubmitted": false,
+  "publicationPendingApproval": true,
+  "contractLinksReverified": true,
+  "network": "GenLayer StudioNet",
+  "chainId": 61999,
+  "checkedAt": "2026-11-10T23:16:31.328Z",
+  "publication_status": "PENDING_EXPLICIT_PUBLIC_DESTINATION_AND_PAYLOAD_APPROVAL",
+  "proposed_public_repository": "https://github.com/JWattjr/calibrated-forecast-pool",
+  "public_repository_created": false,
+  "git_push_performed": false,
+  "pending_source_and_documentation_links": 7
+}

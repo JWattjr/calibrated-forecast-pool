@@ -1,7 +1,7 @@
 {
   "category": "Intelligent Contracts",
   "category_id": 52,
-  "contribution_date": "2026-11-11",
+  "contribution_date": "2026-11-10",
   "title": "Calibrated Forecast Pool \u2014 sealed probabilities and conserved Brier payouts",
   "notes": "Forecasters seal identity/question/contract-bound probabilities and equal synthetic stakes, then reveal. Validators independently fetch frozen sources and interpret a binary criterion; integer Brier scores deterministically split the pot, with dust ordering, unrevealed-stake forfeiture and one-shot withdrawals. Permissionless deadline expiry refunds unresolved pools. Two source-matched StudioNet demos: CPython distutils removal resolved YES and paid 172/128/0 from 300 units; expiry refunded both revealed and unrevealed 100-unit stakes. All 24 transactions finalized: 20 successes, 4 expected rollbacks; zero units held. 85 direct tests and lint/SDK validation pass. Local comparisons disclose shared commit-reveal and evidence-resolution plumbing; the distinction is sealed-probability scoring with conserved allocation. Limits: synthetic ledger, no native/token custody; normalized pooled payouts do not guarantee truthful-reporting incentives.",
   "notes_length": 951,
@@ -67,5 +67,67 @@
   "portal_url": "https://portal.genlayer.foundation/submit-contribution",
   "portal_submitted": false,
   "guidelines_url": "https://portal.genlayer.foundation/contribution-type/52",
-  "publication_scope": "Public source/evidence repository and prepared Portal draft; final submission is pending review."
+  "publication_scope": "Public source/evidence repository and prepared Portal draft; final submission is pending review.",
+  "contribution_date_reason": "Build and both live demos completed on November 10. The Portal currently caps contribution dates at November 10 UTC; publication preparation is November 11 in Africa/Lagos.",
+  "portal_draft_prepared": true,
+  "publication_status": "PENDING_EXPLICIT_PUBLIC_DESTINATION_AND_PAYLOAD_APPROVAL",
+  "current_portal_evidence": [
+    {
+      "label": "Scoring contract \u2014 StudioNet",
+      "type": "GenLayer Explorer Contract",
+      "url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93"
+    },
+    {
+      "label": "Expiry-refund contract \u2014 StudioNet",
+      "type": "GenLayer Explorer Contract",
+      "url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A"
+    },
+    {
+      "label": "Finalized YES resolution",
+      "type": "Other",
+      "url": "https://explorer-studio.genlayer.com/tx/0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab"
+    },
+    {
+      "label": "Finalized deadline expiry",
+      "type": "Other",
+      "url": "https://explorer-studio.genlayer.com/tx/0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30"
+    }
+  ],
+  "pending_publication_evidence": [
+    {
+      "label": "Public repository",
+      "type": "GitHub Repository",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool"
+    },
+    {
+      "label": "Exact deployed contract source",
+      "type": "GitHub File",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/contracts/calibrated_forecast_pool.py"
+    },
+    {
+      "label": "Live release manifest",
+      "type": "GitHub File",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/deployments/studionet-release-2026-11-10.json"
+    },
+    {
+      "label": "Live results and transaction classification",
+      "type": "GitHub File",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/LIVE_DEMO.md"
+    },
+    {
+      "label": "85-case test matrix",
+      "type": "GitHub File",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/TEST_MATRIX.md"
+    },
+    {
+      "label": "Design and incentive limitation",
+      "type": "GitHub File",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/docs/DESIGN.md"
+    },
+    {
+      "label": "Local distinctiveness comparison",
+      "type": "GitHub File",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/DISTINCTIVENESS.md"
+    }
+  ]
 }
