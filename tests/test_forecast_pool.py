@@ -98,13 +98,16 @@ def reveal(c, vm, row):
     accounting(c)
 
 
-def mocks(vm, outcome="YES", body=None, quotes=None):
+def mocks(vm, outcome="YES", body=None, quotes=None, classifications=None):
     vm.clear_mocks()
     vm.mock_web(r".*", {"status": 200, "body": body if body is not None else LINE + "\n"})
     if quotes is None:
         quotes = [{"url": URL, "line": LINE}] if outcome != "UNRESOLVABLE" else []
+    if classifications is None:
+        label = {"YES": "HOLDS", "NO": "CONTRADICTED", "UNRESOLVABLE": "UNCLEAR"}[outcome.strip().upper()]
+        classifications = [{"url": URL, "label": label}]
     # Same double encoding as auction: mock decodes once, legacy SDK parses again.
-    vm.mock_llm(r"CALIBRATED FORECAST POOL RESOLUTION", json.dumps(json.dumps({"outcome": outcome, "quotes": quotes})))
+    vm.mock_llm(r"CALIBRATED FORECAST POOL RESOLUTION", json.dumps(json.dumps({"classifications": classifications, "quotes": quotes})))
 
 
 def finish(c, vm, outcome="YES", **kwargs):
@@ -397,10 +400,12 @@ def test_validator_compares_outcome_and_evidence_not_free_text(pool, direct_vm):
     alternate = json.loads(json.dumps(honest))
     alternate["resolution"]["quotes"] = [{"url": URL, "line": "Version 1.0 release date: 2024-01-01."}]
     assert direct_vm.run_validator(leader_result=alternate)
-    for mutation in ("outcome", "quote", "snapshot", "extra"):
+    for mutation in ("outcome", "label", "quote", "snapshot", "extra"):
         forged = json.loads(json.dumps(honest))
         if mutation == "outcome":
             forged["resolution"]["outcome"] = "NO"
+        elif mutation == "label":
+            forged["resolution"]["classifications"][0]["label"] = "CONTRADICTED"
         elif mutation == "quote":
             forged["resolution"]["quotes"][0]["line"] = "fabricated"
         elif mutation == "snapshot":
@@ -426,10 +431,14 @@ def test_consensus_failure_changes_no_state_and_can_retry(pool, direct_vm, direc
 
 
 @pytest.mark.parametrize("result", [
-    {"outcome": "MAYBE", "quotes": []}, {"outcome": "YES", "quotes": [], "extra": 1},
-    {"outcome": "YES", "quotes": [{"url": URL, "line": "x" * 1001}]},
-    {"outcome": "YES", "quotes": [{"url": URL, "line": LINE}] * 7},
-    {"outcome": "YES", "quotes": [{"url": URL, "line": LINE, "extra": 1}]},
+    {"classifications": [{"url": URL, "label": "MAYBE"}], "quotes": []},
+    {"classifications": [], "quotes": [], "outcome": "YES"},
+    {"classifications": [{"url": URL_B, "label": "HOLDS"}], "quotes": []},
+    {"classifications": [{"url": URL, "label": "HOLDS"}] * 2, "quotes": []},
+    {"classifications": [{"url": URL, "label": "HOLDS", "extra": 1}], "quotes": []},
+    {"classifications": [], "quotes": [{"url": URL, "line": "x" * 1001}]},
+    {"classifications": [], "quotes": [{"url": URL, "line": LINE}] * 7},
+    {"classifications": [], "quotes": [{"url": URL, "line": LINE, "extra": 1}]},
 ])
 def test_malformed_model_result_reverts_unchanged(pool, direct_vm, result):
     direct_vm.warp(RESOLVE)
@@ -516,8 +525,9 @@ def test_forecaster_cap_eight_and_max_stake(direct_vm, direct_deploy, direct_own
         assert withdraw(c, direct_vm, bytes([i]) * 20) == 10**12
 
 
-def test_outcome_normalization(pool, direct_vm):
-    assert finish(pool, direct_vm, outcome=" yes ")["outcome"] == "YES"
+def test_classification_normalization(pool, direct_vm):
+    assert finish(pool, direct_vm, classifications=[{"url": URL, "label": " holds "}])["outcome"] == "YES"
+    assert pool.get_decision()["resolution"]["classifications"] == [{"url": URL, "label": "HOLDS"}]
 
 
 def test_network_exception_is_retryable_without_state_changes(pool, direct_vm, monkeypatch):
@@ -540,14 +550,16 @@ def test_model_response_text_limit_reverts_without_state_changes(pool, direct_vm
         pool.resolve_question()
 
 
-def test_valid_quote_in_kept_prefix_can_resolve_oversized_body(pool, direct_vm, direct_alice):
+@pytest.mark.parametrize("outcome", ["YES", "NO"])
+def test_valid_quote_in_kept_prefix_cannot_resolve_truncated_body(pool, direct_vm, direct_alice, outcome):
     row = commit(pool, direct_vm, direct_alice, 10000)
     direct_vm.warp(REVEAL)
     reveal(pool, direct_vm, row)
     body = (LINE + "\n" + "a" * 6000).encode()
-    result = finish(pool, direct_vm, body=body)
-    assert result["outcome"] == "YES" and not result["refund"]
+    result = finish(pool, direct_vm, outcome=outcome, body=body)
+    assert result["outcome"] == "UNRESOLVABLE" and result["refund"]
     assert pool.get_sources()["sources"][0]["status"] == "truncated"
+    assert pool.get_decision()["resolution"] == {"classifications": [{"url": URL, "label": "UNCLEAR"}], "outcome": "UNRESOLVABLE", "quotes": []}
     assert withdraw(pool, direct_vm, direct_alice) == 100
 
 
@@ -562,7 +574,7 @@ def test_valid_quote_in_kept_prefix_can_resolve_oversized_body(pool, direct_vm, 
 def test_whitespace_normalized_substring_quotes_are_accepted(pool, direct_vm, body, quote):
     result = finish(pool, direct_vm, body=body, quotes=[{"url": URL, "line": quote}])
     assert result["outcome"] == "YES"
-    assert pool.get_decision()["resolution"]["quotes"] == [{"url": URL, "line": quote}]
+    assert pool.get_decision()["resolution"]["quotes"] == [{"url": URL, "line": " ".join(quote.split())}]
 
 
 @pytest.mark.parametrize("time", [RESOLVE, "2030-01-08T00:00:00Z"])
@@ -582,7 +594,7 @@ def test_expiry_after_deadline_refunds_revealed_and_unrevealed(pool, direct_vm, 
     direct_vm.sender = direct_charlie  # Expiry requires no privileged caller.
     decision = pool.expire_unresolved()
     assert decision["reason"] == "RESOLUTION_DEADLINE"
-    assert decision["resolution"] == {"outcome": "UNRESOLVABLE", "quotes": []}
+    assert decision["resolution"] == {"classifications": [], "outcome": "UNRESOLVABLE", "quotes": []}
     assert decision["sources"] == [] and pool.get_sources() == {"sources": []}
     assert pool.get_question()["status"] == "RESOLVED"
     assert accounting(pool)["held_units"] == 200
@@ -634,3 +646,185 @@ def test_failed_fetch_can_expire_after_resolution_deadline(pool, direct_vm, dire
     accounting(pool)
     assert pool.settle()["refund"]
     assert withdraw(pool, direct_vm, direct_alice) == 100
+
+
+@pytest.mark.parametrize("labels,expected", [
+    (("HOLDS", "HOLDS"), "YES"),
+    (("CONTRADICTED", "CONTRADICTED"), "NO"),
+    (("HOLDS", "CONTRADICTED"), "UNRESOLVABLE"),
+    (("CONTRADICTED", "HOLDS"), "UNRESOLVABLE"),
+    (("HOLDS", "UNCLEAR"), "UNRESOLVABLE"),
+    (("UNCLEAR", "HOLDS"), "UNRESOLVABLE"),
+    (("CONTRADICTED", "UNCLEAR"), "UNRESOLVABLE"),
+    (("UNCLEAR", "CONTRADICTED"), "UNRESOLVABLE"),
+    (("UNCLEAR", "UNCLEAR"), "UNRESOLVABLE"),
+])
+def test_per_source_labels_deterministically_derive_outcome(direct_vm, direct_deploy, direct_owner, labels, expected):
+    c = deploy(direct_vm, direct_deploy, direct_owner, source_urls_json=json.dumps([URL, URL_B]))
+    # Reverse input order to exercise canonical ordering independently of model order.
+    classifications = [{"url": url, "label": label} for url, label in zip((URL, URL_B), labels)][::-1]
+    quotes = [{"url": URL, "line": LINE}, {"url": URL_B, "line": LINE}]
+    result = finish(c, direct_vm, classifications=classifications, quotes=quotes)
+    assert result["outcome"] == expected
+    assert c.get_decision()["resolution"]["classifications"] == sorted(classifications, key=lambda row: row["url"])
+
+
+@pytest.mark.parametrize("classifications", [[], [{"url": URL, "label": "HOLDS"}]])
+def test_missing_source_classifications_become_unclear(direct_vm, direct_deploy, direct_owner, classifications):
+    c = deploy(direct_vm, direct_deploy, direct_owner, source_urls_json=json.dumps([URL, URL_B]))
+    result = finish(c, direct_vm, classifications=classifications, quotes=[{"url": URL, "line": LINE}])
+    assert result["outcome"] == "UNRESOLVABLE"
+    labels = {row["url"]: row["label"] for row in c.get_decision()["resolution"]["classifications"]}
+    assert labels[URL_B] == "UNCLEAR"
+    assert labels[URL] == ("HOLDS" if classifications else "UNCLEAR")
+
+
+def test_each_determinate_source_needs_its_own_quote(direct_vm, direct_deploy, direct_owner):
+    c = deploy(direct_vm, direct_deploy, direct_owner, source_urls_json=json.dumps([URL, URL_B]))
+    result = finish(c, direct_vm, classifications=[{"url": url, "label": "HOLDS"} for url in (URL, URL_B)])
+    assert result["outcome"] == "UNRESOLVABLE"
+    assert {row["url"]: row["label"] for row in c.get_decision()["resolution"]["classifications"]} == {URL: "HOLDS", URL_B: "UNCLEAR"}
+
+
+def test_validator_rejects_different_labels_even_with_same_unresolvable_outcome(direct_vm, direct_deploy, direct_owner):
+    c = deploy(direct_vm, direct_deploy, direct_owner, source_urls_json=json.dumps([URL, URL_B]))
+    direct_vm.warp(RESOLVE)
+    mocks(direct_vm, "UNRESOLVABLE", classifications=[{"url": URL, "label": "UNCLEAR"}, {"url": URL_B, "label": "UNCLEAR"}], quotes=[{"url": URL, "line": LINE}])
+    c.resolve_question()
+    assert direct_vm.run_validator()
+    forged = c.get_decision()
+    for row in forged["resolution"]["classifications"]:
+        if row["url"] == URL:
+            row["label"] = "HOLDS"
+    assert forged["resolution"]["outcome"] == "UNRESOLVABLE"
+    # Internally valid, supported quotation, unchanged headline: facts still disagree.
+    assert direct_vm.run_validator(leader_result=forged) is False
+
+
+def test_validator_rejects_consistent_different_label_and_outcome(pool, direct_vm):
+    direct_vm.warp(RESOLVE)
+    mocks(direct_vm)
+    pool.resolve_question()
+    forged = pool.get_decision()
+    forged["resolution"]["classifications"][0]["label"] = "CONTRADICTED"
+    forged["resolution"]["outcome"] = "NO"
+    assert direct_vm.run_validator(leader_result=forged) is False
+
+
+def test_quotes_are_normalized_sorted_and_leader_must_be_canonical(pool, direct_vm):
+    direct_vm.warp(RESOLVE)
+    second = "Version 1.0 release date: 2024-01-01."
+    quotes = [{"url": URL, "line": "  " + second + "\n"}, {"url": URL, "line": LINE.replace("published on", "published\n on")}]
+    mocks(direct_vm, body=LINE + "\n" + second, quotes=quotes)
+    pool.resolve_question()
+    honest = pool.get_decision()
+    assert honest["resolution"]["quotes"] == [{"url": URL, "line": LINE}, {"url": URL, "line": second}]
+    assert direct_vm.run_validator()
+    for mutation in ("order", "whitespace", "fabricated"):
+        forged = json.loads(json.dumps(honest))
+        if mutation == "order":
+            forged["resolution"]["quotes"].reverse()
+        elif mutation == "whitespace":
+            forged["resolution"]["quotes"][0]["line"] = " " + LINE
+        else:
+            forged["resolution"]["quotes"][0]["line"] = "a fabricated supporting statement"
+        assert direct_vm.run_validator(leader_result=forged) is False
+
+
+def test_fabricated_quote_is_rejected_even_for_unclear_leader(pool, direct_vm):
+    direct_vm.warp(RESOLVE)
+    mocks(direct_vm, "UNRESOLVABLE")
+    pool.resolve_question()
+    forged = pool.get_decision()
+    forged["resolution"]["quotes"] = [{"url": URL, "line": "a fabricated supporting statement"}]
+    assert direct_vm.run_validator(leader_result=forged) is False
+
+
+def test_exactly_at_limit_complete_source_can_resolve(pool, direct_vm):
+    body = (LINE + "\n").encode()
+    body += b"a" * (5000 - len(body))
+    assert finish(pool, direct_vm, body=body)["outcome"] == "YES"
+    assert pool.get_sources()["sources"][0]["status"] == "fetched"
+
+
+def test_any_truncated_required_source_skips_model_and_refunds(direct_vm, direct_deploy, direct_owner, direct_alice, direct_bob, monkeypatch):
+    c = deploy(direct_vm, direct_deploy, direct_owner, source_urls_json=json.dumps([URL, URL_B]))
+    row = commit(c, direct_vm, direct_alice, 10000)
+    commit(c, direct_vm, direct_bob, 0)
+    direct_vm.warp(REVEAL)
+    reveal(c, direct_vm, row)
+    direct_vm.warp(RESOLVE)
+    direct_vm.mock_web(r"releases\.example", {"status": 200, "body": LINE})
+    direct_vm.mock_web(r"archive\.example", {"status": 200, "body": LINE + "a" * 6000})
+    nondet = importlib.import_module("genlayer.gl.nondet")
+    def forbidden_model(*args, **kwargs):
+        raise AssertionError("truncated source must not invoke the model")
+    with monkeypatch.context() as local:
+        local.setattr(nondet, "exec_prompt", forbidden_model)
+        c.resolve_question()
+        assert direct_vm.run_validator()
+    decision = c.get_decision()
+    assert decision["resolution"]["outcome"] == "UNRESOLVABLE"
+    assert all(row["label"] == "UNCLEAR" for row in decision["resolution"]["classifications"])
+    forged = json.loads(json.dumps(decision))
+    for row in forged["resolution"]["classifications"]:
+        row["label"] = "HOLDS"
+    forged["resolution"]["outcome"] = "YES"
+    forged["resolution"]["quotes"] = sorted([{"url": url, "line": LINE} for url in (URL, URL_B)], key=lambda row: row["url"])
+    assert direct_vm.run_validator(leader_result=forged) is False
+    assert c.settle()["refund"]
+    assert withdraw(c, direct_vm, direct_alice) == withdraw(c, direct_vm, direct_bob) == 100
+    assert accounting(c)["refunded_units"] == 200 and accounting(c)["held_units"] == 0
+
+
+def test_verified_small_source_example_payouts(direct_vm, direct_deploy, direct_owner, direct_alice, direct_bob, direct_charlie):
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[1]
+    args = json.loads((root / "examples/constructor.json").read_text(encoding="utf-8"))
+    body = (root / "examples/distutils-source.rst").read_bytes()
+    assert len(body) == 667
+    assert hashlib.sha256(body).hexdigest() == "8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076"
+    c = deploy(direct_vm, direct_deploy, direct_owner, **args)
+    rows = [commit(c, direct_vm, a, p) for a, p in zip((direct_alice, direct_bob, direct_charlie), (10000, 5000, 0))]
+    direct_vm.warp(REVEAL)
+    for row in rows:
+        reveal(c, direct_vm, row)
+    url = json.loads(args["source_urls_json"])[0]
+    quotes = [{"url": url, "line": "This module is no longer part of the Python standard library."},
+              {"url": url, "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after"}]
+    result = finish(c, direct_vm, body=body, classifications=[{"url": url, "label": "HOLDS"}], quotes=quotes)
+    assert result["allocations"] == {key(direct_alice): 172, key(direct_bob): 128, key(direct_charlie): 0}
+    assert c.get_sources()["sources"][0]["status"] == "fetched"
+    assert [withdraw(c, direct_vm, a) for a in (direct_alice, direct_bob, direct_charlie)] == [172, 128, 0]
+    assert accounting(c)["held_units"] == 0
+
+
+@pytest.mark.parametrize("invalid_first", [False, True])
+def test_invalid_quote_dropped_while_same_source_valid_support_keeps_yes(pool, direct_vm, invalid_first):
+    quotes = [{"url": URL, "line": LINE}, {"url": URL, "line": "a fabricated supporting statement"}]
+    if invalid_first:
+        quotes.reverse()
+    assert finish(pool, direct_vm, quotes=quotes)["outcome"] == "YES"
+    result = pool.get_decision()["resolution"]
+    assert result["classifications"] == [{"url": URL, "label": "HOLDS"}]
+    assert result["quotes"] == [{"url": URL, "line": LINE}]
+    forged = pool.get_decision()
+    forged["resolution"]["quotes"].append({"url": URL, "line": "a fabricated supporting statement"})
+    assert direct_vm.run_validator(leader_result=forged) is False
+
+
+def test_invalid_quotes_only_downgrade_unsupported_source(direct_vm, direct_deploy, direct_owner):
+    c = deploy(direct_vm, direct_deploy, direct_owner, source_urls_json=json.dumps([URL, URL_B]))
+    assert finish(c, direct_vm,
+                  classifications=[{"url": url, "label": "HOLDS"} for url in (URL, URL_B)],
+                  quotes=[{"url": URL, "line": LINE}, {"url": URL_B, "line": "a fabricated supporting statement"}])["outcome"] == "UNRESOLVABLE"
+    result = c.get_decision()["resolution"]
+    assert {row["url"]: row["label"] for row in result["classifications"]} == {URL: "HOLDS", URL_B: "UNCLEAR"}
+    assert result["quotes"] == [{"url": URL, "line": LINE}]
+
+
+def test_only_invalid_quotes_become_unclear_and_are_not_stored(pool, direct_vm):
+    assert finish(pool, direct_vm, quotes=[{"url": URL, "line": "a fabricated supporting statement"}])["outcome"] == "UNRESOLVABLE"
+    result = pool.get_decision()["resolution"]
+    assert result["classifications"] == [{"url": URL, "label": "UNCLEAR"}]
+    assert result["quotes"] == []

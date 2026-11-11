@@ -1,6 +1,6 @@
-# StudioNet live demonstration
+# Historical StudioNet demonstration — previous source only
 
-Both instances use exact deployed source commit `6cc6b4f32b486dc41fb23d11b7b7b40e004af510` (Git blob `c803084a5cce74da4b9bbfd53b37b36526d20bba`, SHA-256 `25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677`). Deployed bytes were independently fetched from chain-61999 RPC and matched the committed source exactly. Calls used the installed `genlayer-py==0.18.0` runtime; no package upgrade occurred.
+Historical evidence only: addresses 0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93 and 0xE908f2670Ee24C13346cf2e754001Ad20F2f825A prove only the previous source. Both instances use exact deployed source commit `6cc6b4f32b486dc41fb23d11b7b7b40e004af510` (Git blob `c803084a5cce74da4b9bbfd53b37b36526d20bba`, SHA-256 `25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677`). Deployed bytes were independently fetched from chain-61999 RPC and matched the committed source exactly. Calls used the installed `genlayer-py==0.18.0` runtime; no package upgrade occurred.
 
 ## Separate contract evidence
 

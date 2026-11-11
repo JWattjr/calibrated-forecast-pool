@@ -1,109 +1,86 @@
-"""Generate the requested full-source report and expanded pass/fail matrix."""
-import ast
+"""Generate local evidence only; does not run checks or change any remote."""
 import hashlib
 import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-
 root = Path(__file__).resolve().parents[1]
-verification = root / "verification"
-source = (root / "contracts/calibrated_forecast_pool.py").read_text(encoding="utf-8")
-source_hash = hashlib.sha256(source.encode()).hexdigest()
-tree = ET.parse(verification / "tests.xml")
-cases = tree.findall(".//testcase")
-rows = []
-for case in cases:
-    status = "FAIL" if case.find("failure") is not None or case.find("error") is not None else "SKIP" if case.find("skipped") is not None else "PASS"
-    rows.append(f"| `{case.attrib['name']}` | {status} |")
-assert all("| PASS |" in row for row in rows)
-test_list = "| Test case | Result |\n|---|---|\n" + "\n".join(rows) + "\n"
+verification = root / 'verification'
+source = (root / 'contracts/calibrated_forecast_pool.py').read_text(encoding='utf-8')
+source_hash = hashlib.sha256(source.encode('utf-8')).hexdigest()
+checks = json.loads((verification / 'checks.json').read_text(encoding='utf-8'))
+assert [row['name'] for row in checks['checks']] == ['lint', 'tests', 'schema']
+assert all(row['exit_code'] == 0 for row in checks['checks'])
+cases = ET.parse(verification / 'tests.xml').findall('.//testcase')
+assert cases and all(case.find('failure') is None and case.find('error') is None and case.find('skipped') is None for case in cases)
+test_list = '| Test case | Result |\n|---|---|\n' + '\n'.join(f"| `{case.attrib['name']}` | PASS |" for case in cases) + '\n'
+demo = json.loads((verification / 'demo-source-checks.json').read_text(encoding='utf-8'))
+coverage = '''| Invariant or behavior | Coverage |
+|---|---|
+| Per-source HOLDS / CONTRADICTED / UNCLEAR; code derives outcome | All nine two-source label combinations; missing classifications default UNCLEAR; every determinate source needs its own quote |
+| Same headline with changed facts disagrees | Internally valid different source label with unchanged UNRESOLVABLE is rejected; changed label and consistent changed outcome are rejected |
+| Different valid quote choices agree | Captured validator accepts an alternate genuine supporting passage against identical fetched evidence and source labels |
+| Fabricated evidence is rejected | Forged quote rejected for determinate and UNCLEAR candidates; malformed quote schemas/bounds rejected; wrong case, short, unknown-source and missing support cannot authorize determinate labels |
+| Quote filtering preserves other support | Invalid membership quotes dropped individually; same-source valid support keeps HOLDS/YES; only unsupported sources downgrade; only-invalid quotes are not stored |
+| Canonical quote storage | Whitespace normalized and `(url, line)` sorted; unsorted or non-normalized leader records rejected; full-candidate equality across models is not required |
+| Complete required evidence | Exact 5000-byte source can resolve; truncated source cannot resolve YES or NO even with retained valid support; any required truncated source skips the model and refunds revealed/unrevealed stakes |
+| UTF-8 and source integrity | Exact cap, over cap, three-/four-byte cut, complete multibyte boundary; forged counts/status/digests/prefixes rejected even with rebound outer hashes |
+| Unavailable evidence and failed consensus preserve state | Non-200, empty/whitespace, invalid UTF-8, network exceptions, one failed required source, simulated consensus failure; deadline refunds remain available |
+| Sealed forecast domains and permissions | Sender/question/contract-bound commitments; copied and altered reveals fail; one commit/reveal; own entitlement only; public resolution, expiry and settlement |
+| Deadline liveness | Strict constructor ordering; exact boundary behavior; early expiry and late resolution fail; permissionless expiry refunds both revealed and unrevealed stakes |
+| Conserved deterministic payouts | 172/128/0 and reverse NO example; highest-score/address dust; unrevealed forfeiture; UNRESOLVABLE, empty, no-reveal and zero-score refunds; one withdrawal including zero |
+| Frozen verified complete-source example | 667-byte pinned distutils snapshot and SHA-256 checked; HOLDS mock -> code-derived YES -> 172/128/0 -> zero held units |
+| Input/model limits | Participant cap, stake/probability/salt/domain/URL/text/time bounds; unknown/duplicate source IDs and labels; model cannot supply outcome |
+'''
 matrix = f'''# Test matrix
 
-Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` from the project root using the pinned portfolio direct-test environment. Saved exact commands/output: `verification/lint.txt`, `verification/tests.txt`, `verification/schema.txt`, `verification/checks.json`. JUnit evidence: `verification/tests.xml`.
+**{len(cases)} parameter-expanded cases passed** for the current local source, SHA-256 `{source_hash}`. GenVM lint ran first and passed; the complete suite ran second. Exact output is in verification/lint.txt and verification/tests.txt; commands/tool versions are in verification/checks.json; expanded results are in verification/tests.xml.
 
-**{len(cases)} parameter-expanded cases passed.** These are mocked direct-mode tests. Captured validator callbacks are explicitly invoked for honest/forged candidates; a thrown consensus disagreement is simulated. No real network consensus or deployment is established.
+These are mocked direct-mode tests, including explicit execution of captured validator callbacks. They establish local behavior under the approved fact-agreement/quote-selection design, not live consensus or finality. No push, deployment or Portal action was performed for this revision.
 
-| Invariant or behavior | Test coverage |
-|---|---|
-| Confident correct out-earns hedged and wrong; exact 172/128/0 example and reverse NO case | `test_confident_correct_hedged_wrong_exact_payouts`, `test_no_outcome_reverses_scores` |
-| All dust to highest score; ties use lowest address | Worked example plus `test_dust_tie_uses_lowest_address_with_unrevealed_pot` |
-| Identity, question and contract bound; independent canonical hash reconstruction; copied reveal fails | Changed/copy/cross-domain/real-deployment tests |
-| One commitment and reveal; late commit, early/late reveal, exact deadline edges | Duplicate and deadline tests |
-| Resolution deadline strictly follows resolve-after; expiry only after deadline and only while OPEN; no resolution after deadline | Constructor deadline cases and expiry/late-resolution boundary tests |
-| Expiry records RESOLUTION_DEADLINE with empty sources/quotes and refunds revealed/unrevealed stakes without web/model calls | `test_expiry_after_deadline_refunds_revealed_and_unrevealed`, `test_failed_fetch_can_expire_after_resolution_deadline` |
-| Unrevealed stake forfeited for scored YES/NO; full refund for UNRESOLVABLE, no reveals or zero sum | Forfeiture, terminal UNRESOLVABLE and four degenerate cases |
-| Only own payout withdrawn once, including zero; public resolution/settlement; immutable terms | Worked example and access-control/lifecycle tests |
-| Fetch and consensus failure preserve state and allow retry | Five fetch failures, one partial-source failure, network exception and mocked consensus failure |
-| Conservation at each lifecycle step and after reverts; claimed/unclaimed rows independently sum to counters | `accounting`, `unchanged` and lifecycle helpers; fixture teardown for every `pool` scenario |
-| Exact cap, over cap, three-/four-byte cut, complete multibyte boundary | Five UTF-8 fetch boundary cases |
-| Tail-only quote downgrades to UNRESOLVABLE; retained quote can resolve a truncated body | Tail/prefix quote tests |
-| Whitespace and line-wrap normalization; partial-line substring matching; minimum eight normalized characters; case-sensitive rejection | Six accepted substring cases and missing/invented/unavailable/short/wrong-case quote cases |
-| Source status/count/digest tampering rejected even with rebound outer hashes; independent re-fetch rejects coherent lies | `test_validator_rejects_mismatched_truncation_record_even_rebound` |
-| Validators compare normalized outcome and bound evidence, while valid quotation selection may differ | `test_validator_compares_outcome_and_evidence_not_free_text`, normalization test |
-| Question, criterion, URLs/JSON, timestamps, salt, probability, stake, commitment, queue, model response and quote bounds | Constructor/size/schema/format tests, 8-forecaster maximum-stake test |
-
-## Expanded pass/fail results
+{coverage}
+## Expanded results
 
 {test_list}
+## Historical live evidence
+
+The November 10 StudioNet demos (24 finalized transactions: 20 SUCCESS, four expected ERROR) prove only historical source commit `6cc6b4f`. They do not prove this changed source. See LIVE_DEMO.md and the original release manifest for those historical records. A future authorized deployment requires a pushed exact source commit, fresh demos and separately verified Explorer contract links.
 '''
-if (root / "deployments/studionet-release-2026-11-10.json").exists():
-    matrix += "\n## Separate live verification\n\nThe authorized StudioNet run finalized 24 transactions: 20 successful executions and four expected rollbacks. The scoring instance paid 172/128/0; the separate expiry instance refunded revealed and unrevealed stakes. Both source identities and direct contract Explorer links were verified. See [LIVE_DEMO.md](LIVE_DEMO.md) and the release manifest. These live receipts are separate from the 85 mocked direct-mode test cases.\n"
-(root / "docs/TEST_MATRIX.md").write_text(matrix.rstrip() + "\n", encoding="utf-8", newline="\n")
+(root / 'docs/TEST_MATRIX.md').write_text(matrix, encoding='utf-8', newline='\n')
+report = f'''# Local revision build report
 
-checks = json.loads((verification / "checks.json").read_text())
-demo = json.loads((verification / "demo-source-checks.json").read_text())
-report = f'''# Local build report
+Local gate: **PASS**. Source SHA-256: `{source_hash}`. GenVM lint ran first: three checks and SDK validation passed (13 public methods: seven views, six writes; nine constructor parameters). Full test suite ran second: **{len(cases)} passed**. ABI extraction also passed. The runner and dependency versions remain unchanged. I200 is an informational newer-runner notice, not a lint failure.
 
-Project: `calibrated-forecast-pool`. Source SHA-256: `{source_hash}`.
+## Approved implementation
 
-Result: {len(cases)} tests PASS; 3 GenVM lint checks PASS; SDK validation PASS (13 methods: 7 views and 6 writes; 9 constructor parameters). The final Git commit identifier is supplied with delivery, outside this commit to avoid a self-referencing commit hash.
+- The model classifies each frozen source HOLDS, CONTRADICTED or UNCLEAR; ordinary code derives YES only for all HOLDS on complete sources, NO only for all CONTRADICTED on complete sources, otherwise UNRESOLVABLE. Missing classifications become UNCLEAR; invented/duplicate URLs, labels or outcome fields are rejected.
+- Any required truncated source keeps its UTF-8 prefix, original/kept counts, availability and digest, but forces terminal UNRESOLVABLE with UNCLEAR labels and empty quotes without invoking the model. Unavailable-source retry and deadline refunds remain unchanged. This rule applies to calibrated-forecast-pool only; parametric-coverage-pool was not changed.
+- Invalid membership quotes are dropped individually, with only unsupported source labels downgraded to UNCLEAR; valid support on the same source preserves its label. Stored quotes are whitespace-normalized and sorted. `_valid_candidate` rejects fabricated, invalid or noncanonical leader quotes. Independent validator agreement compares input/evidence/snapshot digests, canonical byte-identical sources, all source labels and derived outcome. Different valid quote choices are accepted for consensus liveness. This is the user's explicit replacement of full-candidate equality, documented in DESIGN.md.
+- The new demo uses complete commit-pinned distutils documentation: 667 bytes, expected source label HOLDS and code-derived YES. Three 100-unit stakes and 10000/5000/0 forecasts preserve the 172/128/0 payout example. Anonymous source verification and the mock example are separate from a real live demonstration.
+- Commitment domains, lifecycle/deadlines, integer scoring/dust, refunds, synthetic accounting, one-shot withdrawals, pinned runner and dependency versions remain unchanged.
 
-## Review fixes
+## Three separate gates
 
-- Added a frozen resolution deadline strictly after resolve-after. Resolution is accepted through the final deadline; after it, permissionless expiry records UNRESOLVABLE / RESOLUTION_DEADLINE with empty sources and quotations. The existing settlement path refunds all stakes, revealed or unrevealed.
-- Replaced full-line quotation matching with case-sensitive substring matching after collapsing whitespace and stripping both quote and retained source text. At least eight normalized characters are required. Partial-line quotations and line wrapping are accepted; invented, too-short and discarded-tail quotations remain UNRESOLVABLE.
-- Replaced the literal-date demo with an interpretation of the settled CPython 3.12 distutils removal. The commit-pinned raw release documentation states the answer using different wording, inside the first 5,000 bytes. Stake and forecaster count remain unchanged, preserving the 172/128/0 worked payout example.
-- Shared commitment hashing, runner, truncation/digest/availability validation, scoring, dust, synthetic accounting and one-shot withdrawal behavior are unchanged. Direct-test compatibility fixtures and dependency pins are unchanged.
+| Gate | Result | Scope |
+|---|---|---|
+| Technical readiness | PASS locally under the user-approved design | Lint and all {len(cases)} mocked direct tests pass, including honest and adversarial validator callbacks. This is not a production audit or live consensus proof. |
+| Distinctiveness | PASS for the documented local comparison | Sealed probability scoring and conserved pot allocation differ from the auction, bounty, predicate graph and same-week underwriting pool; no ecosystem originality or points guarantee. |
+| Evidence readiness | FAIL for this revision's submission | Source has changed and has not been pushed or deployed. Historical receipts and public source links prove `6cc6b4f` only. Fresh live proof remains necessary after user review and authorization. |
 
-## Commands and exact output
+## Source verification
 
-Working directory: `{checks['working_directory']}`.
-Pinned tool versions: `{json.dumps(checks['versions'], sort_keys=True)}`.
+Anonymous HTTP {demo['sources'][0]['http_status']}; {demo['sources'][0]['byte_count']} raw bytes, all retained; upstream commit `{demo['upstream_commit']}`. Full/kept SHA-256 `{demo['sources'][0]['sha256']}`. Exact URL and supporting lines are in DEMO_PLAN.md and verification/demo-source-checks.json. The byte-exact example snapshot is examples/distutils-source.rst.
 
-The report generator does not run lint or tests. `verification/run_checks.py` ran lint first, then tests, then extracted the ABI. Initial restricted-network lint checks reported DNS lookup failure for the latest-runner lookup and successfully used the installed SDK cache. An unpinned final-directory rerun stalled during automatic artifact lookup and was stopped before completion. The successful final gates explicitly pin the already cached GenVM artifact bundle `v0.6.0-rc5`, matching the direct-test SDK. The contract runner was retained and no package dependency was upgraded. Any I200 notice is informational; the requested runner remains unchanged.
+## Validation evidence
+
+Checked at `{checks['checked_at_utc']}`. Working directory: `{checks['working_directory']}`. Versions: `{json.dumps(checks['versions'], sort_keys=True)}`. GenVM artifact bundle remains `{checks['genvm_artifact_bundle']}`.
+
+The report generator reads saved validation results and does not run lint or tests. No push, deployment, Portal interaction or new live receipt was performed. Existing public evidence remains historical. Local changes are held for user review at the requested gate.
 
 '''
-for label in ("lint", "tests", "schema"):
-    report += f"### {label}\n\n```text\n{(verification / (label + '.txt')).read_text(encoding='utf-8').rstrip()}\n```\n\n"
-report += f'''## Every test and result
-
-{test_list}
-
-## Source availability check
-
-The replacement URL proposed as frozen demo evidence was fetched anonymously with HTTP {demo['sources'][0]['http_status']}, {demo['sources'][0]['byte_count']} bytes, at {demo['checked_at_utc']}. It is pinned to upstream commit `{demo['upstream_commit']}`. Full response SHA-256: `{demo['sources'][0]['sha256']}`. The supporting statement occupies UTF-8 bytes [{demo['sources'][0]['supporting_line_byte_offset']}, {demo['sources'][0]['supporting_line_end_byte_offset']}) and fits inside the retained {demo['sources'][0]['kept_byte_count']}-byte prefix. See `docs/DEMO_PLAN.md` and `verification/demo-source-checks.json`. The live demo was not run.
-
-## Decisions, uncertainty and deliberate omissions
-
-- User-approved deviation: 5,000-byte UTF-8 prefix truncation replaces the auction's oversized-body rejection, using bounty-style source metadata and independent validation. Everything shared with the auction is documented in DESIGN.md; source identities are in reference-provenance.json.
-- One question per deployment follows the auction layout. The question owner freezes terms at construction. Anyone may trigger resolution and settlement; each forecaster may withdraw only their own allocation.
-- A failed source aborts the entire attempt, preserving all state. No failed-attempt availability log is persisted. Only finalized records appear in get_sources. A finalized UNRESOLVABLE result is terminal and refunds all stakes on settlement; a deterministic deadline expiry records empty sources and quotations.
-- Malformed UTF-8 inside the kept prefix is unavailable; only an incomplete final character is cut back. This preserves strict UTF-8 handling without silent replacement.
-- Quotes must be case-sensitive substrings of retained text after whitespace normalization, with at least eight normalized characters; unsupported or too-short quotes force UNRESOLVABLE. Source membership cannot prove semantic entailment. Direct mocks and callback mutation checks do not establish live consensus or finality.
-- Brier scores are proper in isolation, but rival-dependent pot normalization does not guarantee truthful-reporting incentives. No claim of production incentive compatibility, Sybil resistance or ecosystem-wide originality is made.
-- Deliberately absent: native/token custody or transfers, wallet setup, real stake debits, frontend, multi-question mutable registry, cancellation/admin recovery, live demo, deployment, public remote, push, GitHub repository creation, visibility change and Portal submission.
-- No private keys or credential-helper output were read or logged. Other projects and portfolio trackers were only read.
-
-## Full contract source
-
-```python
-{source.rstrip()}
-```
-'''
-if (root / "deployments/studionet-release-2026-11-10.json").exists():
-    report = report.replace("# Local build report", "# Build and live verification report\n\nThe separately authorized StudioNet demos passed: 24 finalized transactions, 20 successful executions and four expected rollbacks. Scoring paid 172/128/0; deadline expiry refunded both stakes. Both deployed source blobs and direct contract Explorer links were verified. Full live evidence is in docs/LIVE_DEMO.md and deployments/studionet-release-2026-11-10.json. The original local validation results and complete source follow.")
-    report = report.replace("The live demo was not run.", "The live demo was subsequently run under explicit authorization; see docs/LIVE_DEMO.md for actual results.")
-    report = report.replace("cancellation/admin recovery, live demo, deployment, public remote", "cancellation/admin recovery, public remote")
-(root / "docs/BUILD_REPORT.md").write_text(report.rstrip() + "\n", encoding="utf-8", newline="\n")
-print(f"Wrote full-source report and matrix for {len(cases)} passing cases; source sha256={source_hash}")
+for label in ('lint', 'tests', 'schema'):
+    output = (verification / f'{label}.txt').read_text(encoding='utf-8').rstrip()
+    report += f'### {label}\n\n```text\n{output}\n```\n\n'
+report += f'## Every test and result\n\n{test_list}\n## Full current contract source\n\n```python\n{source.rstrip()}\n```\n'
+(root / 'docs/BUILD_REPORT.md').write_text(report, encoding='utf-8', newline='\n')
+print(f'Generated local report and matrix: {len(cases)} passing cases, source SHA-256 {source_hash}')

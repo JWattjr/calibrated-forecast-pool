@@ -1,22 +1,23 @@
 {
-  "checked_at_utc": "2026-11-10T21:26:15.528655+00:00",
+  "checked_at_utc": "2026-11-11T13:51:49.927499+00:00",
   "anonymous": true,
   "method": "GET; fresh urllib opener; no authorization or cookies",
-  "upstream_release_tag": "v3.12.0",
-  "upstream_commit": "0fb18b02c8ad56299d6a2910be0bab8ad601ef24",
+  "source_status": "fetched",
+  "proposed_revision_not_deployed": true,
+  "upstream_commit": "0ada998ebbf392238719358432cd723a622fcd5e",
   "sources": [
     {
-      "url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst",
-      "final_url": "https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst",
+      "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst",
+      "final_url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst",
       "http_status": 200,
-      "byte_count": 101514,
-      "kept_byte_count": 5000,
-      "sha256": "4a0da7af729f2ba5d6f34d257f440d1700245531aad9cb2bf18bb78af24cfab9",
-      "kept_sha256": "2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d",
-      "supporting_line": "Of note, the :mod:`!distutils` package has been removed from the standard library.",
+      "byte_count": 667,
+      "kept_byte_count": 667,
+      "sha256": "8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+      "kept_sha256": "8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+      "supporting_line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after",
       "supporting_line_in_kept_prefix": true,
-      "supporting_line_byte_offset": 2307,
-      "supporting_line_end_byte_offset": 2389
+      "supporting_line_byte_offset": 290,
+      "supporting_line_end_byte_offset": 364
     }
   ],
   "demo_run": false

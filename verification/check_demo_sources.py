@@ -16,17 +16,19 @@ def get(url):
 
 
 def main():
-    commit = "0fb18b02c8ad56299d6a2910be0bab8ad601ef24"
-    url = f"https://raw.githubusercontent.com/python/cpython/{commit}/Doc/whatsnew/3.12.rst"
+    commit = "0ada998ebbf392238719358432cd723a622fcd5e"
+    url = f"https://raw.githubusercontent.com/python/cpython/{commit}/Doc/library/distutils.rst"
     status, body, final_url = get(url)
     text = body[:5000].decode("utf-8")
-    line = "Of note, the :mod:`!distutils` package has been removed from the standard library."
-    assert status == 200 and line in text.splitlines()
+    line = "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after"
+    assert status == 200 and len(body) == 667 and line in text.splitlines()
+    assert hashlib.sha256(body).hexdigest() == "8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076"
     result = {
         "checked_at_utc": datetime.now(timezone.utc).isoformat(),
         "anonymous": True,
         "method": "GET; fresh urllib opener; no authorization or cookies",
-        "upstream_release_tag": "v3.12.0",
+        "source_status": "fetched",
+        "proposed_revision_not_deployed": True,
         "upstream_commit": commit,
         "sources": [{"url": url, "final_url": final_url, "http_status": status,
                      "byte_count": len(body), "kept_byte_count": len(body[:5000]),

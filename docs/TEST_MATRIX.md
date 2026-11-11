@@ -1,31 +1,27 @@
 # Test matrix
 
-November 11 review: the existing deployed behavior and recorded 85-test result are unchanged. Submission is held pending design confirmation for complete stored-field comparison, fail-closed truncated evidence and per-source classification with code-derived outcomes. See [the review and proposed design](SUBMISSION_REVIEW_2026-11-11.md). The public repository and anonymous-access verification are now available; historical build/live records below describe their original capture.
+**112 parameter-expanded cases passed** for the current local source, SHA-256 `686e0530f616fee0794686f14c16ccafc0d73dfa22aa2915dc17aacfc128ca9a`. GenVM lint ran first and passed; the complete suite ran second. Exact output is in verification/lint.txt and verification/tests.txt; commands/tool versions are in verification/checks.json; expanded results are in verification/tests.xml.
 
-Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` from the project root using the pinned portfolio direct-test environment. Saved exact commands/output: `verification/lint.txt`, `verification/tests.txt`, `verification/schema.txt`, `verification/checks.json`. JUnit evidence: `verification/tests.xml`.
+These are mocked direct-mode tests, including explicit execution of captured validator callbacks. They establish local behavior under the approved fact-agreement/quote-selection design, not live consensus or finality. No push, deployment or Portal action was performed for this revision.
 
-**85 parameter-expanded cases passed.** These are mocked direct-mode tests. Captured validator callbacks are explicitly invoked for honest/forged candidates; a thrown consensus disagreement is simulated. No real network consensus or deployment is established.
-
-| Invariant or behavior | Test coverage |
+| Invariant or behavior | Coverage |
 |---|---|
-| Confident correct out-earns hedged and wrong; exact 172/128/0 example and reverse NO case | `test_confident_correct_hedged_wrong_exact_payouts`, `test_no_outcome_reverses_scores` |
-| All dust to highest score; ties use lowest address | Worked example plus `test_dust_tie_uses_lowest_address_with_unrevealed_pot` |
-| Identity, question and contract bound; independent canonical hash reconstruction; copied reveal fails | Changed/copy/cross-domain/real-deployment tests |
-| One commitment and reveal; late commit, early/late reveal, exact deadline edges | Duplicate and deadline tests |
-| Resolution deadline strictly follows resolve-after; expiry only after deadline and only while OPEN; no resolution after deadline | Constructor deadline cases and expiry/late-resolution boundary tests |
-| Expiry records RESOLUTION_DEADLINE with empty sources/quotes and refunds revealed/unrevealed stakes without web/model calls | `test_expiry_after_deadline_refunds_revealed_and_unrevealed`, `test_failed_fetch_can_expire_after_resolution_deadline` |
-| Unrevealed stake forfeited for scored YES/NO; full refund for UNRESOLVABLE, no reveals or zero sum | Forfeiture, terminal UNRESOLVABLE and four degenerate cases |
-| Only own payout withdrawn once, including zero; public resolution/settlement; immutable terms | Worked example and access-control/lifecycle tests |
-| Fetch and consensus failure preserve state and allow retry | Five fetch failures, one partial-source failure, network exception and mocked consensus failure |
-| Conservation at each lifecycle step and after reverts; claimed/unclaimed rows independently sum to counters | `accounting`, `unchanged` and lifecycle helpers; fixture teardown for every `pool` scenario |
-| Exact cap, over cap, three-/four-byte cut, complete multibyte boundary | Five UTF-8 fetch boundary cases |
-| Tail-only quote downgrades to UNRESOLVABLE; retained quote can resolve a truncated body | Tail/prefix quote tests |
-| Whitespace and line-wrap normalization; partial-line substring matching; minimum eight normalized characters; case-sensitive rejection | Six accepted substring cases and missing/invented/unavailable/short/wrong-case quote cases |
-| Source status/count/digest tampering rejected even with rebound outer hashes; independent re-fetch rejects coherent lies | `test_validator_rejects_mismatched_truncation_record_even_rebound` |
-| Validators compare normalized outcome and bound evidence, while valid quotation selection may differ | `test_validator_compares_outcome_and_evidence_not_free_text`, normalization test |
-| Question, criterion, URLs/JSON, timestamps, salt, probability, stake, commitment, queue, model response and quote bounds | Constructor/size/schema/format tests, 8-forecaster maximum-stake test |
+| Per-source HOLDS / CONTRADICTED / UNCLEAR; code derives outcome | All nine two-source label combinations; missing classifications default UNCLEAR; every determinate source needs its own quote |
+| Same headline with changed facts disagrees | Internally valid different source label with unchanged UNRESOLVABLE is rejected; changed label and consistent changed outcome are rejected |
+| Different valid quote choices agree | Captured validator accepts an alternate genuine supporting passage against identical fetched evidence and source labels |
+| Fabricated evidence is rejected | Forged quote rejected for determinate and UNCLEAR candidates; malformed quote schemas/bounds rejected; wrong case, short, unknown-source and missing support cannot authorize determinate labels |
+| Quote filtering preserves other support | Invalid membership quotes dropped individually; same-source valid support keeps HOLDS/YES; only unsupported sources downgrade; only-invalid quotes are not stored |
+| Canonical quote storage | Whitespace normalized and `(url, line)` sorted; unsorted or non-normalized leader records rejected; full-candidate equality across models is not required |
+| Complete required evidence | Exact 5000-byte source can resolve; truncated source cannot resolve YES or NO even with retained valid support; any required truncated source skips the model and refunds revealed/unrevealed stakes |
+| UTF-8 and source integrity | Exact cap, over cap, three-/four-byte cut, complete multibyte boundary; forged counts/status/digests/prefixes rejected even with rebound outer hashes |
+| Unavailable evidence and failed consensus preserve state | Non-200, empty/whitespace, invalid UTF-8, network exceptions, one failed required source, simulated consensus failure; deadline refunds remain available |
+| Sealed forecast domains and permissions | Sender/question/contract-bound commitments; copied and altered reveals fail; one commit/reveal; own entitlement only; public resolution, expiry and settlement |
+| Deadline liveness | Strict constructor ordering; exact boundary behavior; early expiry and late resolution fail; permissionless expiry refunds both revealed and unrevealed stakes |
+| Conserved deterministic payouts | 172/128/0 and reverse NO example; highest-score/address dust; unrevealed forfeiture; UNRESOLVABLE, empty, no-reveal and zero-score refunds; one withdrawal including zero |
+| Frozen verified complete-source example | 667-byte pinned distutils snapshot and SHA-256 checked; HOLDS mock -> code-derived YES -> 172/128/0 -> zero held units |
+| Input/model limits | Participant cap, stake/probability/salt/domain/URL/text/time bounds; unknown/duplicate source IDs and labels; model cannot supply outcome |
 
-## Expanded pass/fail results
+## Expanded results
 
 | Test case | Result |
 |---|---|
@@ -72,6 +68,9 @@ Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` fr
 | `test_malformed_model_result_reverts_unchanged[result2]` | PASS |
 | `test_malformed_model_result_reverts_unchanged[result3]` | PASS |
 | `test_malformed_model_result_reverts_unchanged[result4]` | PASS |
+| `test_malformed_model_result_reverts_unchanged[result5]` | PASS |
+| `test_malformed_model_result_reverts_unchanged[result6]` | PASS |
+| `test_malformed_model_result_reverts_unchanged[result7]` | PASS |
 | `test_access_control_lifecycle_and_frozen_terms` | PASS |
 | `test_frozen_input_size_and_schema_bounds[overrides0-stake must]` | PASS |
 | `test_frozen_input_size_and_schema_bounds[overrides1-stake must]` | PASS |
@@ -98,10 +97,11 @@ Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` fr
 | `test_probability_and_salt_bounds[5000-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]` | PASS |
 | `test_exact_stake_and_commitment_format_bounds` | PASS |
 | `test_forecaster_cap_eight_and_max_stake` | PASS |
-| `test_outcome_normalization` | PASS |
+| `test_classification_normalization` | PASS |
 | `test_network_exception_is_retryable_without_state_changes` | PASS |
 | `test_model_response_text_limit_reverts_without_state_changes` | PASS |
-| `test_valid_quote_in_kept_prefix_can_resolve_oversized_body` | PASS |
+| `test_valid_quote_in_kept_prefix_cannot_resolve_truncated_body[YES]` | PASS |
+| `test_valid_quote_in_kept_prefix_cannot_resolve_truncated_body[NO]` | PASS |
 | `test_whitespace_normalized_substring_quotes_are_accepted[quote-outer-whitespace]` | PASS |
 | `test_whitespace_normalized_substring_quotes_are_accepted[source-outer-whitespace]` | PASS |
 | `test_whitespace_normalized_substring_quotes_are_accepted[source-line-wrap]` | PASS |
@@ -114,8 +114,30 @@ Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` fr
 | `test_resolution_after_deadline_reverts_without_fetch` | PASS |
 | `test_resolution_at_final_deadline_is_allowed_and_cannot_expire_later` | PASS |
 | `test_failed_fetch_can_expire_after_resolution_deadline` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels0-YES]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels1-NO]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels2-UNRESOLVABLE]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels3-UNRESOLVABLE]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels4-UNRESOLVABLE]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels5-UNRESOLVABLE]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels6-UNRESOLVABLE]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels7-UNRESOLVABLE]` | PASS |
+| `test_per_source_labels_deterministically_derive_outcome[labels8-UNRESOLVABLE]` | PASS |
+| `test_missing_source_classifications_become_unclear[classifications0]` | PASS |
+| `test_missing_source_classifications_become_unclear[classifications1]` | PASS |
+| `test_each_determinate_source_needs_its_own_quote` | PASS |
+| `test_validator_rejects_different_labels_even_with_same_unresolvable_outcome` | PASS |
+| `test_validator_rejects_consistent_different_label_and_outcome` | PASS |
+| `test_quotes_are_normalized_sorted_and_leader_must_be_canonical` | PASS |
+| `test_fabricated_quote_is_rejected_even_for_unclear_leader` | PASS |
+| `test_exactly_at_limit_complete_source_can_resolve` | PASS |
+| `test_any_truncated_required_source_skips_model_and_refunds` | PASS |
+| `test_verified_small_source_example_payouts` | PASS |
+| `test_invalid_quote_dropped_while_same_source_valid_support_keeps_yes[False]` | PASS |
+| `test_invalid_quote_dropped_while_same_source_valid_support_keeps_yes[True]` | PASS |
+| `test_invalid_quotes_only_downgrade_unsupported_source` | PASS |
+| `test_only_invalid_quotes_become_unclear_and_are_not_stored` | PASS |
 
+## Historical live evidence
 
-## Separate live verification
-
-The authorized StudioNet run finalized 24 transactions: 20 successful executions and four expected rollbacks. The scoring instance paid 172/128/0; the separate expiry instance refunded revealed and unrevealed stakes. Both source identities and direct contract Explorer links were verified. See [LIVE_DEMO.md](LIVE_DEMO.md) and the release manifest. These live receipts are separate from the 85 mocked direct-mode test cases.
+The November 10 StudioNet demos (24 finalized transactions: 20 SUCCESS, four expected ERROR) prove only historical source commit `6cc6b4f`. They do not prove this changed source. See LIVE_DEMO.md and the original release manifest for those historical records. A future authorized deployment requires a pushed exact source commit, fresh demos and separately verified Explorer contract links.

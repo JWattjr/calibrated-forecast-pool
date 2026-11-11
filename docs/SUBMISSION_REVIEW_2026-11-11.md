@@ -1,6 +1,6 @@
 # November 11 submission guidance review
 
-Status: **design confirmation pending; do not submit**. This reviews the existing deployed source at `6cc6b4f32b486dc41fb23d11b7b7b40e004af510`. No contract, tests, ABI, dependencies or deployed behavior changed during this review. The user's guidance is learned review guidance, not official criteria or a promise of points.
+Historical review and original proposal. **Design is now approved with item 3 explicitly replaced:** agreement covers byte-identical source evidence, source labels and derived outcome; valid quote selection may differ, but every leader quote must pass canonical source-membership validation. See DESIGN.md for the approved implementation. Local lint/tests are the authorized stopping gate; no push, deployment or Portal action is authorized. The original pre-revision findings below remain historical, not a report of the revised local code. This reviews the existing deployed source at `6cc6b4f32b486dc41fb23d11b7b7b40e004af510`. No contract, tests, ABI, dependencies or deployed behavior changed during this review. The user's guidance is learned review guidance, not official criteria or a promise of points.
 
 ## Three separate gates
 

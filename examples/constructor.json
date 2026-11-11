@@ -1,8 +1,8 @@
 {
-  "question_id": "cpython-312-distutils-removal-2026-11-10",
+  "question_id": "cpython-312-distutils-removal-complete-evidence",
   "question": "Did CPython 3.12 stop including distutils in its standard library?",
-  "criterion": "YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.",
-  "source_urls_json": "[\"https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst\"]",
+  "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+  "source_urls_json": "[\"https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst\"]",
   "stake_units": 100,
   "commit_deadline_iso": "2030-01-02T00:00:00Z",
   "reveal_deadline_iso": "2030-01-05T00:00:00Z",

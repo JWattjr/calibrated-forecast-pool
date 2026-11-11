@@ -1,42 +1,34 @@
-# StudioNet demo plan and execution record
+# New local revision: complete-source demo plan
 
-Status: executed under explicit user authorization on 2026-11-10. Both demos passed; see [LIVE_DEMO.md](LIVE_DEMO.md) and the [release manifest](../deployments/studionet-release-2026-11-10.json). The original reproducible plan follows. Dates in `examples/constructor.json` are local placeholders; choose ordered future deadlines before a separately authorized deployment and freeze them permanently. Use the existing separate StudioNet environment with `genlayer-py==0.18.0` for any future runtime call; direct tests require 0.19.0rc2.
+Status: **planned, not deployed or run live**. The November 10 demos in LIVE_DEMO.md and the release manifest prove the historical source at `6cc6b4f`, which allowed positive resolution from a truncated prefix. They do not prove this revised source. Stop after local lint and the full test suite for user review; do not push, deploy or touch the Portal.
 
-## Settled question and criterion
+## Question, classification and supporting evidence
 
 Question: **Did CPython 3.12 stop including distutils in its standard library?**
 
-Criterion: YES if the frozen CPython 3.12 release documentation explicitly establishes that distutils was removed from the standard library. NO if it explicitly establishes that distutils remained included in that release. Otherwise UNRESOLVABLE. Interpret equivalent wording in the supplied text; do not infer unstated facts or use outside knowledge.
+Criterion: HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.
 
-The question uses “stop including”; the source states removal in release-summary prose with reStructuredText module markup. The model interprets those equivalent meanings against the frozen criterion and emits a normalized outcome. No particular literal answer string is required by the criterion. The quote checker establishes source membership after whitespace normalization; it does not perform the semantic decision. The original expected YES was a proposal expectation; the actual authorized run subsequently finalized YES, as recorded in LIVE_DEMO.md.
+The source says the module is no longer part of the standard library and identifies removal in Python 3.12. The model interprets that wording relative to the question; it returns HOLDS for this source, while code derives YES. It never selects the final outcome or payout.
 
-## Anonymous source verification
+Pinned URL: https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst
 
-| Frozen evidence URL | HTTP status | Original bytes | Kept bytes | Check |
-|---|---:|---:|---:|---|
-| [CPython 3.12 What's New, commit-pinned raw source](https://raw.githubusercontent.com/python/cpython/0fb18b02c8ad56299d6a2910be0bab8ad601ef24/Doc/whatsnew/3.12.rst) | 200 | 101514 | 5000 | Anonymous GET; no cookies or Authorization |
+Anonymous HTTP **200**, raw **667 bytes**, all 667 retained, source status **fetched**. SHA-256 of both full and kept text: `8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076`. Verification timestamp: `2026-11-11T13:38:02.231571+00:00`; recheck with `verification/check_demo_sources.py`. A byte-exact local snapshot is in `examples/distutils-source.rst`.
 
-Checked at `2026-11-10T21:26:15.528655+00:00` (UTC), on 2026-11-10 Africa/Lagos. The exact CPython commit is `0fb18b02c8ad56299d6a2910be0bab8ad601ef24`, originally resolved from the official `v3.12.0` release tag. Full response SHA-256: `4a0da7af729f2ba5d6f34d257f440d1700245531aad9cb2bf18bb78af24cfab9`. Kept-prefix SHA-256: `2e61bdf2af142db75084d4999be463e1180ae47278f90434c071c44571bf473d`.
-
-Supporting statement, quoted from the raw source:
+Exact supporting lines, entirely inside the complete 667-byte source:
 
 ```text
-Of note, the :mod:`!distutils` package has been removed from the standard library.
+This module is no longer part of the Python standard library.
+It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after
 ```
 
-Its byte span is [2307, 2389) (zero-based UTF-8 offsets), entirely inside the first 5,000 bytes. The response is oversized, so the contract records status `truncated`, original byte_count=101514, kept_byte_count=5000 and available=true. Only the retained prefix enters resolution. There is one proposed frozen evidence URL, and it returned anonymous HTTP 200.
+The source's module heading identifies distutils. Its wording differs from the question. Source membership is checked in code; semantic interpretation still depends on independently agreeing source classifications. Anonymous availability now does not prove future GenVM retrieval.
 
-See [machine-readable record](../verification/demo-source-checks.json). Reproduce the read-only check with `..\.venv\Scripts\python.exe -B verification/check_demo_sources.py`. Current anonymous availability does not establish future validator-side retrieval.
+## Sequence for a separately authorized fresh live run
 
-## Proposed sequence and expected deterministic result
+1. After user review of local gates and separate live authorization, push the exact source commit first, then deploy with this question, criterion, URL, stake 100 and strictly ordered future deadlines. Preserve the existing pinned runner and StudioNet client environment. Compare deployed bytes against that pushed commit's Git blob.
+2. Three forecasters seal probabilities 10000, 5000 and 0 with separate private random salts, each recording 100 synthetic units. After commit closes, all reveal. Record a deliberately forged reveal as an expected failure and verify unchanged state.
+3. Anyone resolves during the resolution window. Expected source label is HOLDS and code-derived outcome YES; stop on an unexpected judgment. Save sources, classifications, canonical quotes, counts and digests. A fetch/consensus failure preserves state for retry within the deadline; never blindly retry an accepted result.
+4. Deterministic settlement uses scores 100000000, 75000000 and 0, pot 300 and one unit of dust. Payouts remain **172/128/0**. Withdraw each entitlement once, including zero; record duplicate withdrawal as an expected failure. Final accounting: stakes=300, paid=300, refunded=0, held=0.
+5. A fresh expiry instance must prove early-expiry rejection, late-resolution rejection, then permissionless expiry and full refunds for revealed and unrevealed stakes. Truncated evidence is separately covered by local regression tests and cannot resolve this revision to YES or NO.
 
-1. Separately authorize deployment; freeze this question, criterion, one URL, stake 100 and four ordered future deadlines: commit < reveal < resolve-after < resolution-deadline. Record the deployed source/commit identity without exposing wallet secrets.
-2. Three accounts privately calculate independent salted commitments for 10000, 5000 and 0 basis points, each recording exactly 100 synthetic stake units.
-3. After commit closes, all reveal by reveal deadline. Demonstrate that changing a committed probability fails without affecting accounting.
-4. After resolve-after and through resolution-deadline, attempt resolution. Stop and record any unexpected live judgment; do not retry an accepted UNRESOLVABLE outcome. A fetch/consensus failure preserves state and permits retry within the window. After the final deadline, resolution must revert and anyone can expire the OPEN question, then settle for full refunds without fetching evidence.
-5. If YES finalizes, save get_decision/get_sources, including supporting quotation, original/kept counts, truncation status and digest. Settle: scores 100000000, 75000000, 0; pot 300; payouts **172, 128, 0**, with one dust unit assigned to the highest score. Stake and forecaster count are unchanged from the worked example.
-6. Each participant withdraws once. Verify stakes_in=300, paid_units=300, refunded_units=0, held_units=0 and conserved=true. In a terminal UNRESOLVABLE/expiry branch, verify three full 100-unit refunds instead. These are synthetic accounting effects, not asset transfers.
-
-## Evidence for a future authorized run
-
-Record and verify the direct GenLayer Explorer URL for the deployed contract address as a separate evidence entry on the correct network. Select **GenLayer Explorer Contract** when evidence types are supported. Transaction/source/repository links are additional evidence and do not replace the contract-address link. The scoring instance is [here](https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93); the expiry instance is [here](https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A). Both direct contract links were verified on StudioNet. This plan does not authorize deployment, submission or repository visibility changes.
+Record FINALIZED and leader SUCCESS/ERROR separately, read-backs, expected-failure labels, deployed source identity and the release manifest. Add each new contract's direct GenLayer Explorer address URL as its own evidence entry on the correct network, typed **GenLayer Explorer Contract**. Historical addresses remain historical evidence and must not be presented as deployments of this revision. This plan authorizes no push, deployment or submission.
