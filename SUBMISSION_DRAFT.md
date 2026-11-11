@@ -1,6 +1,6 @@
 # Submission draft
 
-Category: **Intelligent Contracts** (Builder, type 52). Contribution date: **2026-11-10** (work completion date; also the Portal's current UTC date maximum). Draft prepared on **2026-11-11 Africa/Lagos**. Status: Portal draft filled with four existing public evidence links; public repository creation and full-history push await explicit approval. **Not submitted**.
+Category: **Intelligent Contracts** (Builder, type 52). Contribution date: **2026-11-10** (work completion date; also the Portal's current UTC date maximum). Draft prepared on **2026-11-11 Africa/Lagos**. Status: public repository created and pushed with explicit approval; seven GitHub evidence links verified anonymously. **Held for design confirmation; not submitted**.
 
 ## Title
 
@@ -28,7 +28,7 @@ The first two entries are separate direct contract-address Explorer links on Stu
 
 ## Reviewer guide
 
-The deployed source is frozen at `6cc6b4f32b486dc41fb23d11b7b7b40e004af510`; live evidence is pinned to `317bc7ce8f58d429274f7949eb7133236d16fb48`. The source blob is identical in both deployed instances. The initial release manifest and its local-only repository status describe the live-run capture on November 10, before this separately authorized publication. Current publication access will be verified independently.
+The deployed source is frozen at `6cc6b4f32b486dc41fb23d11b7b7b40e004af510`; live evidence is pinned to `317bc7ce8f58d429274f7949eb7133236d16fb48`. The source blob is identical in both deployed instances. The initial release manifest and its local-only repository status describe the live-run capture on November 10, before this separately authorized publication. Current publication access passed anonymous verification; see verification/public-access-checks-2026-11-11.json.
 
 Start with LIVE_DEMO.md for the 24 classified transactions and final balances, DESIGN.md for the scoring/dust/refund rules and incentive caveat, TEST_MATRIX.md for the 85 mocked direct-mode cases, and DISTINCTIVENESS.md for the local comparator review. The distinction is the sealed-probability scoring/allocation mechanism, not web resolution or commit-reveal alone. No ecosystem-wide originality claim is made.
 
@@ -39,6 +39,6 @@ Start with LIVE_DEMO.md for the 24 classified transactions and final balances, D
 - Verify title, note, date and every evidence URL/type match verification/portal-fields.json.
 - Review the completed Portal draft. CAPTCHA and final submission are separate from this prepared draft; Portal submission has not occurred.
 
-## Current prepared Portal state
+## Current Portal state and review hold
 
-The title and 951-character note are filled and read back exactly. Both direct contract URLs are individually typed GenLayer Explorer Contract; the resolution and expiry transactions are typed Other. The seven GitHub source/documentation entries above remain planned and were not entered because the repository has not been created. The Portal tab is preserved for review; CAPTCHA and final submission were not performed. See verification/portal-draft-prepared-2026-11-11.json.
+The prior four-entry draft read-back is historical. That tab is no longer present and the open submission form is blank at contribution-type selection. The seven GitHub links above are public and verified, but have not been entered into a replacement form. CAPTCHA and final submission were not performed. Resolve the technical gaps in [the November 11 review](docs/SUBMISSION_REVIEW_2026-11-11.md) before preparing a replacement submission.

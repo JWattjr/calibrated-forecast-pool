@@ -1,5 +1,7 @@
 # Build and live verification report
 
+November 11 review: the existing deployed behavior and recorded 85-test result are unchanged. Submission is held pending design confirmation for complete stored-field comparison, fail-closed truncated evidence and per-source classification with code-derived outcomes. See [the review and proposed design](SUBMISSION_REVIEW_2026-11-11.md). The public repository and anonymous-access verification are now available; historical build/live records below describe their original capture.
+
 The separately authorized StudioNet demos passed: 24 finalized transactions, 20 successful executions and four expected rollbacks. Scoring paid 172/128/0; deadline expiry refunded both stakes. Both deployed source blobs and direct contract Explorer links were verified. Full live evidence is in docs/LIVE_DEMO.md and deployments/studionet-release-2026-11-10.json. The original local validation results and complete source follow.
 
 Project: `calibrated-forecast-pool`. Source SHA-256: `25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677`.

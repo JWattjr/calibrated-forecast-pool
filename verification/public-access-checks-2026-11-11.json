@@ -1,0 +1,60 @@
+{
+  "checked_at_utc": "2026-11-11T00:05:49.367678+00:00",
+  "repository_url": "https://github.com/JWattjr/calibrated-forecast-pool",
+  "repository_public": true,
+  "default_branch": "main",
+  "anonymous_checks": [
+    {
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool",
+      "http_status": 200,
+      "final_url": "https://github.com/JWattjr/calibrated-forecast-pool",
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/contracts/calibrated_forecast_pool.py",
+      "http_status": 200,
+      "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/contracts/calibrated_forecast_pool.py",
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/deployments/studionet-release-2026-11-10.json",
+      "http_status": 200,
+      "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/deployments/studionet-release-2026-11-10.json",
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/LIVE_DEMO.md",
+      "http_status": 200,
+      "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/LIVE_DEMO.md",
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/TEST_MATRIX.md",
+      "http_status": 200,
+      "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/TEST_MATRIX.md",
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/docs/DESIGN.md",
+      "http_status": 200,
+      "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/docs/DESIGN.md",
+      "anonymous": true
+    },
+    {
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/DISTINCTIVENESS.md",
+      "http_status": 200,
+      "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/DISTINCTIVENESS.md",
+      "anonymous": true
+    }
+  ],
+  "source_check": {
+    "url": "https://raw.githubusercontent.com/JWattjr/calibrated-forecast-pool/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/contracts/calibrated_forecast_pool.py",
+    "http_status": 200,
+    "anonymous": true,
+    "byte_count": 27237,
+    "sha256": "25194904bc324510dbae2614adc982cdbd56bb5af64fde0ec125d8ef3ad49677",
+    "matches_deployed_commit_blob": true
+  },
+  "portal_submitted": false,
+  "passed": true
+}

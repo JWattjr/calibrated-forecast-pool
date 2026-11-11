@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-11-11T13:38:02.231571+00:00",
+  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst",
+  "anonymous": true,
+  "http_status": 200,
+  "byte_count": 667,
+  "sha256": "8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+  "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+  "proposed_only_not_deployed": true
+}

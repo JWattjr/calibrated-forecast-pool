@@ -68,10 +68,14 @@
   "portal_submitted": false,
   "guidelines_url": "https://portal.genlayer.foundation/contribution-type/52",
   "publication_scope": "Public source/evidence repository and prepared Portal draft; final submission is pending review.",
-  "contribution_date_reason": "Build and both live demos completed on November 10. The Portal currently caps contribution dates at November 10 UTC; publication preparation is November 11 in Africa/Lagos.",
-  "portal_draft_prepared": true,
-  "publication_status": "PENDING_EXPLICIT_PUBLIC_DESTINATION_AND_PAYLOAD_APPROVAL",
-  "current_portal_evidence": [
+  "contribution_date_reason": "Build and both live demos completed on November 10; publication and guidance review occurred November 11 Africa/Lagos.",
+  "portal_draft_prepared": false,
+  "publication_status": "PUBLIC_ANONYMOUS_ACCESS_VERIFIED",
+  "current_portal_evidence": [],
+  "pending_publication_evidence": [],
+  "portal_state": "EARLIER_DRAFT_TAB_ABSENT_CURRENT_FORM_BLANK_AT_TYPE_SELECTION",
+  "submission_hold": "DESIGN_CONFIRMATION_REQUIRED_FOR_NOVEMBER_11_GUIDANCE",
+  "pending_portal_evidence": [
     {
       "label": "Scoring contract \u2014 StudioNet",
       "type": "GenLayer Explorer Contract",
@@ -82,18 +86,6 @@
       "type": "GenLayer Explorer Contract",
       "url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A"
     },
-    {
-      "label": "Finalized YES resolution",
-      "type": "Other",
-      "url": "https://explorer-studio.genlayer.com/tx/0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab"
-    },
-    {
-      "label": "Finalized deadline expiry",
-      "type": "Other",
-      "url": "https://explorer-studio.genlayer.com/tx/0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30"
-    }
-  ],
-  "pending_publication_evidence": [
     {
       "label": "Public repository",
       "type": "GitHub Repository",
@@ -128,6 +120,16 @@
       "label": "Local distinctiveness comparison",
       "type": "GitHub File",
       "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/DISTINCTIVENESS.md"
+    },
+    {
+      "label": "Finalized YES resolution",
+      "type": "Other",
+      "url": "https://explorer-studio.genlayer.com/tx/0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab"
+    },
+    {
+      "label": "Finalized deadline expiry",
+      "type": "Other",
+      "url": "https://explorer-studio.genlayer.com/tx/0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30"
     }
   ]
 }

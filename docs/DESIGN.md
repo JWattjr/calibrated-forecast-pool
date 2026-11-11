@@ -1,5 +1,7 @@
 # Design
 
+November 11 review: the existing deployed behavior and recorded 85-test result are unchanged. Submission is held pending design confirmation for complete stored-field comparison, fail-closed truncated evidence and per-source classification with code-derived outcomes. See [the review and proposed design](SUBMISSION_REVIEW_2026-11-11.md). The public repository and anonymous-access verification are now available; historical build/live records below describe their original capture.
+
 ## Boundary and frozen state
 
 One deployment is one question, matching the auction's one-deployment/one-auction layout. The deployment sender is the question owner. Constructor-only configuration freezes the ID, question, criterion, URLs, stake, and four deadlines. There are no update, owner-cancellation, privileged resolution, or third-party withdrawal methods. Anyone can expire an unresolved question after its frozen resolution deadline. The owner may forecast on the same terms as everyone else.

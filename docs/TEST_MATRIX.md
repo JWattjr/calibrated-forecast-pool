@@ -1,5 +1,7 @@
 # Test matrix
 
+November 11 review: the existing deployed behavior and recorded 85-test result are unchanged. Submission is held pending design confirmation for complete stored-field comparison, fail-closed truncated evidence and per-source classification with code-derived outcomes. See [the review and proposed design](SUBMISSION_REVIEW_2026-11-11.md). The public repository and anonymous-access verification are now available; historical build/live records below describe their original capture.
+
 Run lint first, then `python -B -m pytest -vv -p no:cacheprovider --tb=short` from the project root using the pinned portfolio direct-test environment. Saved exact commands/output: `verification/lint.txt`, `verification/tests.txt`, `verification/schema.txt`, `verification/checks.json`. JUnit evidence: `verification/tests.xml`.
 
 **85 parameter-expanded cases passed.** These are mocked direct-mode tests. Captured validator callbacks are explicitly invoked for honest/forged candidates; a thrown consensus disagreement is simulated. No real network consensus or deployment is established.
