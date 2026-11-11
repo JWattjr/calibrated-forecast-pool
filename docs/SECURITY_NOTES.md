@@ -19,4 +19,4 @@
 - Pool-normalized scores do not establish truthful-reporting incentives. Equal stakes and one commitment per address do not prevent Sybil participation or collusion.
 - Historical source `6cc6b4f` has two StudioNet demo instances, including one successful real-source consensus judgment and deterministic expiry refunds. Native/token wallet integration, adversarial live consensus testing, formal verification and production security audit remain unverified.
 
-The current local classification revision has not been pushed or deployed. Historical live receipts establish only the prior source, not this revision.
+The classification revision was pushed before fresh deployment; LIVE_RELEASE_2026-11-11.md records its observed results. Historical November 10 receipts establish only the prior source, not this revision. The new live run does not establish adversarial consensus robustness.

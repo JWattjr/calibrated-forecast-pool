@@ -1,6 +1,6 @@
 # New local revision: complete-source demo plan
 
-Status: **planned, not deployed or run live**. The November 10 demos in LIVE_DEMO.md and the release manifest prove the historical source at `6cc6b4f`, which allowed positive resolution from a truncated prefix. They do not prove this revised source. Stop after local lint and the full test suite for user review; do not push, deploy or touch the Portal.
+Status: **executed successfully under explicit release authorization on November 11**. Source commit 32bcc75839a09de2dfb55bda4a52f61c3adbe395 was pushed before the fresh deployment; see LIVE_RELEASE_2026-11-11.md and deployments/studionet-release-2026-11-11.json. The original staged plan below is historical. The November 10 demos in LIVE_DEMO.md and the release manifest prove the historical source at `6cc6b4f`, which allowed positive resolution from a truncated prefix. They do not prove this revised source. The user subsequently reviewed local results and explicitly authorized the release and one scoring demonstration. No fresh expiry instance was requested for this release. The Portal was not used.
 
 ## Question, classification and supporting evidence
 
@@ -27,7 +27,7 @@ The source's module heading identifies distutils. Its wording differs from the q
 
 1. After user review of local gates and separate live authorization, push the exact source commit first, then deploy with this question, criterion, URL, stake 100 and strictly ordered future deadlines. Preserve the existing pinned runner and StudioNet client environment. Compare deployed bytes against that pushed commit's Git blob.
 2. Three forecasters seal probabilities 10000, 5000 and 0 with separate private random salts, each recording 100 synthetic units. After commit closes, all reveal. Record a deliberately forged reveal as an expected failure and verify unchanged state.
-3. Anyone resolves during the resolution window. Expected source label is HOLDS and code-derived outcome YES; stop on an unexpected judgment. Save sources, classifications, canonical quotes, counts and digests. A fetch/consensus failure preserves state for retry within the deadline; never blindly retry an accepted result.
+3. Anyone resolves during the resolution window. Expected source label is HOLDS and code-derived outcome YES; stop on an unexpected judgment. Save sources, classifications, canonical quotes, counts and digests. For this authorized release, any consensus failure or UNRESOLVABLE result requires stopping without retry or redesign. A reverted call preserves state, but this run does not retry resolution.
 4. Deterministic settlement uses scores 100000000, 75000000 and 0, pot 300 and one unit of dust. Payouts remain **172/128/0**. Withdraw each entitlement once, including zero; record duplicate withdrawal as an expected failure. Final accounting: stakes=300, paid=300, refunded=0, held=0.
 5. A fresh expiry instance must prove early-expiry rejection, late-resolution rejection, then permissionless expiry and full refunds for revealed and unrevealed stakes. Truncated evidence is separately covered by local regression tests and cannot resolve this revision to YES or NO.
 

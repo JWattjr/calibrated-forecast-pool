@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-11-11T14:04:17.798Z",
+  "url": "https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+  "contract_address": "0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+  "deployment_transaction": "0x0c7dcdea2fd9dbe3acfa398c0105be74bd4c968b57c2f9faf3d2f53da1bd432c",
+  "network": "GenLayer StudioNet",
+  "chain_id": 61999,
+  "verified_correct_contract": true,
+  "observed_deployment_finality": "FINALIZED",
+  "observed_deployment_execution": "SUCCESS",
+  "method": "Rendered Chrome Explorer contract page; full address and matching deployment link verified",
+  "screenshot_path": "verification/explorer-contract-2026-11-11.png",
+  "screenshot_sha256": "1d2dcb8111f6cf4ce2c0d57275db6d51ec66a849c6869819b3b18e36679e3d9d"
+}

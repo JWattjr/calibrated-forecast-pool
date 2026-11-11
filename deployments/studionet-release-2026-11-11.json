@@ -1,0 +1,1829 @@
+{
+  "schema_version": "2.0",
+  "status": "RELEASE_VERIFIED",
+  "run_id": "20261111T140145",
+  "started_at_utc": "2026-11-11T14:01:45.641452+00:00",
+  "project": {
+    "name": "calibrated-forecast-pool",
+    "source_commit": "32bcc75839a09de2dfb55bda4a52f61c3adbe395",
+    "source_git_blob": "83f82f4a0ee7eea4a14c09ba78abc0191cc5700f",
+    "source_sha256": "686e0530f616fee0794686f14c16ccafc0d73dfa22aa2915dc17aacfc128ca9a",
+    "source_bytes": 29535,
+    "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6"
+  },
+  "network": {
+    "name": "GenLayer StudioNet",
+    "chain_id": 61999,
+    "rpc": "https://studio.genlayer.com/api",
+    "explorer": "https://explorer-studio.genlayer.com"
+  },
+  "runtime": {
+    "executable": "C:\\Python314\\python.exe",
+    "genlayer-py": "0.18.0",
+    "driver_sha256": "757b0b3045fbb9479f6c89fc15e9f7fdd2d5b2550be9d0f06ebae4a39742e57d",
+    "helper_sha256": "079fca2d88887b4b2da5417ff0beb4a5b80386d6652595465968c173c47380ae"
+  },
+  "participants": {
+    "owner": "0xcdB6eEdad2e55f64870DF2C85D3290bF5De4Adce",
+    "alice": "0x6630935AA84d14D5B68f59591Eb7AF60F8792cA6",
+    "bob": "0xEE09d8E2B9b94B0cEDed72dD41b629292f6A2685",
+    "charlie": "0x7ba1Bf94625AaDC061005426bDA86fb4fc500365",
+    "trigger": "0x0eB61a01A6Cb457faEca752F150C874a4bE3EE5A"
+  },
+  "publication": {
+    "public_repository": "https://github.com/JWattjr/calibrated-forecast-pool",
+    "remote_head_before_deployment": "32bcc75839a09de2dfb55bda4a52f61c3adbe395",
+    "anonymous_source_http_status": 200,
+    "anonymous_source_matches_commit": true,
+    "verified_at_utc": "2026-11-11T14:01:45.723454+00:00"
+  },
+  "repository_pushed": true,
+  "portal_used": false,
+  "instances": {
+    "score": {
+      "constructor": {
+        "question_id": "cfp-20261111T140145-score",
+        "question": "Did CPython 3.12 stop including distutils in its standard library?",
+        "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+        "source_urls_json": "[\"https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst\"]",
+        "stake_units": 100,
+        "commit_deadline_iso": "2026-11-11T14:08:47Z",
+        "reveal_deadline_iso": "2026-11-11T14:13:47Z",
+        "resolve_after_iso": "2026-11-11T14:14:47Z",
+        "resolution_deadline_iso": "2026-11-11T14:41:47Z"
+      },
+      "deadlines_epoch": {
+        "commit": 1794406127,
+        "reveal": 1794406427,
+        "resolve_after": 1794406487,
+        "resolution": 1794408107
+      },
+      "committed_roles": [
+        "alice",
+        "bob",
+        "charlie"
+      ],
+      "readbacks": {
+        "after_deployment": {
+          "checked_at_utc": "2026-11-11T14:02:43.873931+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 0,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 0
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {}
+        },
+        "after_commit_alice": {
+          "checked_at_utc": "2026-11-11T14:03:52.314106+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 1,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 100,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 100
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_commit_bob": {
+          "checked_at_utc": "2026-11-11T14:04:55.150810+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 2,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 200,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 200
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_commit_charlie": {
+          "checked_at_utc": "2026-11-11T14:06:02.168255+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "before_forged_reveal": {
+          "checked_at_utc": "2026-11-11T14:09:13.995480+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_forged_reveal": {
+          "checked_at_utc": "2026-11-11T14:10:21.855896+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {},
+          "get_sources": {
+            "sources": []
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "status": "COMMITTED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "status": "COMMITTED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_reveal_alice": {
+          "checked_at_utc": "2026-11-11T14:11:12.949164+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "view_scope": "question and accounting; one forecast when specified",
+          "forecast": {
+            "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+            "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+            "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+            "probability_bps": 10000,
+            "question_id": "cfp-20261111T140145-score",
+            "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+            "status": "REVEALED",
+            "withdrawn": false
+          }
+        },
+        "after_reveal_bob": {
+          "checked_at_utc": "2026-11-11T14:12:04.795686+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "view_scope": "question and accounting; one forecast when specified",
+          "forecast": {
+            "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+            "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+            "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+            "probability_bps": 5000,
+            "question_id": "cfp-20261111T140145-score",
+            "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+            "status": "REVEALED",
+            "withdrawn": false
+          }
+        },
+        "after_reveal_charlie": {
+          "checked_at_utc": "2026-11-11T14:12:57.551923+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "OPEN"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "view_scope": "question and accounting; one forecast when specified",
+          "forecast": {
+            "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+            "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+            "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+            "probability_bps": 0,
+            "question_id": "cfp-20261111T140145-score",
+            "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+            "status": "REVEALED",
+            "withdrawn": false
+          }
+        },
+        "after_resolution": {
+          "checked_at_utc": "2026-11-11T14:16:05.178441+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "RESOLVED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:6f979fa6c802a6ed128dfbf4c88ba45d79c354debe7a885f6a6285023116c3d1",
+            "input_snapshot_digest": "sha256:c0a749086c0714b37047d0872606d8e5cadf4da3877690ed92b321c2bf1ecc71",
+            "resolution": {
+              "classifications": [
+                {
+                  "label": "HOLDS",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ],
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after being deprecated in Python 3.10.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:021e7eb9cdd5e0b1c671d455d9a51799d9914bede40015ee097ee4d956f3d13c",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_settlement": {},
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "probability_bps": 10000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "probability_bps": 5000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "probability_bps": 0,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_settlement": {
+          "checked_at_utc": "2026-11-11T14:17:22.421781+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 300,
+            "paid_units": 0,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:6f979fa6c802a6ed128dfbf4c88ba45d79c354debe7a885f6a6285023116c3d1",
+            "input_snapshot_digest": "sha256:c0a749086c0714b37047d0872606d8e5cadf4da3877690ed92b321c2bf1ecc71",
+            "resolution": {
+              "classifications": [
+                {
+                  "label": "HOLDS",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ],
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after being deprecated in Python 3.10.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:021e7eb9cdd5e0b1c671d455d9a51799d9914bede40015ee097ee4d956f3d13c",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x6630935aa84d14d5b68f59591eb7af60f8792ca6": 172,
+              "0x7ba1bf94625aadc061005426bda86fb4fc500365": 0,
+              "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685": 128
+            },
+            "dust_recipient": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_withdraw_alice": {
+          "checked_at_utc": "2026-11-11T14:18:31.307929+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 128,
+            "paid_units": 172,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:6f979fa6c802a6ed128dfbf4c88ba45d79c354debe7a885f6a6285023116c3d1",
+            "input_snapshot_digest": "sha256:c0a749086c0714b37047d0872606d8e5cadf4da3877690ed92b321c2bf1ecc71",
+            "resolution": {
+              "classifications": [
+                {
+                  "label": "HOLDS",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ],
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after being deprecated in Python 3.10.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:021e7eb9cdd5e0b1c671d455d9a51799d9914bede40015ee097ee4d956f3d13c",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x6630935aa84d14d5b68f59591eb7af60f8792ca6": 172,
+              "0x7ba1bf94625aadc061005426bda86fb4fc500365": 0,
+              "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685": 128
+            },
+            "dust_recipient": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": false
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_withdraw_bob": {
+          "checked_at_utc": "2026-11-11T14:19:41.033052+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 300,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:6f979fa6c802a6ed128dfbf4c88ba45d79c354debe7a885f6a6285023116c3d1",
+            "input_snapshot_digest": "sha256:c0a749086c0714b37047d0872606d8e5cadf4da3877690ed92b321c2bf1ecc71",
+            "resolution": {
+              "classifications": [
+                {
+                  "label": "HOLDS",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ],
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after being deprecated in Python 3.10.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:021e7eb9cdd5e0b1c671d455d9a51799d9914bede40015ee097ee4d956f3d13c",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x6630935aa84d14d5b68f59591eb7af60f8792ca6": 172,
+              "0x7ba1bf94625aadc061005426bda86fb4fc500365": 0,
+              "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685": 128
+            },
+            "dust_recipient": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": false
+            }
+          }
+        },
+        "after_withdraw_charlie": {
+          "checked_at_utc": "2026-11-11T14:20:48.839969+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 300,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:6f979fa6c802a6ed128dfbf4c88ba45d79c354debe7a885f6a6285023116c3d1",
+            "input_snapshot_digest": "sha256:c0a749086c0714b37047d0872606d8e5cadf4da3877690ed92b321c2bf1ecc71",
+            "resolution": {
+              "classifications": [
+                {
+                  "label": "HOLDS",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ],
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after being deprecated in Python 3.10.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:021e7eb9cdd5e0b1c671d455d9a51799d9914bede40015ee097ee4d956f3d13c",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x6630935aa84d14d5b68f59591eb7af60f8792ca6": 172,
+              "0x7ba1bf94625aadc061005426bda86fb4fc500365": 0,
+              "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685": 128
+            },
+            "dust_recipient": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": true
+            }
+          }
+        },
+        "before_duplicate_withdraw": {
+          "checked_at_utc": "2026-11-11T14:21:16.101544+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 300,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:6f979fa6c802a6ed128dfbf4c88ba45d79c354debe7a885f6a6285023116c3d1",
+            "input_snapshot_digest": "sha256:c0a749086c0714b37047d0872606d8e5cadf4da3877690ed92b321c2bf1ecc71",
+            "resolution": {
+              "classifications": [
+                {
+                  "label": "HOLDS",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ],
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after being deprecated in Python 3.10.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:021e7eb9cdd5e0b1c671d455d9a51799d9914bede40015ee097ee4d956f3d13c",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x6630935aa84d14d5b68f59591eb7af60f8792ca6": 172,
+              "0x7ba1bf94625aadc061005426bda86fb4fc500365": 0,
+              "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685": 128
+            },
+            "dust_recipient": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": true
+            }
+          }
+        },
+        "final": {
+          "checked_at_utc": "2026-11-11T14:22:33.577647+00:00",
+          "get_question": {
+            "commit_deadline": "2026-11-11T14:08:47Z",
+            "criterion": "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+            "forecaster_count": 3,
+            "owner": "0xcdb6eedad2e55f64870df2c85d3290bf5de4adce",
+            "question": "Did CPython 3.12 stop including distutils in its standard library?",
+            "question_id": "cfp-20261111T140145-score",
+            "resolution_deadline": "2026-11-11T14:41:47Z",
+            "resolve_after": "2026-11-11T14:14:47Z",
+            "reveal_deadline": "2026-11-11T14:13:47Z",
+            "source_urls": [
+              "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+            ],
+            "stake_units": 100,
+            "status": "SETTLED"
+          },
+          "get_accounting": {
+            "conserved": true,
+            "held_units": 0,
+            "paid_units": 300,
+            "refunded_units": 0,
+            "stakes_in": 300
+          },
+          "get_decision": {
+            "evidence_digest": "sha256:6f979fa6c802a6ed128dfbf4c88ba45d79c354debe7a885f6a6285023116c3d1",
+            "input_snapshot_digest": "sha256:c0a749086c0714b37047d0872606d8e5cadf4da3877690ed92b321c2bf1ecc71",
+            "resolution": {
+              "classifications": [
+                {
+                  "label": "HOLDS",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ],
+              "outcome": "YES",
+              "quotes": [
+                {
+                  "line": "It was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after being deprecated in Python 3.10.",
+                  "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+                }
+              ]
+            },
+            "snapshot_digest": "sha256:021e7eb9cdd5e0b1c671d455d9a51799d9914bede40015ee097ee4d956f3d13c",
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_sources": {
+            "sources": [
+              {
+                "available": true,
+                "byte_count": 667,
+                "content_digest": "sha256:8c44b643a8a70ff7bd1c479b5b0b53088ece62f0c73e02bd6668af118a156076",
+                "kept_byte_count": 667,
+                "status": "fetched",
+                "text": ":mod:`!distutils` --- Building and installing Python modules\n============================================================\n\n.. module:: distutils\n   :synopsis: Removed in 3.12.\n   :deprecated:\n\n.. deprecated-removed:: 3.10 3.12\n\nThis module is no longer part of the Python standard library.\nIt was :ref:`removed in Python 3.12 <whatsnew312-removed-distutils>` after\nbeing deprecated in Python 3.10.  The removal was decided in :pep:`632`,\nwhich has `migration advice\n<https://peps.python.org/pep-0632/#migration-advice>`_.\n\nThe last version of Python that provided the :mod:`!distutils` module was\n`Python 3.11 <https://docs.python.org/3.11/library/distutils.html>`_.\n",
+                "url": "https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst"
+              }
+            ]
+          },
+          "get_settlement": {
+            "allocations": {
+              "0x6630935aa84d14d5b68f59591eb7af60f8792ca6": 172,
+              "0x7ba1bf94625aadc061005426bda86fb4fc500365": 0,
+              "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685": 128
+            },
+            "dust_recipient": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+            "dust_units": 1,
+            "outcome": "YES",
+            "pot_units": 300,
+            "refund": false,
+            "score_sum": 175000000
+          },
+          "forecasts": {
+            "alice": {
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x6630935aa84d14d5b68f59591eb7af60f8792ca6",
+              "payment_kind": "PAYOUT",
+              "payout_units": 172,
+              "probability_bps": 10000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7",
+              "score": 100000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "bob": {
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0xee09d8e2b9b94b0ceded72dd41b629292f6a2685",
+              "payment_kind": "PAYOUT",
+              "payout_units": 128,
+              "probability_bps": 5000,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9",
+              "score": 75000000,
+              "status": "REVEALED",
+              "withdrawn": true
+            },
+            "charlie": {
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "contract_address": "0x4e510d9f62d2632892bb84a52557b4573a94a2d6",
+              "forecaster": "0x7ba1bf94625aadc061005426bda86fb4fc500365",
+              "payment_kind": "PAYOUT",
+              "payout_units": 0,
+              "probability_bps": 0,
+              "question_id": "cfp-20261111T140145-score",
+              "salt": "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e",
+              "score": 0,
+              "status": "REVEALED",
+              "withdrawn": true
+            }
+          },
+          "get_commitment_hash": {
+            "alice": {
+              "caller": "0x6630935AA84d14D5B68f59591Eb7AF60F8792cA6",
+              "commitment_hash": "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+              "matches_recorded_commitment": true
+            },
+            "bob": {
+              "caller": "0xEE09d8E2B9b94B0cEDed72dD41b629292f6A2685",
+              "commitment_hash": "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+              "matches_recorded_commitment": true
+            },
+            "charlie": {
+              "caller": "0x7ba1Bf94625AaDC061005426bDA86fb4fc500365",
+              "commitment_hash": "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+              "matches_recorded_commitment": true
+            }
+          }
+        }
+      },
+      "address": "0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+      "explorer_contract_url": "https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+      "evidence_type": "GenLayer Explorer Contract",
+      "deployed_source_matches_commit": true,
+      "deployed_source_sha256": "686e0530f616fee0794686f14c16ccafc0d73dfa22aa2915dc17aacfc128ca9a",
+      "deployed_source_git_blob": "83f82f4a0ee7eea4a14c09ba78abc0191cc5700f",
+      "final_views_exercised": [
+        "get_question",
+        "get_accounting",
+        "get_decision",
+        "get_sources",
+        "get_settlement",
+        "get_forecast",
+        "get_commitment_hash"
+      ],
+      "complete": true
+    }
+  },
+  "transactions": [
+    {
+      "operation": "score_deploy",
+      "scenario": "score",
+      "method": "constructor",
+      "args": [
+        "cfp-20261111T140145-score",
+        "Did CPython 3.12 stop including distutils in its standard library?",
+        "HOLDS if this source explicitly establishes that distutils was removed from the Python standard library in Python 3.12. CONTRADICTED if it explicitly establishes that distutils remained included in that release. Otherwise UNCLEAR. Interpret equivalent wording; use no unstated facts or outside knowledge.",
+        "[\"https://raw.githubusercontent.com/python/cpython/0ada998ebbf392238719358432cd723a622fcd5e/Doc/library/distutils.rst\"]",
+        100,
+        "2026-11-11T14:08:47Z",
+        "2026-11-11T14:13:47Z",
+        "2026-11-11T14:14:47Z",
+        "2026-11-11T14:41:47Z"
+      ],
+      "actor": "0xcdB6eEdad2e55f64870DF2C85D3290bF5De4Adce",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:01:46.280254+00:00",
+      "hash": "0x0c7dcdea2fd9dbe3acfa398c0105be74bd4c968b57c2f9faf3d2f53da1bd432c",
+      "submitted_at_utc": "2026-11-11T14:01:52.587041+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0c7dcdea2fd9dbe3acfa398c0105be74bd4c968b57c2f9faf3d2f53da1bd432c",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:02:01.771142+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 5
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:02:28.204350+00:00",
+      "contract_address": "0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+      "receipt_path": "studionet-receipts-2026-11-11/score_deploy.json",
+      "receipt_sha256": "97db5e6b71dd8cf2c5e4e7df034129509b58d72d4e157e904cf1472e5427b6c3"
+    },
+    {
+      "operation": "score_commit_alice",
+      "scenario": "score",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:b694f77a08bf291bcdb8c5c826a7b0cc5aa2444b209f9eede76909943df7da56",
+        100
+      ],
+      "actor": "0x6630935AA84d14D5B68f59591Eb7AF60F8792cA6",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:02:43.876392+00:00",
+      "hash": "0xe7fce14553202fb40dac4fe6c647a33934f0c51e5771f726e4246e47234b92e8",
+      "submitted_at_utc": "2026-11-11T14:02:50.006060+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xe7fce14553202fb40dac4fe6c647a33934f0c51e5771f726e4246e47234b92e8",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:02:58.887337+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:03:33.627606+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_commit_alice.json",
+      "receipt_sha256": "2e9a87357de746b45badc5a4fd422d198765eba310d6cc5a2baa8e5dd69add48"
+    },
+    {
+      "operation": "score_commit_bob",
+      "scenario": "score",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:03f24443afd9e97e8fcccd7a5c2d1c3e07834bc796b52e80bd6786e596cdd908",
+        100
+      ],
+      "actor": "0xEE09d8E2B9b94B0cEDed72dD41b629292f6A2685",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:03:52.316035+00:00",
+      "hash": "0x3edbc6d36ee7e98f8efca1af1c3f41879ef12923f4c962ad7aaf61c4e7920688",
+      "submitted_at_utc": "2026-11-11T14:03:57.102868+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x3edbc6d36ee7e98f8efca1af1c3f41879ef12923f4c962ad7aaf61c4e7920688",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:04:06.603679+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:04:33.503496+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_commit_bob.json",
+      "receipt_sha256": "91f8c69be005c04c333bb3261a047bb1c1d94b4085848b78e03cd028db8b7551"
+    },
+    {
+      "operation": "score_commit_charlie",
+      "scenario": "score",
+      "method": "commit_forecast",
+      "args": [
+        "sha256:be9e8e52f6dd87b8a1c8c50de286f4cc547c643d81d887b7a55271aa423cec87",
+        100
+      ],
+      "actor": "0x7ba1Bf94625AaDC061005426bDA86fb4fc500365",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:04:55.152864+00:00",
+      "hash": "0x5d77d7d6b4f99d4ccfb110f31617e6474833ca34b3ab237e97e0fc9d372af0e9",
+      "submitted_at_utc": "2026-11-11T14:05:00.873520+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5d77d7d6b4f99d4ccfb110f31617e6474833ca34b3ab237e97e0fc9d372af0e9",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:05:10.078144+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 5
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:05:36.980567+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_commit_charlie.json",
+      "receipt_sha256": "c82bc76954c5e0bb0797680f8218017c44b03ec10dfad2d6a93efcd825b3725f"
+    },
+    {
+      "operation": "score_forged_reveal",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        9999,
+        "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7"
+      ],
+      "actor": "0x6630935AA84d14D5B68f59591Eb7AF60F8792cA6",
+      "expected_error": "reveal does not match",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:09:13.998250+00:00",
+      "hash": "0x73012d2812688f2d9871da0df0899434f64d3b05c182097bd2dd3ec27369802f",
+      "submitted_at_utc": "2026-11-11T14:09:20.303832+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x73012d2812688f2d9871da0df0899434f64d3b05c182097bd2dd3ec27369802f",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:09:30.028055+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "ERROR",
+      "leader_result_code": "rollback",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:09:56.870463+00:00",
+      "expected_error_found": true,
+      "receipt_path": "studionet-receipts-2026-11-11/score_forged_reveal.json",
+      "receipt_sha256": "70e715a2f472523f5fdd18e4f3768f41f774078ebf00b3e7964cdf2ecc391e68"
+    },
+    {
+      "operation": "score_reveal_alice",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        10000,
+        "6bd2d080a1316e9415d428d810956ece2697e4d55d72a3b19bbe42f6b6c4cbd7"
+      ],
+      "actor": "0x6630935AA84d14D5B68f59591Eb7AF60F8792cA6",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:10:21.859119+00:00",
+      "hash": "0x5b0ce9d6ebd05af816b63f49cf803b0cdf4d401fb8861a51e314db8f9f9a03e5",
+      "submitted_at_utc": "2026-11-11T14:10:27.637281+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5b0ce9d6ebd05af816b63f49cf803b0cdf4d401fb8861a51e314db8f9f9a03e5",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:10:37.208164+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:11:03.515052+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_reveal_alice.json",
+      "receipt_sha256": "0ec5d4038373b0cd55cdee5d54acf561bb6c002374131a0485419e99cfac9296"
+    },
+    {
+      "operation": "score_reveal_bob",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        5000,
+        "66bf88722998b48cad31d67abf5e3d7fa775351408353d870faf0652f0ea6ba9"
+      ],
+      "actor": "0xEE09d8E2B9b94B0cEDed72dD41b629292f6A2685",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:11:12.951528+00:00",
+      "hash": "0x9bce962008aa201fe3c752070732b4ba1e74c204d450eca9efa031e5bb5bd923",
+      "submitted_at_utc": "2026-11-11T14:11:18.422303+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9bce962008aa201fe3c752070732b4ba1e74c204d450eca9efa031e5bb5bd923",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:11:27.516719+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:11:54.969275+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_reveal_bob.json",
+      "receipt_sha256": "d618c97a39a7325355929319ed9fc83c7de26c451bffb942b66cd91d76ba2d68"
+    },
+    {
+      "operation": "score_reveal_charlie",
+      "scenario": "score",
+      "method": "reveal_forecast",
+      "args": [
+        0,
+        "2af615fc4a149e5af1674097032a63f0f3d427ce04cedef46dac9add813ca26e"
+      ],
+      "actor": "0x7ba1Bf94625AaDC061005426bDA86fb4fc500365",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:12:04.798310+00:00",
+      "hash": "0x2e9f2fdf1443f063484d9a6604e482779271f4963985cef0d0bc66f1f20715df",
+      "submitted_at_utc": "2026-11-11T14:12:10.954878+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x2e9f2fdf1443f063484d9a6604e482779271f4963985cef0d0bc66f1f20715df",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:12:19.952025+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:12:47.933908+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_reveal_charlie.json",
+      "receipt_sha256": "e86e56b4a125f8808a39c3bdfec48a812cfe448c1d9cef9bfb300c05abaaf256"
+    },
+    {
+      "operation": "score_resolve",
+      "scenario": "score",
+      "method": "resolve_question",
+      "args": [],
+      "actor": "0x0eB61a01A6Cb457faEca752F150C874a4bE3EE5A",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:14:47.923996+00:00",
+      "hash": "0x22d0aac3aa594bba53de420fa9f6b17b050b0f76ee5ecb549627d29b485c4411",
+      "submitted_at_utc": "2026-11-11T14:14:54.405522+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x22d0aac3aa594bba53de420fa9f6b17b050b0f76ee5ecb549627d29b485c4411",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:15:11.787983+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:15:39.400801+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_resolve.json",
+      "receipt_sha256": "29e1732d54f044b59858a6d566b65e3240958983027f390fe9f881b4727f316b"
+    },
+    {
+      "operation": "score_settle",
+      "scenario": "score",
+      "method": "settle",
+      "args": [],
+      "actor": "0x0eB61a01A6Cb457faEca752F150C874a4bE3EE5A",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:16:05.181108+00:00",
+      "hash": "0x631d8c0cf86d2ebff72f152283e54e27556ac52f59a2d4b31be8caea6f6dce54",
+      "submitted_at_utc": "2026-11-11T14:16:11.445684+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x631d8c0cf86d2ebff72f152283e54e27556ac52f59a2d4b31be8caea6f6dce54",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:16:21.119034+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 5
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:16:56.409078+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_settle.json",
+      "receipt_sha256": "558a33b8c867c7b38a01a8c5b026bcfc874d4a1b67d41e85c2839bfd5c4da2ca"
+    },
+    {
+      "operation": "score_withdraw_alice",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0x6630935AA84d14D5B68f59591Eb7AF60F8792cA6",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:17:22.424506+00:00",
+      "hash": "0xc4646f4b71d9edf8c0181a0c3d0cd956a52a0d03a3ccb5fbf0c952a37e18d185",
+      "submitted_at_utc": "2026-11-11T14:17:28.154120+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xc4646f4b71d9edf8c0181a0c3d0cd956a52a0d03a3ccb5fbf0c952a37e18d185",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:17:37.746242+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:18:04.916962+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_withdraw_alice.json",
+      "receipt_sha256": "f1b255908a0e69f07b908be3c887792cc4f32a16c1404975eb7bbd1d8eb0505f"
+    },
+    {
+      "operation": "score_withdraw_bob",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0xEE09d8E2B9b94B0cEDed72dD41b629292f6A2685",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:18:31.310509+00:00",
+      "hash": "0xaef089ce6a05ab5bea2aca5038cc4b30135f4958c6b130d91a276adaba2a0647",
+      "submitted_at_utc": "2026-11-11T14:18:37.140341+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xaef089ce6a05ab5bea2aca5038cc4b30135f4958c6b130d91a276adaba2a0647",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:18:47.078322+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 4,
+        "IDLE": 1
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:19:14.783764+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_withdraw_bob.json",
+      "receipt_sha256": "ca49d3eeaf8c66d27eed49af55ba94d5f0561ce0535e0d8a010c8c88f49fd508"
+    },
+    {
+      "operation": "score_withdraw_charlie",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0x7ba1Bf94625AaDC061005426bDA86fb4fc500365",
+      "expected_error": null,
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:19:41.036196+00:00",
+      "hash": "0xe7092f64bbd5946044d5085a61b9ea906698f83deba0857cd21d29ec2bf3f38e",
+      "submitted_at_utc": "2026-11-11T14:19:46.862619+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xe7092f64bbd5946044d5085a61b9ea906698f83deba0857cd21d29ec2bf3f38e",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:19:56.077339+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "leader_result_code": "return",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:20:23.214944+00:00",
+      "receipt_path": "studionet-receipts-2026-11-11/score_withdraw_charlie.json",
+      "receipt_sha256": "39aae569cb316be3326dda04c87530f10a4f4cb13778b237e437cbddef79948b"
+    },
+    {
+      "operation": "score_duplicate_withdraw",
+      "scenario": "score",
+      "method": "withdraw",
+      "args": [],
+      "actor": "0x6630935AA84d14D5B68f59591Eb7AF60F8792cA6",
+      "expected_error": "already been withdrawn",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-11T14:21:16.104797+00:00",
+      "hash": "0xfb114a15398b46b8dae4fc2c22dfc30f0a21e0918b545b2b68f8c12778be92fd",
+      "submitted_at_utc": "2026-11-11T14:21:22.663366+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xfb114a15398b46b8dae4fc2c22dfc30f0a21e0918b545b2b68f8c12778be92fd",
+      "acceptance_poll_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-11T14:21:32.522244+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "ERROR",
+      "leader_result_code": "rollback",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "vote_types": {
+        "AGREE": 3,
+        "IDLE": 2
+      },
+      "finalized_observed_at_utc": "2026-11-11T14:22:07.436465+00:00",
+      "expected_error_found": true,
+      "receipt_path": "studionet-receipts-2026-11-11/score_duplicate_withdraw.json",
+      "receipt_sha256": "f439b5fc1ad7a9688563ad8f465791d7fb83da903f98f8d4f39771c9fedb3f1d"
+    }
+  ],
+  "accounting_notice": "Synthetic units only; no native/token custody, funding, balance debit or transfer.",
+  "historical_deployments": [
+    {
+      "address": "0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93",
+      "source_commit": "6cc6b4f32b486dc41fb23d11b7b7b40e004af510",
+      "evidence_status": "HISTORICAL_PREVIOUS_SOURCE_ONLY"
+    },
+    {
+      "address": "0xE908f2670Ee24C13346cf2e754001Ad20F2f825A",
+      "source_commit": "6cc6b4f32b486dc41fb23d11b7b7b40e004af510",
+      "evidence_status": "HISTORICAL_PREVIOUS_SOURCE_ONLY"
+    }
+  ],
+  "completed_at_utc": "2026-11-11T14:22:45.720986+00:00",
+  "evidence_recorded_at_utc": "2026-11-11T14:23:22.536839+00:00",
+  "verification": {
+    "all_transactions_finalized": true,
+    "leader_success_count": 12,
+    "expected_rollback_count": 2,
+    "deployed_source_matches_pushed_commit": true,
+    "all_seven_view_methods_read_at_end": true,
+    "final_accounting_conserved": true,
+    "explorer_contract_check": {
+      "checked_at_utc": "2026-11-11T14:04:17.798Z",
+      "url": "https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+      "contract_address": "0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+      "deployment_transaction": "0x0c7dcdea2fd9dbe3acfa398c0105be74bd4c968b57c2f9faf3d2f53da1bd432c",
+      "network": "GenLayer StudioNet",
+      "chain_id": 61999,
+      "verified_correct_contract": true,
+      "observed_deployment_finality": "FINALIZED",
+      "observed_deployment_execution": "SUCCESS",
+      "method": "Rendered Chrome Explorer contract page; full address and matching deployment link verified",
+      "screenshot_path": "verification/explorer-contract-2026-11-11.png",
+      "screenshot_sha256": "1d2dcb8111f6cf4ce2c0d57275db6d51ec66a849c6869819b3b18e36679e3d9d"
+    },
+    "portal_used": false,
+    "test_count": 112,
+    "lint_passed": true
+  },
+  "submission_evidence_links": [
+    {
+      "label": "Current scoring contract \u2014 StudioNet",
+      "evidence_type": "GenLayer Explorer Contract",
+      "url": "https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+      "chain_id": 61999,
+      "network": "GenLayer StudioNet",
+      "verified_opens_correct_contract": true
+    },
+    {
+      "label": "Public repository",
+      "evidence_type": "GitHub Repository",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool"
+    },
+    {
+      "label": "Exact deployed source",
+      "evidence_type": "GitHub File",
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/32bcc75839a09de2dfb55bda4a52f61c3adbe395/contracts/calibrated_forecast_pool.py"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-# Local revision build report
+# Build and fresh StudioNet release report
 
-Local gate: **PASS**. Source SHA-256: `686e0530f616fee0794686f14c16ccafc0d73dfa22aa2915dc17aacfc128ca9a`. GenVM lint ran first: three checks and SDK validation passed (13 public methods: seven views, six writes; nine constructor parameters). Full test suite ran second: **112 passed**. ABI extraction also passed. The runner and dependency versions remain unchanged. I200 is an informational newer-runner notice, not a lint failure.
+Local gate: **PASS**. Fresh StudioNet demo: **PASS**. Source SHA-256: `686e0530f616fee0794686f14c16ccafc0d73dfa22aa2915dc17aacfc128ca9a`. GenVM lint ran first: three checks and SDK validation passed (13 public methods: seven views, six writes; nine constructor parameters). Full test suite ran second: **112 passed**. ABI extraction also passed. The runner and dependency versions remain unchanged. I200 is an informational newer-runner notice, not a lint failure.
 
 ## Approved implementation
 
@@ -16,7 +16,7 @@ Local gate: **PASS**. Source SHA-256: `686e0530f616fee0794686f14c16ccafc0d73dfa2
 |---|---|---|
 | Technical readiness | PASS locally under the user-approved design | Lint and all 112 mocked direct tests pass, including honest and adversarial validator callbacks. This is not a production audit or live consensus proof. |
 | Distinctiveness | PASS for the documented local comparison | Sealed probability scoring and conserved pot allocation differ from the auction, bounty, predicate graph and same-week underwriting pool; no ecosystem originality or points guarantee. |
-| Evidence readiness | FAIL for this revision's submission | Source has changed and has not been pushed or deployed. Historical receipts and public source links prove `6cc6b4f` only. Fresh live proof remains necessary after user review and authorization. |
+| Evidence readiness | PASS for the observed release | Pushed exact source, fresh source-matched deployment, 14 finalized transactions, all final views, conserved accounting and verified direct Explorer contract link. Historical addresses prove previous source only. No Portal submission occurred. |
 
 ## Source verification
 
@@ -26,7 +26,7 @@ Anonymous HTTP 200; 667 raw bytes, all retained; upstream commit `0ada998ebbf392
 
 Checked at `2026-11-11T13:57:52.570372+00:00`. Working directory: `C:\Users\User\Desktop\Genlayer apps\intelligent-contracts-v2\calibrated-forecast-pool`. Versions: `{"genlayer-py": "0.19.0rc2", "genlayer-test": "0.30.0rc2", "genvm-linter": "0.11.1rc2", "pytest": "9.1.1"}`. GenVM artifact bundle remains `v0.6.0-rc5 (already cached; matches direct-test SDK)`.
 
-The report generator reads saved validation results and does not run lint or tests. No push, deployment, Portal interaction or new live receipt was performed. Existing public evidence remains historical. Local changes are held for user review at the requested gate.
+The report generator reads saved validation results and does not run lint or tests. After user approval, this exact source was pushed before fresh StudioNet deployment. The separate live evidence below proves the revised source; November 10 receipts remain historical previous-source evidence only. No Portal interaction or submission occurred.
 
 ### lint
 
@@ -894,3 +894,28 @@ INPUT_JSON: """ + _canonical(payload)
         return {"stakes_in": stakes, "paid_units": paid, "refunded_units": refunded, "held_units": held,
                 "conserved": held >= 0 and stakes == paid + refunded + held}
 ```
+
+## Current live release evidence
+
+Source commit `32bcc75839a09de2dfb55bda4a52f61c3adbe395`, verified pushed before deployment; byte-identical on-chain source. Runtime genlayer-py 0.18.0 and the unchanged pinned runner. **GenLayer Explorer Contract**: [0x4e510d9f62d2632892BB84A52557b4573A94a2D6](https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6), verified in the rendered StudioNet Explorer against the full address and deployment transaction.
+
+The single resolution attempt used complete 667-byte evidence and derived YES from HOLDS. Settlement paid 172/128/0. All seven views were read at the end. Final accounting: stakes_in=300, paid_units=300, refunded_units=0, held_units=0, conserved=true. The old 0xc74a... and 0xE908... deployments are historical for source 6cc6b4f only; this release claims no fresh expiry instance.
+
+| Operation | Finality | Leader execution | Explorer |
+|---|---|---|---|
+| score_deploy | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x0c7dcdea2fd9dbe3acfa398c0105be74bd4c968b57c2f9faf3d2f53da1bd432c) |
+| score_commit_alice | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0xe7fce14553202fb40dac4fe6c647a33934f0c51e5771f726e4246e47234b92e8) |
+| score_commit_bob | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x3edbc6d36ee7e98f8efca1af1c3f41879ef12923f4c962ad7aaf61c4e7920688) |
+| score_commit_charlie | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x5d77d7d6b4f99d4ccfb110f31617e6474833ca34b3ab237e97e0fc9d372af0e9) |
+| score_forged_reveal | FINALIZED | ERROR (expected rollback) | [transaction](https://explorer-studio.genlayer.com/tx/0x73012d2812688f2d9871da0df0899434f64d3b05c182097bd2dd3ec27369802f) |
+| score_reveal_alice | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x5b0ce9d6ebd05af816b63f49cf803b0cdf4d401fb8861a51e314db8f9f9a03e5) |
+| score_reveal_bob | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x9bce962008aa201fe3c752070732b4ba1e74c204d450eca9efa031e5bb5bd923) |
+| score_reveal_charlie | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x2e9f2fdf1443f063484d9a6604e482779271f4963985cef0d0bc66f1f20715df) |
+| score_resolve | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x22d0aac3aa594bba53de420fa9f6b17b050b0f76ee5ecb549627d29b485c4411) |
+| score_settle | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0x631d8c0cf86d2ebff72f152283e54e27556ac52f59a2d4b31be8caea6f6dce54) |
+| score_withdraw_alice | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0xc4646f4b71d9edf8c0181a0c3d0cd956a52a0d03a3ccb5fbf0c952a37e18d185) |
+| score_withdraw_bob | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0xaef089ce6a05ab5bea2aca5038cc4b30135f4958c6b130d91a276adaba2a0647) |
+| score_withdraw_charlie | FINALIZED | SUCCESS | [transaction](https://explorer-studio.genlayer.com/tx/0xe7092f64bbd5946044d5085a61b9ea906698f83deba0857cd21d29ec2bf3f38e) |
+| score_duplicate_withdraw | FINALIZED | ERROR (expected rollback) | [transaction](https://explorer-studio.genlayer.com/tx/0xfb114a15398b46b8dae4fc2c22dfc30f0a21e0918b545b2b68f8c12778be92fd) |
+
+Full receipts, votes and read-backs: deployments/studionet-release-2026-11-11.json. These synthetic-unit demos do not establish token custody, truthful-reporting incentives, formal security or adversarial live consensus robustness.

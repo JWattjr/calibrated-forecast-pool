@@ -2,7 +2,7 @@
 
 **112 parameter-expanded cases passed** for the current local source, SHA-256 `686e0530f616fee0794686f14c16ccafc0d73dfa22aa2915dc17aacfc128ca9a`. GenVM lint ran first and passed; the complete suite ran second. Exact output is in verification/lint.txt and verification/tests.txt; commands/tool versions are in verification/checks.json; expanded results are in verification/tests.xml.
 
-These are mocked direct-mode tests, including explicit execution of captured validator callbacks. They establish local behavior under the approved fact-agreement/quote-selection design, not live consensus or finality. No push, deployment or Portal action was performed for this revision.
+These are mocked direct-mode tests, including explicit execution of captured validator callbacks. They establish local behavior under the approved fact-agreement/quote-selection design, not live consensus or finality. The exact source was subsequently pushed and freshly deployed under user authorization; separate live evidence is recorded below. No Portal action occurred.
 
 | Invariant or behavior | Coverage |
 |---|---|
@@ -141,3 +141,7 @@ These are mocked direct-mode tests, including explicit execution of captured val
 ## Historical live evidence
 
 The November 10 StudioNet demos (24 finalized transactions: 20 SUCCESS, four expected ERROR) prove only historical source commit `6cc6b4f`. They do not prove this changed source. See LIVE_DEMO.md and the original release manifest for those historical records. A future authorized deployment requires a pushed exact source commit, fresh demos and separately verified Explorer contract links.
+
+## Current separate live verification
+
+Source commit `32bcc75839a09de2dfb55bda4a52f61c3adbe395` was pushed before fresh deployment. All 14 transactions finalized: 12 SUCCESS, two expected ERROR. Complete 667-byte evidence classified HOLDS, code derived YES, payouts were 172/128/0, and final accounting was stakes=300, paid=300, refunded=0, held=0. All seven view methods were read at the end. Direct Explorer contract evidence: [0x4e510d9f62d2632892BB84A52557b4573A94a2D6](https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6). See LIVE_RELEASE_2026-11-11.md and the November 11 manifest. These observations are separate from the 112 mocked direct tests and are not an adversarial consensus audit.

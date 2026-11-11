@@ -1,6 +1,6 @@
 # Design
 
-Current local revision: user-approved November 11 design with fact agreement and independently validated, normalized quotations. This source has not been pushed or deployed. Historical StudioNet evidence proves only source commit `6cc6b4f`.
+Current released revision: user-approved November 11 design with fact agreement and independently validated, normalized quotations. This revised source was pushed as `32bcc75839a09de2dfb55bda4a52f61c3adbe395` and freshly deployed on StudioNet; see LIVE_RELEASE_2026-11-11.md and the new manifest. Historical StudioNet evidence proves only source commit `6cc6b4f`.
 
 
 ## Boundary and frozen state
@@ -96,3 +96,7 @@ held_units = stakes_in - paid_units - refunded_units
 Settlement allocates exactly the pot but does not count unwithdrawn entitlements as paid. Withdrawals move only the caller's entitlement from held to paid or refunded, once. Tests independently sum all settled rows and split claimed/unclaimed entitlements to check the view's counters, rather than relying only on its `conserved` boolean.
 
 Limits: 8 forecasters, 1–3 distinct HTTPS URLs of at most 500 characters, 64-character question ID, normalized question/criterion each up to 2,000 characters, bounded JSON input (2,500 characters for URLs), 64-character timestamp inputs, 16–128-character salt, stake 1..10^12, probability 0..10,000, 5,000 kept bytes per source, 6 quotations of at most 1,000 raw characters, each requiring at least 8 normalized characters for a determinate outcome, model JSON text at most 8,000 characters, bounded outcome string. Maximum pot is 8*10^12; integer multiplication/division stays far below u256 limits. Input normalization bounds follow the auction exactly.
+
+## Current release validation
+
+Lint passed before all 112 direct tests. The fresh StudioNet contract [0x4e510d9f62d2632892BB84A52557b4573A94a2D6](https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6) used complete 667-byte evidence, classified it HOLDS and derived YES. Payouts were 172/128/0 with zero held units; changed reveal and duplicate withdrawal both reverted. The older 0xc74a... and 0xE908... instances are historical evidence for previous source 6cc6b4f only. This release includes no fresh expiry instance and no Portal submission.
