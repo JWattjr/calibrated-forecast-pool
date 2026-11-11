@@ -1,20 +1,16 @@
 {
   "category": "Intelligent Contracts",
   "category_id": 52,
-  "contribution_date": "2026-11-10",
-  "title": "Calibrated Forecast Pool \u2014 sealed probabilities and conserved Brier payouts",
-  "notes": "Forecasters seal identity/question/contract-bound probabilities and equal synthetic stakes, then reveal. Validators independently fetch frozen sources and interpret a binary criterion; integer Brier scores deterministically split the pot, with dust ordering, unrevealed-stake forfeiture and one-shot withdrawals. Permissionless deadline expiry refunds unresolved pools. Two source-matched StudioNet demos: CPython distutils removal resolved YES and paid 172/128/0 from 300 units; expiry refunded both revealed and unrevealed 100-unit stakes. All 24 transactions finalized: 20 successes, 4 expected rollbacks; zero units held. 85 direct tests and lint/SDK validation pass. Local comparisons disclose shared commit-reveal and evidence-resolution plumbing; the distinction is sealed-probability scoring with conserved allocation. Limits: synthetic ledger, no native/token custody; normalized pooled payouts do not guarantee truthful-reporting incentives.",
-  "notes_length": 951,
+  "contribution_date": "2026-11-11",
+  "contribution_date_reason": "Revised source release and fresh StudioNet demo completed November 11, 2026 (Africa/Lagos).",
+  "title": "Calibrated Forecast Pool — sealed probabilities and conserved Brier payouts",
+  "notes": "Forecasters seal identity/question/contract-bound probabilities with equal synthetic stakes, then reveal. Validators independently fetch frozen sources and classify each HOLDS / CONTRADICTED / UNCLEAR; code derives YES / NO / UNRESOLVABLE and conserved integer Brier payouts. Truncated required evidence fails closed to UNRESOLVABLE. The complete 667-byte pinned distutils source produced HOLDS and code-derived YES on StudioNet. All 14 transactions finalized: 12 SUCCESS, 2 expected rollbacks (changed reveal and double withdrawal). Three 100-unit stakes paid 172/128/0 from 300; 0 held. Lint and 112 direct tests pass. Deadline-expiry refunds are covered by direct tests, not this deployment's live run. Limits: synthetic units, no native/token custody or transfers; pool-normalized payouts do not guarantee truthful-reporting incentives.",
+  "notes_length": 840,
   "evidence": [
     {
-      "label": "Scoring contract \u2014 StudioNet",
+      "label": "Current contract — StudioNet",
       "type": "GenLayer Explorer Contract",
-      "url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93"
-    },
-    {
-      "label": "Expiry-refund contract \u2014 StudioNet",
-      "type": "GenLayer Explorer Contract",
-      "url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A"
+      "url": "https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6"
     },
     {
       "label": "Public repository",
@@ -22,114 +18,287 @@
       "url": "https://github.com/JWattjr/calibrated-forecast-pool"
     },
     {
-      "label": "Exact deployed contract source",
+      "label": "Exact deployed source",
       "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/contracts/calibrated_forecast_pool.py"
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/32bcc75839a09de2dfb55bda4a52f61c3adbe395/contracts/calibrated_forecast_pool.py"
     },
     {
-      "label": "Live release manifest",
+      "label": "Release manifest",
       "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/deployments/studionet-release-2026-11-10.json"
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/deployments/studionet-release-2026-11-11.json"
     },
     {
-      "label": "Live results and transaction classification",
+      "label": "LIVE results — all 14 transactions",
       "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/LIVE_DEMO.md"
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/LIVE_RELEASE_2026-11-11.md"
     },
     {
-      "label": "85-case test matrix",
+      "label": "112-test matrix",
       "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/TEST_MATRIX.md"
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/TEST_MATRIX.md"
     },
     {
       "label": "Design and incentive limitation",
       "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/docs/DESIGN.md"
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/DESIGN.md"
     },
     {
       "label": "Local distinctiveness comparison",
       "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/DISTINCTIVENESS.md"
+      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/DISTINCTIVENESS.md"
     },
     {
-      "label": "Finalized YES resolution",
+      "label": "Resolve (YES)",
       "type": "Other",
-      "url": "https://explorer-studio.genlayer.com/tx/0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab"
+      "url": "https://explorer-studio.genlayer.com/tx/0x22d0aac3aa594bba53de420fa9f6b17b050b0f76ee5ecb549627d29b485c4411",
+      "finality": "FINALIZED",
+      "execution": "SUCCESS",
+      "expected_failure": false
     },
     {
-      "label": "Finalized deadline expiry",
+      "label": "Settle",
       "type": "Other",
-      "url": "https://explorer-studio.genlayer.com/tx/0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30"
+      "url": "https://explorer-studio.genlayer.com/tx/0x631d8c0cf86d2ebff72f152283e54e27556ac52f59a2d4b31be8caea6f6dce54",
+      "finality": "FINALIZED",
+      "execution": "SUCCESS",
+      "expected_failure": false
+    },
+    {
+      "label": "Withdrawal — Alice, 172 units",
+      "type": "Other",
+      "url": "https://explorer-studio.genlayer.com/tx/0xc4646f4b71d9edf8c0181a0c3d0cd956a52a0d03a3ccb5fbf0c952a37e18d185",
+      "finality": "FINALIZED",
+      "execution": "SUCCESS",
+      "expected_failure": false
+    },
+    {
+      "label": "Changed reveal (EXPECTED FAILURE)",
+      "type": "Other",
+      "url": "https://explorer-studio.genlayer.com/tx/0x73012d2812688f2d9871da0df0899434f64d3b05c182097bd2dd3ec27369802f",
+      "finality": "FINALIZED",
+      "execution": "ERROR",
+      "expected_failure": true
+    },
+    {
+      "label": "Double withdrawal (EXPECTED FAILURE)",
+      "type": "Other",
+      "url": "https://explorer-studio.genlayer.com/tx/0xfb114a15398b46b8dae4fc2c22dfc30f0a21e0918b545b2b68f8c12778be92fd",
+      "finality": "FINALIZED",
+      "execution": "ERROR",
+      "expected_failure": true
     }
   ],
-  "source_commit": "6cc6b4f32b486dc41fb23d11b7b7b40e004af510",
-  "evidence_commit": "317bc7ce8f58d429274f7949eb7133236d16fb48",
-  "portal_url": "https://portal.genlayer.foundation/submit-contribution",
-  "portal_submitted": false,
-  "guidelines_url": "https://portal.genlayer.foundation/contribution-type/52",
-  "publication_scope": "Public source/evidence repository and prepared Portal draft; final submission is pending review.",
-  "contribution_date_reason": "Build and both live demos completed on November 10; publication and guidance review occurred November 11 Africa/Lagos.",
+  "source_commit": "32bcc75839a09de2dfb55bda4a52f61c3adbe395",
+  "evidence_commit": "5beb647993c7a4a9c2ba727b20a8d5ef09b185b0",
+  "contract_address": "0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+  "network": "GenLayer StudioNet",
+  "chain_id": 61999,
+  "reviewer_guide": "Start with LIVE_RELEASE_2026-11-11.md and the manifest for the 14 classified transactions and final views. The source was pushed before deployment and the on-chain bytes matched the source commit exactly. DESIGN.md explains per-source labels, deterministic outcome/payout derivation, truncation fail-closed behavior, and consensus agreement on facts while different valid normalized quote selections may agree. TEST_MATRIX.md covers 112 mocked direct cases, including deadline-expiry refunds; this deployment did not run an expiry demonstration. DISTINCTIVENESS.md is a local comparison, including the same-week underwriting pool, not an ecosystem originality or points claim. November 10 deployments are historical evidence for the previous source only and are excluded from this evidence list.",
+  "local_submission_draft_ready": true,
   "portal_draft_prepared": false,
-  "publication_status": "PUBLIC_ANONYMOUS_ACCESS_VERIFIED",
-  "current_portal_evidence": [],
-  "pending_publication_evidence": [],
-  "portal_state": "EARLIER_DRAFT_TAB_ABSENT_CURRENT_FORM_BLANK_AT_TYPE_SELECTION",
-  "submission_hold": "DESIGN_CONFIRMATION_REQUIRED_FOR_NOVEMBER_11_GUIDANCE",
-  "pending_portal_evidence": [
-    {
-      "label": "Scoring contract \u2014 StudioNet",
-      "type": "GenLayer Explorer Contract",
-      "url": "https://explorer-studio.genlayer.com/address/0xc74acBa3E9f5733680a8f6245717DFD70C8f7e93"
-    },
-    {
-      "label": "Expiry-refund contract \u2014 StudioNet",
-      "type": "GenLayer Explorer Contract",
-      "url": "https://explorer-studio.genlayer.com/address/0xE908f2670Ee24C13346cf2e754001Ad20F2f825A"
-    },
-    {
-      "label": "Public repository",
-      "type": "GitHub Repository",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool"
-    },
-    {
-      "label": "Exact deployed contract source",
-      "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/contracts/calibrated_forecast_pool.py"
-    },
-    {
-      "label": "Live release manifest",
-      "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/deployments/studionet-release-2026-11-10.json"
-    },
-    {
-      "label": "Live results and transaction classification",
-      "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/LIVE_DEMO.md"
-    },
-    {
-      "label": "85-case test matrix",
-      "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/TEST_MATRIX.md"
-    },
-    {
-      "label": "Design and incentive limitation",
-      "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/6cc6b4f32b486dc41fb23d11b7b7b40e004af510/docs/DESIGN.md"
-    },
-    {
-      "label": "Local distinctiveness comparison",
-      "type": "GitHub File",
-      "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/317bc7ce8f58d429274f7949eb7133236d16fb48/docs/DISTINCTIVENESS.md"
-    },
-    {
-      "label": "Finalized YES resolution",
-      "type": "Other",
-      "url": "https://explorer-studio.genlayer.com/tx/0xf2163890548a0274d2c9314f429ce6796e455d092dc4d550940c134b0d37a8ab"
-    },
-    {
-      "label": "Finalized deadline expiry",
-      "type": "Other",
-      "url": "https://explorer-studio.genlayer.com/tx/0x1d678975dcd1d2137defb9585876b6e10bdb967680beebf62b721bc3735eba30"
-    }
-  ]
+  "portal_opened_for_this_task": false,
+  "portal_submitted": false,
+  "portal_preparation_status": "LOCAL_FILES_ONLY_NO_PORTAL_ACCESS",
+  "publication_status": "PUBLIC_ANONYMOUS_HTTP_200_VERIFIED",
+  "url_verification": {
+    "method": "Fresh requests session per attempt; no cookies, Authorization, account login, or ambient proxy credentials; standard browser User-Agent for Explorer.",
+    "all_evidence_urls_anonymous_http_200": true,
+    "checks": [
+      {
+        "url": "https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+        "http_status": 200,
+        "final_url": "https://explorer-studio.genlayer.com/address/0x4e510d9f62d2632892BB84A52557b4573A94a2D6",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:12.002968+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:12.002948+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/JWattjr/calibrated-forecast-pool",
+        "http_status": 200,
+        "final_url": "https://github.com/JWattjr/calibrated-forecast-pool",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:11.896700+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:11.896677+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/32bcc75839a09de2dfb55bda4a52f61c3adbe395/contracts/calibrated_forecast_pool.py",
+        "http_status": 200,
+        "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/32bcc75839a09de2dfb55bda4a52f61c3adbe395/contracts/calibrated_forecast_pool.py",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:13.395247+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:13.395227+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/deployments/studionet-release-2026-11-11.json",
+        "http_status": 200,
+        "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/deployments/studionet-release-2026-11-11.json",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:12.861279+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:12.861261+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/LIVE_RELEASE_2026-11-11.md",
+        "http_status": 200,
+        "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/LIVE_RELEASE_2026-11-11.md",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:14.349945+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:14.349927+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/TEST_MATRIX.md",
+        "http_status": 200,
+        "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/TEST_MATRIX.md",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:14.854503+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:14.854480+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/DESIGN.md",
+        "http_status": 200,
+        "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/DESIGN.md",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:16.010154+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:16.010133+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/DISTINCTIVENESS.md",
+        "http_status": 200,
+        "final_url": "https://github.com/JWattjr/calibrated-forecast-pool/blob/5beb647993c7a4a9c2ba727b20a8d5ef09b185b0/docs/DISTINCTIVENESS.md",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:16.391338+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:16.391320+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://explorer-studio.genlayer.com/tx/0x22d0aac3aa594bba53de420fa9f6b17b050b0f76ee5ecb549627d29b485c4411",
+        "http_status": 200,
+        "final_url": "https://explorer-studio.genlayer.com/tx/0x22d0aac3aa594bba53de420fa9f6b17b050b0f76ee5ecb549627d29b485c4411",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:18.314351+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:18.314319+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://explorer-studio.genlayer.com/tx/0x631d8c0cf86d2ebff72f152283e54e27556ac52f59a2d4b31be8caea6f6dce54",
+        "http_status": 200,
+        "final_url": "https://explorer-studio.genlayer.com/tx/0x631d8c0cf86d2ebff72f152283e54e27556ac52f59a2d4b31be8caea6f6dce54",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:17.350076+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:17.350061+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://explorer-studio.genlayer.com/tx/0xc4646f4b71d9edf8c0181a0c3d0cd956a52a0d03a3ccb5fbf0c952a37e18d185",
+        "http_status": 200,
+        "final_url": "https://explorer-studio.genlayer.com/tx/0xc4646f4b71d9edf8c0181a0c3d0cd956a52a0d03a3ccb5fbf0c952a37e18d185",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:18.283507+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:18.283492+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://explorer-studio.genlayer.com/tx/0x73012d2812688f2d9871da0df0899434f64d3b05c182097bd2dd3ec27369802f",
+        "http_status": 200,
+        "final_url": "https://explorer-studio.genlayer.com/tx/0x73012d2812688f2d9871da0df0899434f64d3b05c182097bd2dd3ec27369802f",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:20.264728+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:20.264712+00:00"
+          }
+        ]
+      },
+      {
+        "url": "https://explorer-studio.genlayer.com/tx/0xfb114a15398b46b8dae4fc2c22dfc30f0a21e0918b545b2b68f8c12778be92fd",
+        "http_status": 200,
+        "final_url": "https://explorer-studio.genlayer.com/tx/0xfb114a15398b46b8dae4fc2c22dfc30f0a21e0918b545b2b68f8c12778be92fd",
+        "anonymous": true,
+        "request_had_authorization": false,
+        "request_had_cookies": false,
+        "checked_at_utc": "2026-11-11T14:46:19.653428+00:00",
+        "attempts": [
+          {
+            "http_status": 200,
+            "checked_at_utc": "2026-11-11T14:46:19.653407+00:00"
+          }
+        ]
+      }
+    ]
+  }
 }
